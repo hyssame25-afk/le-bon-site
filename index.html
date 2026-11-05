@@ -212,6 +212,21 @@
   .browser-bar span { margin-left: 10px; font-size: 12px; color: var(--muted); background: var(--paper); padding: 3px 12px; border-radius: 999px; }
   .browser img { width: 100%; aspect-ratio: 800 / 506; object-fit: cover; }
   .hero-figure { position: relative; }
+  .mock { aspect-ratio: 800 / 506; padding: 18px; display: grid; grid-template-rows: auto 1fr auto; gap: 16px; background: var(--paper); }
+  .mock b, .mock span, .mock em, .mock i { display: block; border-radius: 6px; }
+  .mock-nav { display: flex; align-items: center; gap: 10px; }
+  .mock-nav b { width: 90px; height: 14px; background: var(--ink); margin-right: auto; }
+  .mock-nav span { width: 46px; height: 8px; background: var(--line); }
+  .mock-nav em { width: 70px; height: 22px; background: var(--sun); border-radius: 999px; }
+  .mock-hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: 18px; align-items: center; }
+  .mock-hero div { display: grid; gap: 10px; }
+  .mock-hero b { height: 18px; background: var(--ink); }
+  .mock-hero span { height: 9px; background: var(--line); }
+  .mock-hero .short { width: 65%; }
+  .mock-hero em { width: 110px; height: 26px; background: var(--sun); border-radius: 999px; margin-top: 6px; }
+  .mock-hero i { height: 100%; min-height: 110px; border-radius: 10px; background: linear-gradient(135deg, #e9eef2, #cfd8df); }
+  .mock-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .mock-cards i { height: 54px; border-radius: 10px; background: var(--mist); border: 1px solid var(--line); }
   .hero-figure .tag { position: absolute; left: -14px; bottom: -18px; background: var(--ink); color: var(--paper); border-radius: 12px; padding: 12px 16px; font-size: 14px; box-shadow: 0 12px 30px rgba(19,32,43,.25); }
   .hero-figure .tag strong { display: block; font-family: var(--display); font-size: 17px; }
 
@@ -354,7 +369,6 @@
       <span data-cfg="nom">Le Bon Site</span>
     </a>
     <nav aria-label="Menu">
-      <a href="#exemple">Exemple</a>
       <a href="#formules">Formules</a>
       <a href="#entretien">Entretien</a>
       <a href="#faq">Questions</a>
@@ -378,10 +392,14 @@
       </div>
       <div class="hero-figure">
         <div class="browser">
-          <div class="browser-bar"><i></i><i></i><i></i><span>Site de René Maçonnerie</span></div>
-          <img src="images/rene-maconnerie.jpg" alt="Page d'accueil du site de René Maçonnerie">
+          <div class="browser-bar"><i></i><i></i><i></i><span>votre-entreprise.fr</span></div>
+          <div class="mock" aria-hidden="true">
+            <div class="mock-nav"><b></b><span></span><span></span><span></span><em></em></div>
+            <div class="mock-hero"><div><b></b><b class="short"></b><span></span><span class="short"></span><em></em></div><i></i></div>
+            <div class="mock-cards"><i></i><i></i><i></i></div>
+          </div>
         </div>
-        <div class="tag"><strong>René Maçonnerie</strong>Maçon · site réalisé en 1 semaine</div>
+        <div class="tag"><strong>Votre site</strong>Maquette gratuite en quelques jours</div>
       </div>
     </div>
   </section>
@@ -404,29 +422,6 @@
       </div>
       <div class="who">
         <span>Maçons et artisans du bâtiment</span><span>Plombiers, électriciens</span><span>Coiffeurs, esthéticiennes</span><span>Restaurants, boulangeries</span><span>Garages</span><span>Paysagistes</span><span>Commerces de quartier</span><span>Indépendants et petites entreprises</span>
-      </div>
-    </div>
-  </section>
-
-  <section id="exemple" style="padding-top:0">
-    <div class="wrap">
-      <div class="work">
-        <div class="browser">
-          <div class="browser-bar"><i></i><i></i><i></i><span>Site de René Maçonnerie</span></div>
-          <img src="images/rene-maconnerie.jpg" alt="Site de René Maçonnerie" loading="lazy">
-        </div>
-        <div>
-          <div class="eyebrow">Exemple de réalisation</div>
-          <h3>René Maçonnerie</h3>
-          <p>Un maçon qui n'avait aucun site. En une semaine : un site complet qui présente ses chantiers et donne envie d'appeler.</p>
-          <ul>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1f9d55" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg>Galerie de 15 chantiers avec photos en grand</li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1f9d55" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg>Boutons Appeler et WhatsApp toujours visibles sur téléphone</li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1f9d55" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg>Formulaire de demande de devis</li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1f9d55" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg>Questions fréquentes et zone d'intervention</li>
-          </ul>
-          <a class="btn btn-sun" href="#contact">Je veux le même</a>
-        </div>
       </div>
     </div>
   </section>
