@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /maquette/
 
 Sitemap: https://lebonsitepro.fr/sitemap.xml

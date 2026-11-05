@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nuances &amp; Styl | Coiffure mixte · Barbier à Ingré (maquette)</title>
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Maquette du site de Nuances &amp; Styl">
+<meta property="og:description" content="Une proposition de site pour Nuances &amp; Styl, coiffure mixte · barbier à Ingré, préparée par Le Bon Site.">
+<meta property="og:image" content="https://lebonsitepro.fr/images/partage.jpg">
+<meta property="og:url" content="https://lebonsitepro.fr/maquette/nuances-et-styl/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{--c1:#3d2340;--c2:#d98fa6;--bg:#fbf6f8;--ink:#1d1d1f;--muted:#5d6670;--line:rgba(0,0,0,.09);--disp:"Cormorant Garamond",Georgia,serif;--body:"DM Sans",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--body);color:var(--ink);background:var(--bg);line-height:1.6;font-size:17px}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.lbs{background:#13202b;color:#fff;font-size:14px;padding:10px 0;text-align:center}
+.lbs a{color:#ffc93c;font-weight:700;text-decoration:none}
+.lbs b{color:#ffc93c}
+header{background:var(--c1);color:#fff;position:sticky;top:0;z-index:20}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:70px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--disp);font-size:24px;font-weight:700;text-decoration:none}
+.logo span{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--c2);color:var(--c1)}
+nav{display:flex;gap:22px;font-size:15px}
+nav a{text-decoration:none;opacity:.85}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:999px;font-weight:700;text-decoration:none;border:0;font-size:16px}
+.btn-c2{background:var(--c2);color:var(--c1)}
+.btn-line{border:2px solid currentColor}
+.hero{background:var(--c1);color:#fff;padding:64px 0 76px;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.hero .wrap>*{min-width:0}
+.kicker{text-transform:uppercase;letter-spacing:.14em;font-size:13px;color:var(--c2);font-weight:700;margin-bottom:14px}
+h1{font-family:var(--disp);font-size:clamp(36px,5.4vw,60px);line-height:1.05;margin-bottom:18px}
+.hero p{font-size:19px;opacity:.88;max-width:34em;margin-bottom:28px}
+.acts{display:flex;flex-wrap:wrap;gap:12px}
+.visu{aspect-ratio:4/5;border-radius:28px;background:radial-gradient(120% 80% at 20% 10%,var(--c2),transparent 60%),linear-gradient(160deg,rgba(255,255,255,.12),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.18);display:grid;place-items:center;color:var(--c2);position:relative}
+.visu svg{width:38%;height:38%;opacity:.9}
+.visu small{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:rgba(255,255,255,.7);font-size:13px}
+section{padding:72px 0}
+h2{font-family:var(--disp);font-size:clamp(28px,3.6vw,42px);line-height:1.1;margin-bottom:12px;color:var(--c1)}
+.sub{color:var(--muted);max-width:40em;margin-bottom:34px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px}
+.card .i{display:grid;place-items:center;width:48px;height:48px;border-radius:14px;background:var(--c1);color:var(--c2);margin-bottom:14px}
+.card h3{font-size:19px;margin-bottom:6px}
+.card p{color:var(--muted);font-size:15px}
+.menu{display:grid;grid-template-columns:1fr 1fr;gap:14px 40px;background:#fff;border-radius:20px;padding:28px;border:1px solid var(--line)}
+.menu div{display:flex;justify-content:space-between;gap:16px;border-bottom:1px dashed var(--line);padding-bottom:12px}
+.menu b{font-family:var(--disp);font-size:20px;color:var(--c1)}
+.menu span{color:var(--muted);font-size:14px;display:block}
+.menu em{font-style:normal;font-weight:700;color:var(--c2);white-space:nowrap}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.ph{aspect-ratio:1;border-radius:18px;background:linear-gradient(145deg,var(--c1),color-mix(in srgb,var(--c1) 55%,var(--c2)));display:flex;align-items:flex-end;padding:14px;color:#fff;font-weight:700;font-size:15px;position:relative;overflow:hidden}
+.ph:before{content:"";position:absolute;inset:auto -30% -40% auto;width:80%;aspect-ratio:1;border-radius:50%;background:var(--c2);opacity:.35}
+.ph span{position:relative}
+.note{font-size:13px;color:var(--muted);margin-top:12px}
+.infos{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.infos .card b{display:block;font-size:17px;margin-bottom:4px}
+.ph-txt{color:var(--muted)}
+.cta{background:var(--c1);color:#fff;border-radius:28px;padding:44px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px}
+.cta h2{color:#fff;margin:0}
+footer{padding:28px 0 90px;color:var(--muted);font-size:14px;text-align:center}
+.mbar{display:none}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:14px}.ba .ph{aspect-ratio:4/3}.ph.av{filter:grayscale(.85) brightness(.85)}
+.formbox{background:#fff;border:1px solid var(--line);border-radius:28px;padding:36px;display:grid;grid-template-columns:.9fr 1.1fr;gap:36px}
+.fm{display:grid;gap:14px}.fm label{display:grid;gap:6px;font-weight:700;font-size:14px}
+.fm input,.fm select,.fm textarea{font:inherit;font-weight:400;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--bg)}
+.fm .btn{justify-content:center}.ok{background:var(--bg);border-radius:12px;padding:12px;font-size:14px}
+.faq{display:grid;gap:12px;max-width:860px}.faq details{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 22px}
+.faq summary{font-weight:700;cursor:pointer}.faq p{color:var(--muted);margin-top:10px}
+@media(max-width:900px){.formbox{grid-template-columns:1fr;padding:24px}}
+@media(max-width:900px){.grid{grid-template-columns:1fr 1fr}.gal{grid-template-columns:1fr 1fr}.hero .wrap{grid-template-columns:1fr}.visu{aspect-ratio:16/10}nav{display:none}.infos{grid-template-columns:1fr}.menu{grid-template-columns:1fr}}
+@media(max-width:560px){.grid{grid-template-columns:1fr}section{padding:56px 0}.cta{padding:30px}header .btn{display:none}
+.mbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px 12px;background:#fff;border-top:1px solid var(--line)}.mbar .btn{justify-content:center;padding:12px}}
+</style>
+</head>
+<body>
+<div class="lbs"><div class="wrap">Maquette gratuite préparée par <b>Le Bon Site</b> pour Nuances &amp; Styl. Textes et images d'exemple. <a href="https://lebonsitepro.fr/">lebonsitepro.fr</a></div></div>
+<header><div class="wrap">
+  <a class="logo" href="#"><span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.9M14.5 14.5 20 20M8.1 8.1 12 12"/></svg></span>Nuances &amp; Styl</a>
+  <nav><a href="#services">Services</a><a href="#photos">Photos</a><a href="#contact">Réserver</a><a href="#infos">Infos</a></nav>
+  <a class="btn btn-c2" href="#infos"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg> Appeler</a>
+</div></header>
+<section class="hero"><div class="wrap">
+  <div>
+    <div class="kicker">Coiffure mixte · Barbier · Ingré</div>
+    <h1>Coiffure femme, homme et barbier à Ingré</h1>
+    <p>Coupes, couleurs et barbe : un salon mixte pour toute la famille, à deux pas de chez vous.</p>
+    <div class="acts"><a class="btn btn-c2" href="#infos"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg> Appeler</a><a class="btn btn-line" href="#services">Voir les services</a></div>
+  </div>
+  <div class="visu"><svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.9M14.5 14.5 20 20M8.1 8.1 12 12"/></svg><small>Ici : une belle photo de votre salon</small></div>
+</div></section>
+<section id="services"><div class="wrap">
+  <h2>Nos services</h2>
+  <p class="sub">Vos clients voient en un coup d'œil ce que vous proposez.</p>
+  <div class="grid"><div class="card"><div class="i"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.9M14.5 14.5 20 20M8.1 8.1 12 12"/></svg></div><h3>Coupe femme</h3><p>Coupe, brushing et conseils personnalisés.</p></div><div class="card"><div class="i"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.9M14.5 14.5 20 20M8.1 8.1 12 12"/></svg></div><h3>Coupe homme</h3><p>Coupe classique ou tendance.</p></div><div class="card"><div class="i"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 3 7 7 .6-5.3 4.7 1.6 7L12 17.8 5.7 21.3l1.6-7L2 9.6 9 9z"/></svg></div><h3>Couleur et mèches</h3><p>Des nuances qui vous ressemblent.</p></div><div class="card"><div class="i"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21.2l8.8-8.8a5.5 5.5 0 0 0 0-7.8z"/></svg></div><h3>Barbe</h3><p>Taille et entretien de la barbe.</p></div></div>
+</div></section>
+
+<section id="photos" style="padding-top:0"><div class="wrap">
+  <h2>En photos</h2>
+  <p class="sub">Vos plus belles photos, en grand. Quelques photos prises au téléphone suffisent.</p>
+  <div class="gal"><div class="ph"><span>Couleur</span></div><div class="ph"><span>Coupe femme</span></div><div class="ph"><span>Coupe homme</span></div><div class="ph"><span>Le salon</span></div></div>
+  <p class="note">Emplacements réservés à vos propres photos.</p>
+</div></section>
+<section style="padding-top:0"><div class="wrap"><h2>Avant / après</h2><p class="sub">Rien ne convainc mieux qu'un avant / après de votre travail.</p>
+  <div class="ba"><div class="ph av"><span>Avant</span></div><div class="ph"><span>Après</span></div></div></div></section>
+<section id="contact" style="padding-top:0"><div class="wrap"><div class="formbox">
+  <div><h2>Réserver un rendez-vous</h2><p class="sub">Vos clients vous écrivent directement depuis le site, même quand vous êtes occupé. Vous recevez la demande par e-mail.</p></div>
+  <form class="fm" onsubmit="event.preventDefault();this.querySelector('.ok').hidden=false">
+    <label>Nom<input required placeholder="Votre nom"></label>
+    <label>Téléphone<input required type="tel" placeholder="06 00 00 00 00"></label>
+    <label>Prestation souhaitée<select><option>Coupe femme</option><option>Coupe homme</option><option>Couleur et mèches</option><option>Barbe</option></select></label>
+    <label>Date souhaitée<input type="date"></label>
+    <button class="btn btn-c2" type="submit">Envoyer la demande</button>
+    <p class="ok" hidden>Ceci est une maquette : sur votre vrai site, cette demande vous serait envoyée par e-mail.</p>
+  </form></div></div></section>
+<section id="faq" style="padding-top:0"><div class="wrap"><h2>Questions fréquentes</h2><p class="sub">Les réponses aux questions que vos clients se posent, avant même d'appeler.</p><div class="faq"><details><summary>Faut-il prendre rendez-vous ?</summary><p>Vous pouvez réserver par téléphone ou avec le formulaire ci-dessus. Selon l&#x27;affluence, nous vous prenons aussi sans rendez-vous.</p></details><details><summary>Combien de temps dure une coupe ?</summary><p>Comptez en général 20 à 45 minutes selon la prestation.</p></details><details><summary>Quels moyens de paiement acceptez-vous ?</summary><p>Les moyens de paiement acceptés sont indiqués ici, pour éviter toute surprise.</p></details></div></div></section>
+<section id="infos" style="padding-top:0"><div class="wrap">
+  <h2>Infos pratiques</h2>
+  <p class="sub">Tout ce qu'il faut pour vous contacter ou venir vous voir.</p>
+  <div class="infos">
+    <div class="card"><div class="i"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></div><b>Téléphone</b><span class="ph-txt">Votre numéro, cliquable sur téléphone</span></div>
+    <div class="card"><div class="i"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><b>Horaires</b><span class="ph-txt">Vos jours et heures d'ouverture</span></div>
+    <div class="card"><div class="i"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div><b>Adresse</b><span class="ph-txt">Ingré, avec un plan d'accès</span></div>
+  </div>
+</div></section>
+<section style="padding-top:0"><div class="wrap"><div class="cta">
+  <h2>Ce site vous plaît ?</h2>
+  <a class="btn btn-c2" href="https://lebonsitepro.fr/#contact">Le recevoir avec vos infos</a>
+</div></div></section>
+<footer>Maquette réalisée par Le Bon Site · <a href="https://lebonsitepro.fr/">lebonsitepro.fr</a> · 07 50 08 96 81</footer>
+<div class="mbar"><a class="btn btn-c2" href="#infos">Appeler</a><a class="btn btn-line" style="color:var(--c1)" href="#services">Services</a></div>
+</body>
+</html>
