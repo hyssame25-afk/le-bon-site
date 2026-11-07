@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>R.Pac | Chauffagiste · Pompes à chaleur à Esvres (maquette)</title>
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Maquette du site de R.Pac">
+<meta property="og:description" content="Une proposition de site pour R.Pac, chauffagiste · pompes à chaleur à Esvres, préparée par Le Bon Site.">
+<meta property="og:image" content="https://lebonsitepro.fr/images/partage.jpg">
+<meta property="og:url" content="https://lebonsitepro.fr/maquette/r-pac/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+.wrap>*{min-width:0}
+.lbs{background:#13202b;color:#fff;font:14px/1.5 system-ui,sans-serif;padding:10px 0;text-align:center}
+.lbs a{color:#ffc93c;font-weight:700;text-decoration:none}.lbs b{color:#ffc93c}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;font-weight:700;text-decoration:none;border:0;font-size:16px;cursor:pointer;font-family:inherit;line-height:1.2}
+.fm{display:grid;gap:14px}.fm label{display:grid;gap:6px;font-weight:700;font-size:14px}
+.fm input,.fm select,.fm textarea{font:inherit;font-weight:400;padding:12px 14px;width:100%;color:inherit}
+.ok{border-radius:10px;padding:12px;font-size:14px}
+.faq{display:grid;gap:12px}.faq summary{font-weight:700;cursor:pointer}.faq p{margin-top:10px;opacity:.8}
+.infos{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.info b{display:block;font-size:17px;margin:10px 0 2px}.info span.t{opacity:.7;font-size:15px}
+.mbar{display:none}
+@media(max-width:800px){.infos{grid-template-columns:1fr}}
+@media(max-width:560px){.mbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px 12px}.mbar .btn{padding:12px}body{padding-bottom:66px}}
+
+:root{--ink:#0e1b2c;--mute:#5a6678;--line:#e4e9f0;--soft:#f4f7fb;--hot:#ff6a3d;--hot2:#ffb347;--cold:#2b8cff;--cold2:#7fd3ff;--a:var(--hot);--a2:var(--hot2)}
+body.ete{--a:var(--cold);--a2:var(--cold2)}
+body{background:#fff;color:var(--ink);font-family:"Manrope",sans-serif;transition:background .4s}
+header{background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-size:24px;letter-spacing:-.02em}
+.logo i{width:30px;height:30px;border-radius:50%;background:conic-gradient(var(--hot),var(--hot2),var(--cold2),var(--cold),var(--hot))}
+header nav{display:flex;gap:26px;font-weight:600;font-size:15px}header nav a{text-decoration:none;color:var(--mute)}
+.btn{border-radius:12px;transition:background .4s}
+.b-a{background:var(--a);color:#fff}.b-ink{background:var(--ink);color:#fff}.b-out{border:2px solid var(--line);color:var(--ink)}
+.hero{padding:70px 0 80px;background:radial-gradient(60% 80% at 85% 30%,color-mix(in srgb,var(--a2) 28%,transparent),transparent),#fff;transition:background .4s}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hero .k{font-weight:700;color:var(--a);transition:color .4s}
+.hero h1{font-weight:800;font-size:clamp(42px,6.2vw,80px);line-height:1;letter-spacing:-.035em;margin:16px 0 22px}
+.hero h1 span{background:linear-gradient(90deg,var(--a),var(--a2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{font-size:19px;color:var(--mute);max-width:31em;margin-bottom:30px}
+.acts{display:flex;flex-wrap:wrap;gap:12px}
+.ctrl{background:var(--ink);color:#fff;border-radius:30px;padding:30px;max-width:380px;width:100%;margin:0 auto;box-shadow:0 30px 60px rgba(14,27,44,.25)}
+.sw{display:grid;grid-template-columns:1fr 1fr;background:rgba(255,255,255,.08);border-radius:14px;padding:5px;margin-bottom:26px}
+.sw button{font:inherit;font-weight:700;border:0;background:transparent;color:#fff;padding:10px;border-radius:10px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px}
+.sw button.on{background:var(--a)}
+.dial{width:220px;height:220px;margin:0 auto 20px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--a) 0 var(--deg,240deg),rgba(255,255,255,.1) 0);transition:background .4s;position:relative}
+.dial:before{content:"";position:absolute;inset:14px;border-radius:50%;background:var(--ink)}
+.dial div{position:relative;text-align:center}
+.dial b{font-size:58px;font-weight:800;letter-spacing:-.04em}.dial small{display:block;opacity:.6;font-size:14px}
+.ctrl p{text-align:center;color:#c9d3e0;font-size:15px}
+section{padding:90px 0}
+.h2{font-weight:800;font-size:clamp(34px,4.6vw,56px);line-height:1.04;letter-spacing:-.03em}
+.h2 span{color:var(--a);transition:color .4s}
+.lead{color:var(--mute);max-width:36em;margin:14px 0 44px;font-size:18px}
+.svc{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.sv{background:var(--soft);border-radius:20px;padding:28px}
+.sv .ii{display:grid;place-items:center;width:52px;height:52px;border-radius:14px;background:#fff;color:var(--a);margin-bottom:18px;transition:color .4s}
+.sv h3{font-size:20px;font-weight:800;margin-bottom:6px}.sv p{color:var(--mute);font-size:15px}
+.why{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.cards{display:grid;gap:12px}
+.cd{display:flex;gap:16px;align-items:center;border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+.cd i{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--a),var(--a2));color:#fff;font-style:normal;font-weight:800}
+.cd b{display:block}.cd span{color:var(--mute);font-size:15px}
+.cert{display:flex;flex-wrap:wrap;gap:10px}
+.cert span{border:2px dashed var(--line);border-radius:12px;padding:16px 20px;font-weight:700;color:var(--mute)}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.gal div{aspect-ratio:4/3;border-radius:18px;background:var(--bg);display:flex;align-items:flex-end;padding:14px;color:#fff;font-weight:700}
+.note{font-size:13px;color:var(--mute);margin-top:14px}
+.formbox{background:var(--soft);border-radius:26px;padding:48px;display:grid;grid-template-columns:.9fr 1.1fr;gap:44px}
+.fm input,.fm select,.fm textarea{background:#fff;border:1px solid var(--line);border-radius:12px}
+.ok{background:#fff}
+.faq details{border:1px solid var(--line);border-radius:16px;padding:18px 22px}.faq summary{font-size:18px}
+.info{border:1px solid var(--line);border-radius:20px;padding:28px}.info .ii{display:grid;place-items:center;width:50px;height:50px;border-radius:14px;background:var(--soft);color:var(--a)}
+.cta{background:var(--ink);color:#fff;border-radius:28px;padding:54px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px;background-image:radial-gradient(50% 120% at 100% 0,color-mix(in srgb,var(--a) 45%,transparent),transparent)}
+.cta p{opacity:.75;margin-top:8px;font-size:18px}
+footer{padding:30px 0;text-align:center;color:var(--mute);font-size:14px}
+.mbar{background:#fff;border-top:1px solid var(--line)}
+@media(max-width:900px){header nav{display:none}.hero .wrap,.why,.formbox{grid-template-columns:1fr}.svc{grid-template-columns:1fr 1fr}.gal{grid-template-columns:1fr 1fr}.formbox{padding:28px 22px}section{padding:66px 0}.cta{padding:34px 26px}}
+@media(max-width:560px){header .btn{display:none}.svc{grid-template-columns:1fr}.ctrl{padding:22px}.dial{width:190px;height:190px}}
+</style>
+</head>
+<body>
+<div class="lbs"><div class="wrap">Maquette gratuite préparée par <b>Le Bon Site</b> pour R.Pac. Textes et images d'exemple : vos vraies photos et infos seront ajoutées uniquement avec votre accord. <a href="https://lebonsitepro.fr/">lebonsitepro.fr</a></div></div>
+<header><div class="wrap">
+  <a class="logo" href="#"><i></i>R.Pac</a>
+  <nav><a href="#services">Services</a><a href="#pourquoi">Pourquoi nous</a><a href="#photos">Réalisations</a><a href="#infos">Contact</a></nav>
+  <a class="btn b-ink" href="#contact">Demander un devis</a>
+</div></header>
+<section class="hero"><div class="wrap">
+  <div>
+    <div class="k">Chauffagiste à Esvres, en Indre-et-Loire</div>
+    <h1>Chaud l'hiver,<br><span>frais l'été.</span></h1>
+    <p>Pompes à chaleur, plancher chauffant, chaudières gaz à condensation et climatisation, en construction neuve comme en rénovation.</p>
+    <div class="acts"><a class="btn b-a" href="#contact">Demander un devis</a><a class="btn b-out" href="#infos"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg> Appeler</a></div>
+  </div>
+  <div class="ctrl">
+    <div class="sw"><button class="on" data-m="hiver" onclick="mode('hiver')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22c4 0 7-3 7-7 0-4-3-6-4-10-2 2-3 4-3 6-1-1-2-2-2-4-3 3-5 5-5 8 0 4 3 7 7 7z"/></svg> Hiver</button><button data-m="ete" onclick="mode('ete')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M2 12h20M5 5l14 14M19 5 5 19"/></svg> Été</button></div>
+    <div class="dial"><div><b id="t">21°</b><small id="l">Chauffage</small></div></div>
+    <p>Touchez Hiver ou Été : le site change de couleur.</p>
+  </div>
+</div></section>
+<section id="services"><div class="wrap">
+  <h2 class="h2">Nos <span>services</span></h2>
+  <p class="lead">Ce que vous installez, expliqué simplement. Vos clients savent tout de suite que vous êtes la bonne personne.</p>
+  <div class="svc"><div class="sv"><span class="ii"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22c4 0 7-3 7-7 0-4-3-6-4-10-2 2-3 4-3 6-1-1-2-2-2-4-3 3-5 5-5 8 0 4 3 7 7 7z"/></svg></span><h3>Pompes à chaleur</h3><p>Installation de pompes à chaleur, en construction neuve comme en rénovation.</p></div><div class="sv"><span class="ii"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 12h18M12 3v18"/></svg></span><h3>Plancher chauffant</h3><p>Une chaleur douce et invisible, répartie dans toute la maison.</p></div><div class="sv"><span class="ii"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.7 6.3 9a8 8 0 1 0 11.4 0z"/></svg></span><h3>Chaudières gaz à condensation</h3><p>Installation de chaudières à condensation, plus économes.</p></div><div class="sv"><span class="ii"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M2 12h20M5 5l14 14M19 5 5 19"/></svg></span><h3>Climatisation</h3><p>Rester au frais l&#x27;été, avec un équipement adapté à votre logement.</p></div></div>
+</div></section>
+<section id="pourquoi" style="padding-top:0"><div class="wrap why">
+  <div><h2 class="h2">Pourquoi <span>nous choisir</span></h2>
+  <p class="lead">Exemple : vos points forts, en quelques lignes.</p>
+  <div class="cert"><span>Vos certifications</span><span>Vos labels</span><span>Vos marques</span></div></div>
+  <div class="cards">
+    <div class="cd"><i>1</i><div><b>Un conseil adapté</b><span>Le bon équipement pour votre maison.</span></div></div>
+    <div class="cd"><i>2</i><div><b>Neuf et rénovation</b><span>Une installation propre, dans les règles.</span></div></div>
+    <div class="cd"><i>3</i><div><b>Un interlocuteur local</b><span>Basé à Esvres, près de chez vous.</span></div></div>
+  </div>
+</div></section>
+<section id="photos" style="padding-top:0"><div class="wrap">
+  <h2 class="h2">Nos <span>installations</span></h2>
+  <p class="lead">Une installation bien faite se montre. Quelques photos prises au téléphone suffisent.</p>
+  <div class="gal"><div style="--bg:linear-gradient(150deg,#c6d3e0,#7d93aa)">Pompe à chaleur</div><div style="--bg:linear-gradient(150deg,#e8c9a8,#b98a63)">Plancher chauffant</div><div style="--bg:linear-gradient(150deg,#d5dde6,#93a3b5)">Chaufferie</div></div>
+  <p class="note">Ici, vos propres photos, ajoutées uniquement avec votre accord.</p>
+</div></section>
+<section id="contact" style="padding-top:0"><div class="wrap"><div class="formbox">
+  <div class="ftxt"><h2 class="h2">Demander un devis</h2><p class="lead">Vos clients vous écrivent directement depuis le site, même quand vous êtes occupé. Vous recevez la demande par e-mail.</p></div>
+  <form class="fm" onsubmit="event.preventDefault();this.querySelector('.ok').hidden=false">
+    <label>Nom<input required placeholder="Votre nom"></label>
+    <label>Téléphone<input required type="tel" placeholder="06 00 00 00 00"></label>
+    <label>Type de travaux<select><option>Pompes à chaleur</option><option>Plancher chauffant</option><option>Chaudières gaz à condensation</option><option>Climatisation</option></select></label>
+    <label>Votre projet<textarea rows="3" placeholder="Quelques mots sur vos travaux"></textarea></label>
+    <button class="btn b-a" type="submit">Envoyer la demande</button>
+    <p class="ok" hidden>Ceci est une maquette : sur votre vrai site, cette demande vous serait envoyée par e-mail.</p>
+  </form></div></div></section>
+<section id="faq" style="padding-top:0"><div class="wrap"><h2 class="h2">Questions <span>fréquentes</span></h2><p class="lead">Les réponses aux questions de vos clients, avant même qu'ils appellent.</p><div class="faq"><details><summary>Comment obtenir un devis ?</summary><p>Décrivez votre projet avec le formulaire de cette page, nous revenons vers vous.</p></details><details><summary>Dans quel secteur intervenez-vous ?</summary><p>Nous intervenons dans la ville et ses environs. La zone exacte est indiquée ici.</p></details><details><summary>Quels sont les délais ?</summary><p>Ils dépendent de la saison et du chantier : nous vous donnons une date précise avec le devis.</p></details></div></div></section>
+<section id="infos" style="padding-top:0"><div class="wrap"><h2 class="h2">Nous <span>contacter</span></h2><p class="lead">Tout pour nous joindre facilement.</p><div class="infos">
+  <div class="info"><span class="ii"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span><b>Téléphone</b><span class="t">Votre numéro, cliquable sur téléphone</span></div>
+  <div class="info"><span class="ii"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><b>Horaires</b><span class="t">Vos jours et heures d'ouverture</span></div>
+  <div class="info"><span class="ii"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><b>Adresse</b><span class="t">Esvres, avec un plan d'accès</span></div>
+</div></div></section>
+<section style="padding-top:0"><div class="wrap"><div class="cta"><div><h2 class="h2">Ce site vous plaît ?</h2><p>Je le termine avec vos photos, vos textes et vos infos.</p></div>
+<a class="btn b-a" href="https://lebonsitepro.fr/#contact">Le recevoir avec vos infos</a></div></div></section>
+<script>
+function mode(m){document.body.classList.toggle('ete',m==='ete');document.querySelectorAll('.sw button').forEach(b=>b.classList.toggle('on',b.dataset.m===m));
+var t=document.getElementById('t'),l=document.getElementById('l');if(m==='ete'){t.textContent='24°';l.textContent='Climatisation';document.querySelector('.dial').style.setProperty('--deg','150deg')}else{t.textContent='21°';l.textContent='Chauffage';document.querySelector('.dial').style.setProperty('--deg','240deg')}}
+</script>
+<footer><div class="wrap">Maquette réalisée par Le Bon Site · <a href="https://lebonsitepro.fr/">lebonsitepro.fr</a> · 07 50 08 96 81</div></footer>
+<div class="mbar"><a class="btn b-ink" href="#infos">Appeler</a><a class="btn b-a" href="#contact">Devis</a></div>
+</body>
+</html>

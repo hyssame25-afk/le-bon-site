@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SARL Jose Da Silva | Carreleur à Mignères (maquette)</title>
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Maquette du site de SARL Jose Da Silva">
+<meta property="og:description" content="Une proposition de site pour SARL Jose Da Silva, carreleur à Mignères, préparée par Le Bon Site.">
+<meta property="og:image" content="https://lebonsitepro.fr/images/partage.jpg">
+<meta property="og:url" content="https://lebonsitepro.fr/maquette/jose-da-silva/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,700;1,700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+.wrap>*{min-width:0}
+.lbs{background:#13202b;color:#fff;font:14px/1.5 system-ui,sans-serif;padding:10px 0;text-align:center}
+.lbs a{color:#ffc93c;font-weight:700;text-decoration:none}.lbs b{color:#ffc93c}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;font-weight:700;text-decoration:none;border:0;font-size:16px;cursor:pointer;font-family:inherit;line-height:1.2}
+.fm{display:grid;gap:14px}.fm label{display:grid;gap:6px;font-weight:700;font-size:14px}
+.fm input,.fm select,.fm textarea{font:inherit;font-weight:400;padding:12px 14px;width:100%;color:inherit}
+.ok{border-radius:10px;padding:12px;font-size:14px}
+.faq{display:grid;gap:12px}.faq summary{font-weight:700;cursor:pointer}.faq p{margin-top:10px;opacity:.8}
+.infos{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.info b{display:block;font-size:17px;margin:10px 0 2px}.info span.t{opacity:.7;font-size:15px}
+.mbar{display:none}
+@media(max-width:800px){.infos{grid-template-columns:1fr}}
+@media(max-width:560px){.mbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px 12px}.mbar .btn{padding:12px}body{padding-bottom:66px}}
+
+:root{--bl:#1d4e89;--bl2:#2f6fb5;--sky:#dde9f6;--sand:#f7f3ec;--ter:#c96a3d;--ink:#17233a;--mute:#5d6676;--line:#e2e0da}
+body{background:#fff;color:var(--ink);font-family:"Outfit",sans-serif}
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:74px;gap:16px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;font-family:"Libre Caslon Text",serif;font-weight:700;font-size:22px}
+.tile{width:34px;height:34px;background:var(--bl);position:relative;flex:none}
+.tile:before{content:"";position:absolute;inset:7px;border:2px solid #fff;transform:rotate(45deg)}
+header nav{display:flex;gap:28px;font-weight:500;font-size:15px}header nav a{text-decoration:none;color:var(--mute)}
+.btn{border-radius:999px}
+.b-bl{background:var(--bl);color:#fff}.b-ter{background:var(--ter);color:#fff}.b-out{border:2px solid var(--bl);color:var(--bl)}
+.hero{padding:70px 0 80px;background:var(--sand)}
+.hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.hero .k{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:14px;font-weight:600;color:var(--bl)}
+.hero h1{font-family:"Libre Caslon Text",serif;font-weight:700;font-size:clamp(42px,6vw,76px);line-height:1.04;margin:20px 0}
+.hero h1 em{color:var(--bl2)}
+.hero p{font-size:19px;color:var(--mute);max-width:30em;margin-bottom:30px}
+.acts{display:flex;flex-wrap:wrap;gap:12px}
+.mosaic{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;max-width:460px;width:100%;margin:0 auto}
+.mosaic i{aspect-ratio:1;background:#fff;position:relative;overflow:hidden;box-shadow:0 1px 0 var(--line)}
+.mosaic i.a{background:var(--bl)}
+.mosaic i.a:before{content:"";position:absolute;inset:18%;border:3px solid #fff;transform:rotate(45deg)}
+.mosaic i.a:after{content:"";position:absolute;inset:40%;background:#fff;border-radius:50%}
+.mosaic i.b{background:radial-gradient(circle at 0 0,var(--bl2) 0 30%,transparent 31%),radial-gradient(circle at 100% 100%,var(--bl2) 0 30%,transparent 31%),#fff}
+.mosaic i.c{background:var(--ter)}
+.mosaic i.c:before{content:"";position:absolute;inset:25%;background:var(--sand);border-radius:50%}
+section{padding:90px 0}
+.h2{font-family:"Libre Caslon Text",serif;font-weight:700;font-size:clamp(32px,4.4vw,52px);line-height:1.08}
+.h2 em{color:var(--bl2)}
+.lead{color:var(--mute);max-width:36em;margin:14px 0 44px;font-size:18px}
+.svc{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.sv{border:1px solid var(--line);padding:32px;display:grid;grid-template-columns:86px 1fr;gap:22px;align-items:start;border-radius:6px}
+.sv .sw{width:86px;height:86px;background:var(--p);border-radius:4px}
+.sv h3{font-size:23px;font-weight:700;margin-bottom:6px}.sv p{color:var(--mute)}
+.fmt{background:var(--bl);color:#fff}
+.fmt .lead{color:rgba(255,255,255,.75)}
+.sizes{display:flex;flex-wrap:wrap;align-items:flex-end;gap:26px}
+.sz{text-align:center;font-weight:700}
+.sz i{display:block;background:repeating-linear-gradient(0deg,transparent 0 calc(var(--h) - 2px),rgba(255,255,255,.6) calc(var(--h) - 2px) var(--h)),rgba(255,255,255,.12);border:2px solid rgba(255,255,255,.7);margin-bottom:10px;width:var(--w);height:var(--h)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.st{background:var(--sand);padding:28px;border-radius:6px;position:relative}
+.st b{font-family:"Libre Caslon Text",serif;font-size:44px;color:var(--bl2);display:block;line-height:1;margin-bottom:10px}
+.st p{font-size:16px}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.gal div{aspect-ratio:4/3;background:var(--bg);border-radius:6px;display:flex;align-items:flex-end;padding:14px;color:#fff;font-weight:700}
+.gal div span{background:rgba(23,35,58,.75);padding:5px 10px;border-radius:4px}
+.note{font-size:13px;color:var(--mute);margin-top:14px}
+.zone{display:flex;flex-wrap:wrap;gap:10px}.zone span{background:var(--sky);color:var(--bl);font-weight:700;padding:10px 16px;border-radius:999px}
+.formbox{background:var(--sand);border-radius:10px;padding:48px;display:grid;grid-template-columns:.9fr 1.1fr;gap:44px}
+.fm input,.fm select,.fm textarea{background:#fff;border:1px solid var(--line);border-radius:8px}
+.ok{background:#fff}
+.faq details{border:1px solid var(--line);border-radius:8px;padding:18px 22px}.faq summary{font-size:18px}
+.info{border:1px solid var(--line);border-radius:8px;padding:28px}.info .ii{display:grid;place-items:center;width:50px;height:50px;background:var(--bl);color:#fff;border-radius:4px}
+.cta{background:var(--bl);color:#fff;border-radius:10px;padding:54px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px;background-image:radial-gradient(circle at 0 0,rgba(255,255,255,.08) 0 30%,transparent 31%),radial-gradient(circle at 100% 100%,rgba(255,255,255,.08) 0 30%,transparent 31%);background-size:80px 80px}
+.cta p{opacity:.8;margin-top:8px;font-size:18px}
+footer{padding:30px 0;text-align:center;color:var(--mute);font-size:14px}
+.mbar{background:#fff;border-top:1px solid var(--line)}
+@media(max-width:900px){header nav{display:none}.hero .wrap,.formbox,.svc{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.gal{grid-template-columns:1fr 1fr}.formbox{padding:28px 22px}section{padding:66px 0}.cta{padding:34px 26px}.mosaic{max-width:340px}}
+@media(max-width:560px){header .btn{display:none}.steps{grid-template-columns:1fr}.sv{grid-template-columns:1fr}.sizes{gap:16px}}
+</style>
+</head>
+<body>
+<div class="lbs"><div class="wrap">Maquette gratuite préparée par <b>Le Bon Site</b> pour SARL Jose Da Silva. Textes et images d'exemple : vos vraies photos et infos seront ajoutées uniquement avec votre accord. <a href="https://lebonsitepro.fr/">lebonsitepro.fr</a></div></div>
+<header><div class="wrap">
+  <a class="logo" href="#"><span class="tile"></span>Jose Da Silva</a>
+  <nav><a href="#services">Services</a><a href="#formats">Grand format</a><a href="#photos">Réalisations</a><a href="#infos">Contact</a></nav>
+  <a class="btn b-bl" href="#contact">Demander un devis</a>
+</div></header>
+<section class="hero"><div class="wrap">
+  <div>
+    <span class="k"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 12h18M12 3v18"/></svg> Artisan carreleur, région de Montargis</span>
+    <h1>Des sols et des murs <em>posés au millimètre.</em></h1>
+    <p>Carrelage intérieur, salles de bain, douches italiennes, terrasses et grands formats, à Montargis, Amilly, Villemandeur et alentours.</p>
+    <div class="acts"><a class="btn b-bl" href="#contact">Demander un devis</a><a class="btn b-out" href="#infos"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg> Appeler</a></div>
+  </div>
+  <div class="mosaic" aria-hidden="true"><i class="a"></i><i class="b"></i><i class="c"></i><i class="a"></i><i class="b"></i><i class="a"></i><i class="c"></i><i class="b"></i><i class="c"></i><i class="b"></i><i class="a"></i><i class="b"></i><i class="a"></i><i class="c"></i><i class="b"></i><i class="a"></i></div>
+</div></section>
+<section id="services"><div class="wrap">
+  <h2 class="h2">Nos <em>services</em></h2>
+  <p class="lead">Ce que vous faites, expliqué simplement. Vos clients savent tout de suite que vous êtes la bonne personne.</p>
+  <div class="svc"><div class="sv"><span class="sw" style="--p:linear-gradient(135deg,#e8e2d6 49%,#d8d0c0 51%)"></span><div><h3>Pose de carrelage intérieur</h3><p>Sol et mur : salon, cuisine, pièces de vie, couloirs, chambres. Grès cérame, faïence, imitation parquet.</p></div></div><div class="sv"><span class="sw" style="--p:repeating-linear-gradient(0deg,#cfe0f2 0 12px,#fff 12px 14px),#cfe0f2"></span><div><h3>Salle de bain et douche italienne</h3><p>Création et rénovation complète : étanchéité, faïence, mosaïque, carrelage mural, douche italienne.</p></div></div><div class="sv"><span class="sw" style="--p:linear-gradient(135deg,#c9a27c,#a57c56)"></span><div><h3>Terrasses et extérieur</h3><p>Carrelage extérieur antidérapant pour terrasses, escaliers et plages de piscine.</p></div></div><div class="sv"><span class="sw" style="--p:linear-gradient(90deg,#d9d6cf 49%,#bfbab0 51%)"></span><div><h3>Carrelage grand format</h3><p>Pose précise de grands carreaux : finitions soignées et alignement parfait.</p></div></div></div>
+</div></section>
+<section id="formats" class="fmt"><div class="wrap">
+  <h2 class="h2" style="color:#fff">Le grand format, <em style="color:#bcd6f2">notre spécialité</em></h2>
+  <p class="lead">Les grands carreaux demandent une pose précise. Montrez-le avec vos plus beaux chantiers.</p>
+  <div class="sizes"><div class="sz"><i style="--w:60px;--h:60px"></i>60 × 60</div><div class="sz"><i style="--w:80px;--h:80px"></i>80 × 80</div><div class="sz"><i style="--w:120px;--h:60px"></i>120 × 60</div></div>
+</div></section>
+<section><div class="wrap">
+  <h2 class="h2">Comment ça <em>se passe</em></h2>
+  <p class="lead">Quatre étapes, claires dès le départ.</p>
+  <div class="steps"><div class="st"><b>01</b><p>Vous nous contactez, et nous venons voir les travaux.</p></div><div class="st"><b>02</b><p>Nous vous envoyons un devis gratuit.</p></div><div class="st"><b>03</b><p>Après votre accord, nous intervenons.</p></div><div class="st"><b>04</b><p>Nous garantissons la qualité de notre travail.</p></div></div>
+</div></section>
+<section id="photos" style="padding-top:0"><div class="wrap">
+  <h2 class="h2">Nos <em>réalisations</em></h2>
+  <p class="lead">Une belle salle de bain se montre. Quelques photos prises au téléphone suffisent.</p>
+  <div class="gal"><div style="--bg:repeating-linear-gradient(0deg,#9cbfe3 0 26px,#fff 26px 28px),repeating-linear-gradient(90deg,#9cbfe3 0 26px,#fff 26px 28px)"><span>Douche italienne</span></div><div style="--bg:linear-gradient(135deg,#d9cfbf,#b3a58e)"><span>Sol grand format</span></div><div style="--bg:linear-gradient(135deg,#c79b74,#8f6a49)"><span>Terrasse</span></div><div style="--bg:linear-gradient(135deg,#e7e2d8,#c9c1b2)"><span>Cuisine</span></div><div style="--bg:linear-gradient(135deg,#a9b7c6,#6d7f92)"><span>Escalier</span></div><div style="--bg:linear-gradient(135deg,#d6c6b0,#a8917a)"><span>Imitation parquet</span></div></div>
+  <p class="note">Ici, vos propres photos, ajoutées uniquement avec votre accord.</p>
+</div></section>
+<section style="padding-top:0"><div class="wrap">
+  <h2 class="h2">Où nous <em>intervenons</em></h2>
+  <p class="lead">Montargis et les communes voisines.</p>
+  <div class="zone"><span>Montargis</span><span>Amilly</span><span>Villemandeur</span><span>Mignères</span><span>et alentours</span></div>
+</div></section>
+<section id="contact" style="padding-top:0"><div class="wrap"><div class="formbox">
+  <div class="ftxt"><h2 class="h2">Demander un <em>devis</em></h2><p class="lead">Vos clients vous écrivent directement depuis le site, même quand vous êtes occupé. Vous recevez la demande par e-mail.</p></div>
+  <form class="fm" onsubmit="event.preventDefault();this.querySelector('.ok').hidden=false">
+    <label>Nom<input required placeholder="Votre nom"></label>
+    <label>Téléphone<input required type="tel" placeholder="06 00 00 00 00"></label>
+    <label>Type de travaux<select><option>Pose de carrelage intérieur</option><option>Salle de bain et douche italienne</option><option>Terrasses et extérieur</option><option>Carrelage grand format</option></select></label>
+    <label>Votre projet<textarea rows="3" placeholder="Quelques mots sur vos travaux"></textarea></label>
+    <button class="btn b-bl" type="submit">Envoyer la demande</button>
+    <p class="ok" hidden>Ceci est une maquette : sur votre vrai site, cette demande vous serait envoyée par e-mail.</p>
+  </form></div></div></section>
+<section id="faq" style="padding-top:0"><div class="wrap"><h2 class="h2">Questions <em>fréquentes</em></h2><p class="lead">Les réponses aux questions de vos clients, avant même qu'ils appellent.</p><div class="faq"><details><summary>Comment obtenir un devis ?</summary><p>Décrivez votre projet avec le formulaire de cette page, nous revenons vers vous.</p></details><details><summary>Dans quel secteur intervenez-vous ?</summary><p>Nous intervenons dans la ville et ses environs. La zone exacte est indiquée ici.</p></details><details><summary>Quels sont les délais ?</summary><p>Ils dépendent de la saison et du chantier : nous vous donnons une date précise avec le devis.</p></details></div></div></section>
+<section id="infos" style="padding-top:0"><div class="wrap"><h2 class="h2">Nous <em>contacter</em></h2><p class="lead">Tout pour nous joindre facilement.</p><div class="infos">
+  <div class="info"><span class="ii"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span><b>Téléphone</b><span class="t">Votre numéro, cliquable sur téléphone</span></div>
+  <div class="info"><span class="ii"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><b>Horaires</b><span class="t">Vos jours et heures d'ouverture</span></div>
+  <div class="info"><span class="ii"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><b>Adresse</b><span class="t">Mignères, avec un plan d'accès</span></div>
+</div></div></section>
+<section style="padding-top:0"><div class="wrap"><div class="cta"><div><h2 class="h2">Ce site vous plaît ?</h2><p>Je le termine avec vos photos, vos textes et vos infos.</p></div>
+<a class="btn b-ter" href="https://lebonsitepro.fr/#contact">Le recevoir avec vos infos</a></div></div></section>
+<footer><div class="wrap">Maquette réalisée par Le Bon Site · <a href="https://lebonsitepro.fr/">lebonsitepro.fr</a> · 07 50 08 96 81</div></footer>
+<div class="mbar"><a class="btn b-out" href="#infos">Appeler</a><a class="btn b-bl" href="#contact">Devis</a></div>
+</body>
+</html>
