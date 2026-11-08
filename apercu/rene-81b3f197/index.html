@@ -135,7 +135,7 @@
   /* Contact */
   .contact { background: var(--ink); color: var(--white); }
   .contact .section-head p { color: #b9bcc2; }
-  .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 48px; }
+  .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 48px; } .contact-grid > *, .info-item > div { min-width: 0; } .info-item a { overflow-wrap: anywhere; }
   .info { display: grid; gap: 22px; align-content: start; }
   .info-item { display: flex; gap: 16px; }
   .info-item .ic { width: 48px; height: 48px; border-radius: 8px; background: var(--ink-2); display: grid; place-items: center; color: var(--brick); flex: none; }
@@ -383,7 +383,7 @@
       <div class="section-head">
         <div class="eyebrow">Savoir-faire</div>
         <h2>Quatre métiers, un seul interlocuteur</h2>
-        <p>Des fondations jusqu'au ravalement de façade, nous suivons votre chantier de bout en bout.</p>
+        <p>Du terrassement jusqu'au ravalement de façade, nous vous conseillons et suivons votre chantier de bout en bout.</p>
       </div>
       <div class="services">
         <article class="service">
@@ -392,8 +392,8 @@
           <p>Tous les travaux de maçonnerie pour créer, modifier ou réparer votre bâti.</p>
           <ul>
             <li>Ouverture de murs porteurs, pose d'IPN</li>
-            <li>Démolition et rénovation</li>
-            <li>Pose de brique, murets, clôtures, piliers</li>
+            <li>Démolition, rénovation, débarras des gravats</li>
+            <li>Pose de brique, murets, piliers</li>
             <li>Cheminées</li>
           </ul>
         </article>
@@ -402,9 +402,11 @@
           <h3>Gros œuvre</h3>
           <p>La structure de votre projet, construite pour durer.</p>
           <ul>
-            <li>Maisons individuelles et agrandissements</li>
-            <li>Fondations et fondations renforcées</li>
-            <li>Dalles, chapes, drainage</li>
+            <li>Maisons neuves, extensions et agrandissements</li>
+            <li>Terrassement</li>
+            <li>Fondations : création, réparation, renforcement</li>
+            <li>Fissures et affaissements</li>
+            <li>Dalles, chapes et carrelage</li>
             <li>Bâtiments professionnels et commerciaux</li>
           </ul>
         </article>
@@ -417,6 +419,8 @@
             <li>Cours et bordures pavées</li>
             <li>Terrasses et balcons sur plots</li>
             <li>Sols en résine</li>
+            <li>Clôtures, portails, grillage de jardin</li>
+            <li>Drainage</li>
           </ul>
         </article>
         <article class="service">
@@ -427,6 +431,7 @@
             <li>Taille de pierre</li>
             <li>Ravalement de façade</li>
             <li>Enduits et parements en brique</li>
+            <li>Étanchéité</li>
           </ul>
         </article>
       </div>
@@ -513,7 +518,7 @@
         <h2>Un chantier clair, du premier appel à la fin des travaux</h2>
       </div>
       <div class="steps">
-        <div class="step"><h3>Visite sur place</h3><p>Nous venons voir votre projet et écouter vos besoins.</p></div>
+        <div class="step"><h3>Visite sur place</h3><p>Nous venons voir votre projet, écouter vos besoins et vous conseiller.</p></div>
         <div class="step"><h3>Devis détaillé</h3><p>Un prix clair, poste par poste, sans surprise.</p></div>
         <div class="step"><h3>Travaux</h3><p>Un chantier propre, des délais tenus, un contact direct.</p></div>
         <div class="step"><h3>Réception</h3><p>Nous vérifions ensemble le résultat avant de partir.</p></div>
@@ -655,7 +660,11 @@
                 <option>Ravalement de façade</option>
                 <option>Cheminée</option>
                 <option>Sol en résine</option>
-                <option>Drainage / fondations</option>
+                <option>Fondations, fissures, affaissement</option>
+                <option>Terrassement</option>
+                <option>Chape / carrelage</option>
+                <option>Clôture / portail / grillage</option>
+                <option>Drainage / étanchéité</option>
                 <option>Autre</option>
               </select>
             </label>
