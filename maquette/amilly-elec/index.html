@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Amilly Elec | Électricien à Amilly (maquette)</title>
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Maquette du site de Amilly Elec">
+<meta property="og:description" content="Une proposition de site pour Amilly Elec, électricien à Amilly, préparée par Le Bon Site.">
+<meta property="og:image" content="https://lebonsitepro.fr/images/partage.jpg">
+<meta property="og:url" content="https://lebonsitepro.fr/maquette/amilly-elec/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+.wrap>*{min-width:0}
+.lbs{background:#13202b;color:#fff;font:14px/1.5 system-ui,sans-serif;padding:10px 0;text-align:center}
+.lbs a{color:#ffc93c;font-weight:700;text-decoration:none}.lbs b{color:#ffc93c}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;font-weight:700;text-decoration:none;border:0;font-size:16px;cursor:pointer;font-family:inherit;line-height:1.2}
+.fm{display:grid;gap:14px}.fm label{display:grid;gap:6px;font-weight:700;font-size:14px}
+.fm input,.fm select,.fm textarea{font:inherit;font-weight:400;padding:12px 14px;width:100%;color:inherit}
+.ok{border-radius:10px;padding:12px;font-size:14px}
+.faq{display:grid;gap:12px}.faq summary{font-weight:700;cursor:pointer}.faq p{margin-top:10px;opacity:.8}
+.infos{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.info b{display:block;font-size:17px;margin:10px 0 2px}.info span.t{opacity:.7;font-size:15px}
+.mbar{display:none}
+@media(max-width:800px){.infos{grid-template-columns:1fr}}
+@media(max-width:560px){.mbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px 12px}.mbar .btn{padding:12px}body{padding-bottom:66px}}
+
+:root{--acfg:#0f172a;--bg:#ffffff;--ink:#0f172a;--ac:#f5b301;--ac2:#2563eb;--soft:#f1f5f9;--r:14px;--mute:color-mix(in srgb,var(--ink) 62%,var(--bg));--line:color-mix(in srgb,var(--ink) 12%,var(--bg))}
+body{background:var(--bg);color:var(--ink);font-family:"Inter",sans-serif}
+h1,.h2,h3,.logo{font-family:"Space Grotesk",serif}
+header{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:800;font-size:23px;line-height:1.1}
+.logo .mk{display:grid;place-items:center;width:40px;height:40px;border-radius:var(--r);background:var(--ac);color:#fff;flex:none}
+header nav{display:flex;gap:26px;font-weight:600;font-size:15px}header nav a{text-decoration:none;color:var(--mute)}
+.btn{border-radius:var(--r)}
+.b-ac{background:var(--ac);color:var(--acfg)}.b-ink{background:var(--ink);color:#fff}.b-out{border:2px solid currentColor;background:transparent}
+.hero{padding:80px 0 90px;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;position:relative}
+.k{display:inline-block;font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--ac)}
+.hero h1{font-weight:800;font-size:clamp(42px,6.2vw,80px);line-height:1.02;letter-spacing:-.02em;margin:16px 0 22px}
+.hero h1 span{color:var(--ac)}
+.hero p.lead{font-size:19px;max-width:32em;margin-bottom:30px;color:var(--mute)}
+.acts{display:flex;flex-wrap:wrap;gap:12px}
+.art{position:relative;aspect-ratio:1;max-width:420px;width:100%;margin:0 auto;display:grid;place-items:center}
+.art .disc{position:absolute;inset:6%;border-radius:50%;background:var(--soft)}
+.art .disc2{position:absolute;inset:22%;border-radius:50%;border:3px dashed var(--ac2)}
+.art .ico{position:relative;display:grid;place-items:center;width:46%;aspect-ratio:1;border-radius:calc(var(--r)*2 + 8px);background:var(--ac);color:#fff;box-shadow:0 30px 60px color-mix(in srgb,var(--ac) 35%,transparent);transform:rotate(-6deg)}
+.art .ico svg{width:52%;height:52%}
+.art .tag{position:absolute;background:#fff;color:var(--ink);border-radius:var(--r);padding:10px 14px;font-weight:700;font-size:14px;box-shadow:0 10px 30px rgba(0,0,0,.12);display:flex;gap:8px;align-items:center;max-width:70%}
+.art .tag svg{color:var(--ac);flex:none}
+.art .t1{left:0;top:14%}.art .t2{right:0;bottom:16%}
+/* variantes de hero */
+.h-dark .hero{background:var(--ink);color:#fff}.h-dark .hero p.lead{color:color-mix(in srgb,#fff 72%,var(--ink))}.h-dark .art .disc{background:color-mix(in srgb,#fff 8%,var(--ink))}.h-dark .hero .b-out{color:#fff}
+.h-center .hero .wrap{grid-template-columns:1fr;text-align:center;justify-items:center}.h-center .hero p.lead{margin-left:auto;margin-right:auto}.h-center .acts{justify-content:center}.h-center .art{display:none}
+.h-center .hero{background:radial-gradient(60% 70% at 50% 0,var(--soft),transparent)}
+.h-center .hero h1{font-size:clamp(46px,7.4vw,96px)}
+.h-grid .hero{background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:44px 44px}
+.h-wave .hero{background:linear-gradient(180deg,var(--soft),var(--bg))}
+.h-wave .hero:after{content:"";position:absolute;left:-10%;right:-10%;bottom:-60px;height:120px;background:var(--bg);border-radius:50% 50% 0 0}
+.h-tape .hero{border-top:14px solid;border-image:repeating-linear-gradient(-45deg,var(--ac) 0 18px,var(--ink) 18px 36px) 14}
+.h-tape .hero h1{text-transform:uppercase;line-height:.95}.h-tape .hero h1 span{background:var(--ac);color:var(--ink);padding:0 8px}
+.h-split .hero{background:linear-gradient(90deg,var(--bg) 0 58%,var(--soft) 58%)}
+.band{background:var(--ac);color:var(--acfg)}
+.band .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.band div{padding:22px 16px;font-weight:700;display:flex;align-items:center;gap:10px}
+section{padding:90px 0}
+.h2{font-weight:800;font-size:clamp(32px,4.6vw,54px);line-height:1.05;letter-spacing:-.02em}
+.h2 span{color:var(--ac)}
+.lead{color:var(--mute);max-width:36em;margin:14px 0 44px;font-size:18px}
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.sv{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:30px;position:relative;overflow:hidden}
+.sv .ii{display:grid;place-items:center;width:52px;height:52px;border-radius:var(--r);background:var(--soft);color:var(--ac);margin-bottom:18px}
+.sv h3{font-size:21px;font-weight:800;margin-bottom:8px}.sv p{color:var(--mute);font-size:16px}
+.sv:after{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--ac);opacity:0;transition:.2s}.sv:hover:after{opacity:1}
+.facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}.facts span{background:var(--soft);border-radius:999px;padding:10px 16px;font-weight:700;font-size:15px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.st{background:#fff;border-radius:var(--r);padding:26px;border:1px solid var(--line)}
+.st b{display:block;font-family:"Space Grotesk",serif;font-size:40px;color:var(--ac);line-height:1;margin-bottom:10px}
+.st strong{display:block;font-size:18px;margin-bottom:4px}.st p{color:var(--mute);font-size:15px}
+.gal{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:190px 190px;gap:12px}
+.gal div{border-radius:var(--r);background:var(--bg2);display:flex;align-items:flex-end;padding:14px}
+.gal div:first-child{grid-row:span 2}
+.gal span{background:rgba(0,0,0,.55);color:#fff;font-weight:700;font-size:14px;padding:5px 10px;border-radius:4px}
+.note{font-size:13px;color:var(--mute);margin-top:14px}
+.zone{background:var(--ink);color:#fff;border-radius:var(--r);padding:44px;display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between}
+.zone p{opacity:.8;font-size:18px;max-width:36em;margin-top:10px}
+.zone .pin{display:grid;place-items:center;width:84px;height:84px;border-radius:50%;background:var(--ac);color:#fff;flex:none}
+.formbox{background:var(--soft);border-radius:var(--r);padding:48px;display:grid;grid-template-columns:.9fr 1.1fr;gap:44px}
+.fm input,.fm select,.fm textarea{background:#fff;border:1px solid var(--line);border-radius:var(--r)}
+.ok{background:#fff}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px 22px}.faq summary{font-size:18px}
+.info{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:28px}.info .ii{display:grid;place-items:center;width:50px;height:50px;border-radius:var(--r);background:var(--soft);color:var(--ac)}
+.cta{background:var(--ink);color:#fff;border-radius:var(--r);padding:54px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px;border-bottom:8px solid var(--ac)}
+.cta p{opacity:.75;margin-top:8px;font-size:18px}
+footer{padding:30px 0;text-align:center;color:var(--mute);font-size:14px}
+.mbar{background:var(--bg);border-top:1px solid var(--line)}
+@media(max-width:900px){header nav{display:none}.hero .wrap,.formbox{grid-template-columns:1fr}.art{max-width:300px}.h-split .hero{background:var(--bg)}
+.band .wrap{grid-template-columns:1fr 1fr}.svc{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.gal{grid-template-columns:1fr 1fr;grid-template-rows:180px 140px 140px}.gal div:first-child{grid-column:span 2;grid-row:auto}.formbox{padding:28px 22px}section{padding:66px 0}.cta,.zone{padding:34px 26px}}
+@media(max-width:560px){header .btn{display:none}.svc,.steps{grid-template-columns:1fr}.band div{font-size:14px;padding:16px 10px}.logo{font-size:19px}}
+</style>
+</head>
+<body class="h-grid">
+<div class="lbs"><div class="wrap">Maquette gratuite préparée par <b>Le Bon Site</b> pour Amilly Elec. Textes et images d'exemple : vos vraies photos et infos seront ajoutées uniquement avec votre accord. <a href="https://lebonsitepro.fr/">lebonsitepro.fr</a></div></div>
+<header><div class="wrap">
+  <a class="logo" href="#"><span class="mk"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></span>Amilly Elec</a>
+  <nav><a href="#services">Services</a><a href="#methode">Méthode</a><a href="#photos">Réalisations</a><a href="#infos">Contact</a></nav>
+  <a class="btn b-ac" href="#contact">Demander un devis</a>
+</div></header>
+<section class="hero"><div class="wrap">
+  <div>
+    <span class="k">Électricien à Amilly depuis 1997</span>
+    <h1>L&#x27;électricité,<br><span>bien faite.</span></h1>
+    <p class="lead">Installation complète, mise aux normes et dépannage, pour les maisons, appartements, commerces et petits locaux professionnels.</p>
+    <div class="acts"><a class="btn b-ac" href="#contact">Demander un devis</a><a class="btn b-out" href="#infos"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg> Appeler</a></div>
+  </div>
+  <div class="art" aria-hidden="true"><div class="disc"></div><div class="disc2"></div><div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div>
+<div class="tag t1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Près de 25 ans d&#x27;expérience</div><div class="tag t2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Amilly</div></div>
+</div></section>
+<div class="band"><div class="wrap"><div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Près de 25 ans d&#x27;expérience</div><div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Particuliers et entreprises</div><div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Neuf et rénovation</div><div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Amilly et le Loiret</div></div></div>
+<section id="services"><div class="wrap">
+  <h2 class="h2">Nos <span>services</span></h2>
+  <p class="lead">Ce que vous faites, expliqué simplement. Vos clients savent tout de suite que vous êtes la bonne personne.</p>
+  <div class="svc"><div class="sv"><span class="ii"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></span><h3>Travaux d&#x27;électricité</h3><p>Installation complète et mise aux normes, en neuf et en rénovation.</p></div><div class="sv"><span class="ii"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg></span><h3>Dépannage électrique</h3><p>Une panne ? Un électricien expérimenté intervient.</p></div><div class="sv"><span class="ii"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22c4 0 7-3 7-7 0-4-3-6-4-10-2 2-3 4-3 6-1-1-2-2-2-4-3 3-5 5-5 8 0 4 3 7 7 7z"/></svg></span><h3>Chauffage électrique</h3><p>Installation de votre chauffage électrique.</p></div><div class="sv"><span class="ii"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="2"/><path d="M12 10c0-4 1-7 4-7s2 5-2 7M14 12c4 0 7 1 7 4s-5 2-7-2M12 14c0 4-1 7-4 7s-2-5 2-7M10 12c-4 0-7-1-7-4s5-2 7 2"/></svg></span><h3>Domotique</h3><p>Une maison plus pratique et plus économe.</p></div><div class="sv"><span class="ii"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="1"/><circle cx="15" cy="12" r="1"/></svg></span><h3>Motorisation de portail</h3><p>Ouvrez votre portail sans sortir de la voiture.</p></div><div class="sv"><span class="ii"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><h3>Alarme et interphone</h3><p>Sécurisez votre maison ou votre local.</p></div></div>
+  
+</div></section>
+<section id="methode" style="padding-top:0"><div class="wrap">
+  <h2 class="h2">Comment ça <span>se passe</span></h2>
+  <p class="lead">Exemple : votre façon de travailler, en quatre étapes claires.</p>
+  <div class="steps"><div class="st"><b>01</b><strong>Contact</strong><p>Vous nous appelez ou remplissez le formulaire.</p></div><div class="st"><b>02</b><strong>Visite</strong><p>Nous venons voir votre projet.</p></div><div class="st"><b>03</b><strong>Devis</strong><p>Un devis clair, adapté à votre besoin.</p></div><div class="st"><b>04</b><strong>Travaux</strong><p>Les travaux, à la date prévue ensemble.</p></div></div>
+</div></section>
+<section id="photos" style="padding-top:0"><div class="wrap">
+  <h2 class="h2">Nos <span>réalisations</span></h2>
+  <p class="lead">Vos plus beaux travaux, en grand. Quelques photos prises au téléphone suffisent.</p>
+  <div class="gal"><div style="--bg2:linear-gradient(160deg,#c9c3b8,#8a8174)"><span>Tableau électrique</span></div><div style="--bg2:linear-gradient(160deg,#b7c4cf,#6f8091)"><span>Domotique</span></div><div style="--bg2:linear-gradient(160deg,#d6c3a8,#9d8466)"><span>Éclairage</span></div><div style="--bg2:linear-gradient(160deg,#c3cdb8,#7e8f6c)"><span>Motorisation de portail</span></div><div style="--bg2:linear-gradient(160deg,#d3c9c0,#9b8d80)"><span>Interphone</span></div></div>
+  <p class="note">Ici, vos propres photos, ajoutées uniquement avec votre accord.</p>
+</div></section>
+<section style="padding-top:0"><div class="wrap"><div class="zone">
+  <div><h2 class="h2" style="color:#fff">Zone <span>d'intervention</span></h2><p>Amilly et tout le département du Loiret.</p></div>
+  <span class="pin"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+</div></div></section>
+<section id="contact" style="padding-top:0"><div class="wrap"><div class="formbox">
+  <div class="ftxt"><h2 class="h2">Demander un devis</h2><p class="lead">Vos clients vous écrivent directement depuis le site, même quand vous êtes occupé. Vous recevez la demande par e-mail.</p></div>
+  <form class="fm" onsubmit="event.preventDefault();this.querySelector('.ok').hidden=false">
+    <label>Nom<input required placeholder="Votre nom"></label>
+    <label>Téléphone<input required type="tel" placeholder="06 00 00 00 00"></label>
+    <label>Type de travaux<select><option>Travaux d&#x27;électricité</option><option>Dépannage électrique</option><option>Chauffage électrique</option><option>Domotique</option><option>Motorisation de portail</option><option>Alarme et interphone</option></select></label>
+    <label>Votre projet<textarea rows="3" placeholder="Quelques mots sur vos travaux"></textarea></label>
+    <button class="btn b-ac" type="submit">Envoyer la demande</button>
+    <p class="ok" hidden>Ceci est une maquette : sur votre vrai site, cette demande vous serait envoyée par e-mail.</p>
+  </form></div></div></section>
+<section id="faq" style="padding-top:0"><div class="wrap"><h2 class="h2">Questions <span>fréquentes</span></h2><p class="lead">Les réponses aux questions de vos clients, avant même qu'ils appellent.</p><div class="faq"><details><summary>Comment obtenir un devis ?</summary><p>Décrivez votre projet avec le formulaire de cette page, nous revenons vers vous.</p></details><details><summary>Dans quel secteur intervenez-vous ?</summary><p>Nous intervenons dans la ville et ses environs. La zone exacte est indiquée ici.</p></details><details><summary>Quels sont les délais ?</summary><p>Ils dépendent de la saison et du chantier : nous vous donnons une date précise avec le devis.</p></details></div></div></section>
+<section id="infos" style="padding-top:0"><div class="wrap"><h2 class="h2">Nous <span>contacter</span></h2><p class="lead">Tout pour nous joindre facilement.</p><div class="infos">
+  <div class="info"><span class="ii"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span><b>Téléphone</b><span class="t">Votre numéro, cliquable sur téléphone</span></div>
+  <div class="info"><span class="ii"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><b>Horaires</b><span class="t">Vos jours et heures d'ouverture</span></div>
+  <div class="info"><span class="ii"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><b>Adresse</b><span class="t">Amilly, avec un plan d'accès</span></div>
+</div></div></section>
+<section style="padding-top:0"><div class="wrap"><div class="cta"><div><h2 class="h2">Ce site vous plaît ?</h2><p>Je le termine avec vos photos, vos textes et vos infos.</p></div>
+<a class="btn b-ac" href="https://lebonsitepro.fr/#contact">Le recevoir avec vos infos</a></div></div></section>
+<footer><div class="wrap">Maquette réalisée par Le Bon Site · <a href="https://lebonsitepro.fr/">lebonsitepro.fr</a> · 07 50 08 96 81</div></footer>
+<div class="mbar"><a class="btn b-ink" href="#infos">Appeler</a><a class="btn b-ac" href="#contact">Devis</a></div>
+</body>
+</html>
