@@ -175,6 +175,11 @@
   .duo img { width: 100%; height: 100%; object-fit: cover; }
   .duo figcaption { position: absolute; top: 14px; left: 14px; padding: 6px 12px; border-radius: 4px; background: rgba(28,29,31,.8); color: var(--white); font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
   .duo figure:last-child figcaption { background: var(--brick); }
+  .ba-one { position: relative; margin: 0; border-radius: 10px; overflow: hidden; aspect-ratio: 4 / 5; max-height: 640px; background: var(--sand); }
+  .ba-one img { width: 100%; height: 100%; object-fit: cover; }
+  .ba-one span { position: absolute; top: 14px; padding: 6px 12px; border-radius: 4px; color: var(--white); font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+  .ba-one .t-av { left: 14px; background: rgba(28,29,31,.8); }
+  .ba-one .t-ap { right: 14px; background: var(--brick); }
   .hero-figure { position: relative; margin: 0; justify-self: end; width: 100%; max-width: 400px; aspect-ratio: 4 / 5; border-radius: 10px; overflow: hidden; box-shadow: 0 24px 60px rgba(0,0,0,.45); }
   .hero-figure img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
   .hero-figure figcaption { position: absolute; left: 14px; bottom: 14px; padding: 6px 12px; border-radius: 4px; background: rgba(28,29,31,.8); color: var(--white); font-size: 13px; font-weight: 600; }
@@ -335,7 +340,7 @@
       </button>
       <ul>
         <li><a href="#savoir-faire">Savoir-faire</a></li>
-        <li><a href="#avant-apres">Pendant / après</a></li>
+        <li><a href="#avant-apres">Avant / après</a></li>
         <li><a href="#bati-ancien">Bâti ancien</a></li>
         <li><a href="#qui">L'entreprise</a></li>
         <li><a href="#realisations">Réalisations</a></li>
@@ -392,6 +397,7 @@
           <p>Tous les travaux de maçonnerie pour créer, modifier ou réparer votre bâti.</p>
           <ul>
             <li>Ouverture de murs porteurs, pose d'IPN</li>
+            <li>Forage et carottage béton</li>
             <li>Démolition, rénovation, débarras des gravats</li>
             <li>Pose de brique, murets, piliers</li>
             <li>Cheminées</li>
@@ -465,8 +471,8 @@
   <section id="avant-apres">
     <div class="wrap">
       <div class="section-head">
-        <div class="eyebrow">Pendant / après</div>
-        <h2>Une terrasse de balcon refaite</h2>
+        <div class="eyebrow">Avant / après</div>
+        <h2>Le résultat, en images</h2>
       </div>
       <div class="ba-grid">
         <div class="duo">
@@ -480,6 +486,18 @@
             <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg>Mise à niveau dalle par dalle</li>
             <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg>Joints droits et réguliers</li>
             <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg>Un sol propre et facile à entretenir</li>
+          </ul>
+        </div>
+      </div>
+      <div class="ba-grid" style="margin-top:64px">
+        <figure class="ba-one"><img src="photos/demoussage-toiture-avant-apres.jpg" alt="Toiture en tuiles : à gauche avant le démoussage, couverte de mousse et de lichen ; à droite après, tuiles propres" loading="lazy"><span class="t-av">Avant</span><span class="t-ap">Après</span></figure>
+        <div class="ba-text">
+          <h3>Démoussage de toiture</h3>
+          <p>Sur la même toiture : à gauche, les tuiles encore couvertes de mousse et de lichen ; à droite, après le démoussage.</p>
+          <ul class="gains">
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg>Mousse et lichen retirés</li>
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg>Des tuiles qui retrouvent leur couleur</li>
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg>Un toit protégé plus longtemps</li>
           </ul>
         </div>
       </div>
@@ -556,6 +574,8 @@
         <figure class="shot" data-cat="renovation"><img src="photos/renforcement-plancher-ipn.jpg" alt="Renforcement par poutres acier" loading="lazy"><figcaption class="cap"><strong>Renforcement par poutres acier</strong><span>Rénovation</span></figcaption></figure>
         <figure class="shot" data-cat="exterieurs"><img src="photos/allee-beton-paves.jpg" alt="Allée béton et pavés" loading="lazy"><figcaption class="cap"><strong>Allée béton et pavés</strong><span>Aménagements extérieurs</span></figcaption></figure>
         <figure class="shot" data-cat="gros-oeuvre"><img src="photos/elevation-murs-echafaudage.jpg" alt="Élévation de murs" loading="lazy"><figcaption class="cap"><strong>Élévation de murs</strong><span>Gros œuvre</span></figcaption></figure>
+        <figure class="shot" data-cat="renovation"><img src="photos/demoussage-toiture-avant-apres.jpg" alt="Démoussage de toiture, avant et après" loading="lazy"><figcaption class="cap"><strong>Démoussage de toiture</strong><span>Avant / après</span></figcaption></figure>
+        <figure class="shot" data-cat="gros-oeuvre"><img src="photos/carottage-beton.jpg" alt="Carottage d'une dalle béton à la carotteuse" loading="lazy"><figcaption class="cap"><strong>Carottage béton</strong><span>Forage et carottage</span></figcaption></figure>
         <figure class="shot" data-cat="gros-oeuvre"><img src="photos/batiment-commercial-blocs.jpg" alt="Bâtiment commercial en blocs" loading="lazy"><figcaption class="cap"><strong>Bâtiment commercial en blocs</strong><span>Gros œuvre</span></figcaption></figure>
       </div>
     </div>
@@ -669,6 +689,7 @@
                 <option>Drainage / étanchéité</option>
                 <option>Démoussage toiture / façade</option>
                 <option>Entretien des gouttières</option>
+                <option>Forage / carottage béton</option>
                 <option>Autre</option>
               </select>
             </label>
