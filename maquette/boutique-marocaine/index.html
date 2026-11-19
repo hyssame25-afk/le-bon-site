@@ -116,7 +116,8 @@
   .jewel .tag { background: var(--ink); color: var(--sand); }
   .jewel-note { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 54px; color: var(--sand); font-size: 14px; letter-spacing: .12em; text-transform: uppercase; }
 
-  .pay { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .pay { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .pay div { min-width: 0; }
   .pay div { border: 1px solid var(--sand); padding: 36px 30px; background: var(--white); }
   .pay h3 { font-size: 26px; margin: 18px 0 10px; }
   .pay p { color: var(--muted); }
@@ -207,6 +208,8 @@
     .grid { grid-template-columns: repeat(3, 1fr); }
     .story { grid-template-columns: 1fr; gap: 44px; }
     .pd { grid-template-columns: 1fr; }
+    .pay { grid-template-columns: 1fr 1fr; }
+    .steps { grid-template-columns: 1fr; }
     .pd-info { padding: 30px 24px; }
     footer .cols { grid-template-columns: 1fr 1fr; }
   }
@@ -234,6 +237,19 @@
   .hero-visual img { position: absolute; inset: 0; }
   .story .art { overflow: hidden; }
   .jewel .card .art { background: var(--ink-2); }
+  .returns { background: var(--beige); }
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .steps div { background: var(--cream); padding: 32px 28px; }
+  .steps b { display: inline-grid; place-items: center; width: 40px; height: 40px; border: 1px solid var(--ink); border-radius: 50%; font-weight: 400; margin-bottom: 18px; }
+  .steps h3 { font-size: 26px; margin-bottom: 8px; }
+  .steps p { color: var(--muted); }
+  #ret { max-width: 560px; padding: 40px 36px; }
+  #ret h2 { font-size: 34px; margin-bottom: 6px; }
+  #ret > p { color: var(--muted); margin-bottom: 22px; }
+  #ret form { display: grid; gap: 14px; }
+  #ret label { display: grid; gap: 6px; font-size: 14px; font-weight: 400; }
+  #ret input, #ret select, #ret textarea { font: inherit; border: 1px solid var(--sand); background: var(--white); padding: 12px 14px; width: 100%; }
+  #ret textarea { min-height: 90px; resize: vertical; }
 </style>
 </head>
 <body>
@@ -253,6 +269,7 @@
         <li><a href="#boutique" data-go="paniers">Paniers</a></li>
         <li><a href="#boutique" data-go="textiles">Rideaux</a></li>
         <li><a href="#bijoux">Bijoux</a></li>
+        <li><a href="#apropos">À propos</a></li>
       </ul>
     </nav>
     <a class="logo" href="#">
@@ -314,14 +331,15 @@
     </div>
   </section>
 
-  <section>
+  <section id="apropos">
     <div class="wrap story">
       <div class="art" id="storyArt"></div>
       <div>
-        <div class="kicker">Fait main au Maroc</div>
-        <h2>Des objets qui ont une histoire</h2>
-        <p>Chaque pièce est façonnée à la main : l'osier tressé, la terre tournée, le tissu tissé. Les petites différences d'un objet à l'autre sont la marque du travail de l'artisan.</p>
-        <p>Nous choisissons des objets sobres et durables, faits pour être utilisés tous les jours.</p>
+        <div class="kicker">À propos</div>
+        <h2>Une passion devenue une boutique</h2>
+        <p>Depuis toujours, j'aime la décoration : chiner, assortir les matières, trouver l'objet qui change une pièce. Les intérieurs marocains m'ont toujours fait rêver, avec leurs teintes douces et leurs objets faits main.</p>
+        <p>J'ai décidé de me lancer et de créer cette boutique pour partager ces pièces avec vous. Chaque objet est choisi un par un, pour sa beauté, sa qualité et le savoir-faire de l'artisan qui l'a fabriqué.</p>
+        <p class="serif" style="font-size:22px;color:var(--ink);font-style:italic">« Des objets simples et beaux, qui racontent une histoire. »</p>
         <ul>
           <li>Matières naturelles</li>
           <li>Savoir-faire de Marrakech</li>
@@ -365,7 +383,28 @@
           <h3>Livraison</h3>
           <p>Envoi en colis à domicile. Chaque objet est emballé avec soin pour arriver intact.</p>
         </div>
+        <div>
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M9 14 4 9l5-5"/><path d="M4 9h11a5 5 0 0 1 0 10h-3"/></svg>
+          <h3>Retours</h3>
+          <p>Un objet ne vous plaît pas ? Vous avez 14 jours après réception pour nous le renvoyer. <a href="#retours">Comment faire</a></p>
+        </div>
       </div>
+    </div>
+  </section>
+
+  <section id="retours" class="returns">
+    <div class="wrap">
+      <div class="head">
+        <div class="kicker">Retours</div>
+        <h2>Changé d'avis ? Pas de souci.</h2>
+        <p>Vous avez 14 jours après avoir reçu votre colis pour nous renvoyer un objet qui ne vous convient pas.</p>
+      </div>
+      <div class="steps">
+        <div><b>1</b><h3>Faites la demande</h3><p>Remplissez le petit formulaire de retour avec votre numéro de commande.</p></div>
+        <div><b>2</b><h3>Renvoyez l'objet</h3><p>Dans son état d'origine et bien protégé. Vous recevez l'adresse de retour par e-mail.</p></div>
+        <div><b>3</b><h3>Vous êtes remboursé</h3><p>Dès réception de l'objet, sous 14 jours au plus tard, avec le même moyen de paiement.</p></div>
+      </div>
+      <div style="text-align:center;margin-top:40px"><button class="btn btn-dark" id="openReturn">Demander un retour</button></div>
     </div>
   </section>
 
@@ -379,6 +418,7 @@
         <details><summary>Les objets sont-ils vraiment faits main ?</summary><p>Oui. C'est pour cela que deux pièces ne sont jamais tout à fait identiques : la couleur ou la forme peut varier légèrement.</p></details>
         <details><summary>Les bijoux en acier inoxydable noircissent-ils ?</summary><p>L'acier inoxydable résiste bien à l'eau et au temps. Pour le garder brillant, évitez les produits chimiques et rangez-le à part.</p></details>
         <details><summary>Comment payer par virement ?</summary><p>Choisissez « Virement » au moment de commander. Vous recevez nos coordonnées bancaires, et la commande est envoyée dès réception du paiement.</p></details>
+        <details><summary>Puis-je renvoyer un objet ?</summary><p>Oui. Vous avez 14 jours après réception pour nous le renvoyer, dans son état d'origine. Faites la demande avec le formulaire « Demander un retour » : vous êtes remboursé dès réception de l'objet.</p></details>
         <details><summary>Puis-je offrir un objet ?</summary><p>Oui, chaque commande est emballée avec soin, prête à offrir.</p></details>
       </div>
     </div>
@@ -400,8 +440,8 @@
         <a class="logo" href="#" style="text-align:left"><b>MAISON MEDINA</b><small>MARRAKECH</small></a>
         <p style="margin-top:18px;max-width:300px">Décoration marocaine faite main et bijoux en acier inoxydable.</p>
       </div>
-      <div><h4>Boutique</h4><ul><li><a href="#boutique">Décoration</a></li><li><a href="#boutique">Vaisselle</a></li><li><a href="#boutique">Paniers</a></li><li><a href="#bijoux">Bijoux</a></li></ul></div>
-      <div><h4>Aide</h4><ul><li><a href="#">Livraison</a></li><li><a href="#">Retours</a></li><li><a href="#">Contact</a></li><li><a href="admin.html">Espace vendeuse</a></li></ul></div>
+      <div><h4>Boutique</h4><ul><li><a href="#apropos">À propos</a></li><li><a href="#boutique">Décoration</a></li><li><a href="#boutique">Vaisselle</a></li><li><a href="#boutique">Paniers</a></li><li><a href="#bijoux">Bijoux</a></li></ul></div>
+      <div><h4>Aide</h4><ul><li><a href="#boutique">Livraison</a></li><li><a href="#retours">Retours</a></li><li><a href="#">Contact</a></li><li><a href="admin.html">Espace vendeuse</a></li></ul></div>
       <div><h4>Informations</h4><ul><li><a href="#">Mentions légales</a></li><li><a href="#">Conditions de vente</a></li><li><a href="#">Confidentialité</a></li></ul></div>
     </div>
     <div class="bottom"><span>© Maison Medina (nom provisoire)</span><span>Maquette réalisée par Le Bon Site · lebonsitepro.fr</span></div>
@@ -427,6 +467,22 @@
       </div>
     </div>
   </div>
+</dialog>
+
+<dialog id="ret" aria-label="Demander un retour">
+  <button class="close" aria-label="Fermer">×</button>
+  <h2>Demander un retour</h2>
+  <p>Vous avez 14 jours après réception de votre colis.</p>
+  <form id="retForm">
+    <label>Numéro de commande<input required placeholder="Ex. : 1024"></label>
+    <label>Votre e-mail<input type="email" required autocomplete="email"></label>
+    <label>Article à renvoyer<input required placeholder="Ex. : Panier de Marrakech"></label>
+    <label>Raison
+      <select><option>Il ne me plaît pas</option><option>Il ne correspond pas aux photos</option><option>Il est arrivé abîmé</option><option>Autre</option></select>
+    </label>
+    <label>Un mot de plus (facultatif)<textarea></textarea></label>
+    <button class="btn btn-dark">Envoyer la demande</button>
+  </form>
 </dialog>
 
 <div class="shade" id="shade"></div>
@@ -554,6 +610,16 @@ document.getElementById("openCart").addEventListener("click", () => { render(); 
 document.getElementById("closeCart").addEventListener("click", () => setOpen(false));
 shade.addEventListener("click", () => setOpen(false));
 render();
+
+// Retours
+const ret = document.getElementById("ret");
+document.getElementById("openReturn").addEventListener("click", () => ret.showModal());
+ret.querySelector(".close").addEventListener("click", () => ret.close());
+ret.addEventListener("click", e => { if (e.target === ret) ret.close(); });
+document.getElementById("retForm").addEventListener("submit", e => {
+  e.preventDefault();
+  e.target.innerHTML = `<p style="color:var(--ink)">Merci, votre demande est envoyée (maquette).<br><br>Sur le vrai site, la vendeuse la reçoit dans son espace et par e-mail, puis vous envoie l'adresse de retour.</p>`;
+});
 
 // Menu mobile et lettre d'info
 const burger = document.querySelector(".burger"), menu = document.querySelector("nav ul");

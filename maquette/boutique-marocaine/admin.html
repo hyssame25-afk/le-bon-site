@@ -89,6 +89,7 @@
   <div class="tabs" role="group" aria-label="Rubriques">
     <button type="button" data-tab="articles" aria-pressed="true">Mes articles</button>
     <button type="button" data-tab="commandes" aria-pressed="false">Commandes</button>
+    <button type="button" data-tab="retours" aria-pressed="false">Retours</button>
   </div>
 
   <section id="articles">
@@ -153,6 +154,19 @@
     </div>
     <p class="note">Commandes d'exemple pour la démo. Sur le vrai site : numéro de suivi du colis, et passage à « payée » quand le virement est reçu.</p>
   </section>
+  <section id="retours" hidden>
+    <div class="bar"><div><h1>Retours</h1><p>Les demandes de retour de vos clients arrivent ici et par e-mail.</p></div></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Commande</th><th>Client</th><th>Article</th><th>Raison</th><th>État</th></tr></thead>
+        <tbody>
+          <tr><td>Exemple 1</td><td>Cliente D.</td><td>Rideau en lin écru</td><td>Il ne me plaît pas</td><td><span class="pill">Adresse de retour envoyée</span></td></tr>
+          <tr><td>Exemple 2</td><td>Client E.</td><td>Bol Atlas</td><td>Arrivé abîmé</td><td><span class="pill on">Objet reçu, remboursé</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Exemples pour la démo. Sur le vrai site : un clic pour accepter le retour, puis un clic pour rembourser.</p>
+  </section>
 </main>
 <div class="toast" id="toast"></div>
 
@@ -165,7 +179,7 @@ const euro = n => n == null ? "?? €" : n.toFixed(2).replace(".", ",") + " €"
 const toast = t => { const el = document.getElementById("toast"); el.textContent = t; el.classList.add("show"); setTimeout(() => el.classList.remove("show"), 2200); };
 const esc = t => String(t).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
-const show = id => ["articles", "edit", "commandes"].forEach(s => document.getElementById(s).hidden = s !== id);
+const show = id => ["articles", "edit", "commandes", "retours"].forEach(s => document.getElementById(s).hidden = s !== id);
 document.querySelectorAll("[data-tab]").forEach(b => b.addEventListener("click", () => {
   document.querySelectorAll("[data-tab]").forEach(x => x.setAttribute("aria-pressed", x === b));
   show(b.dataset.tab);
