@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Maison Medina | Décoration marocaine et bijoux, artisanat de Marrakech</title>
+<meta name="description" content="Décoration marocaine faite main, vaisselle, paniers, rideaux et bijoux en acier inoxydable. L'artisanat de Marrakech et de l'Orient, livré chez vous.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f6f1e9;
+    --beige: #ece3d4;
+    --sand: #ddd0bb;
+    --taupe: #a8957a;
+    --gold: #9c7c4e;
+    --ink: #161514;
+    --ink-2: #2b2926;
+    --muted: #6f675c;
+    --white: #fffdf9;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: Jost, system-ui, sans-serif; font-weight: 300; color: var(--ink); background: var(--cream); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  img, svg { display: block; max-width: 100%; }
+  a { color: inherit; }
+  button { font: inherit; cursor: pointer; }
+  .wrap { width: min(1200px, 100% - 40px); margin-inline: auto; }
+  .serif { font-family: "Cormorant Garamond", Georgia, serif; }
+  h1, h2, h3 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; line-height: 1.1; letter-spacing: .01em; }
+  .kicker { font-size: 12px; letter-spacing: .28em; text-transform: uppercase; color: var(--gold); font-weight: 400; }
+
+  .demo { background: var(--ink); color: var(--sand); font-size: 13px; text-align: center; padding: 8px 16px; }
+  .topbar { border-bottom: 1px solid var(--sand); font-size: 13px; letter-spacing: .06em; color: var(--muted); text-align: center; padding: 9px 16px; }
+
+  header { position: sticky; top: 0; z-index: 30; background: rgba(246,241,233,.94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--sand); }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; height: 76px; gap: 20px; }
+  .logo { text-decoration: none; text-align: center; line-height: 1; }
+  .logo b { display: block; font-family: "Cormorant Garamond", serif; font-weight: 500; font-size: 30px; letter-spacing: .14em; }
+  .logo small { font-size: 10px; letter-spacing: .42em; color: var(--gold); }
+  nav ul { list-style: none; display: flex; gap: 30px; font-size: 14px; letter-spacing: .12em; text-transform: uppercase; }
+  nav a { text-decoration: none; padding: 6px 0; border-bottom: 1px solid transparent; }
+  nav a:hover { border-color: var(--ink); }
+  .icons { display: flex; align-items: center; gap: 8px; }
+  .icon-btn { position: relative; background: none; border: 0; width: 44px; height: 44px; display: grid; place-items: center; color: var(--ink); }
+  .count { position: absolute; top: 4px; right: 2px; min-width: 18px; height: 18px; border-radius: 9px; background: var(--ink); color: var(--cream); font-size: 11px; display: grid; place-items: center; padding: 0 5px; }
+  .count[data-n="0"] { display: none; }
+  .burger { display: none; }
+
+  .hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 640px; }
+  .hero-text { display: flex; flex-direction: column; justify-content: center; padding: 80px 64px 80px max(20px, calc((100vw - 1200px) / 2)); }
+  .hero h1 { font-size: clamp(46px, 6vw, 84px); margin: 22px 0 24px; }
+  .hero h1 em { font-style: italic; color: var(--gold); }
+  .hero p { font-size: 18px; color: var(--muted); max-width: 440px; }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 38px; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 30px; border: 1px solid var(--ink); text-decoration: none; font-size: 13px; letter-spacing: .2em; text-transform: uppercase; background: none; color: var(--ink); transition: .25s; }
+  .btn-dark { background: var(--ink); color: var(--cream); }
+  .btn-dark:hover { background: var(--ink-2); }
+  .btn:not(.btn-dark):hover { background: var(--ink); color: var(--cream); }
+  .hero-visual { background: var(--ink); position: relative; overflow: hidden; display: grid; place-items: center; }
+  .hero-visual svg { width: 100%; height: 100%; }
+
+  .reassure { border-block: 1px solid var(--sand); }
+  .reassure .wrap { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .reassure div { padding: 26px 18px; text-align: center; font-size: 14px; letter-spacing: .05em; border-right: 1px solid var(--sand); }
+  .reassure div:last-child { border-right: 0; }
+  .reassure strong { display: block; font-family: "Cormorant Garamond", serif; font-weight: 500; font-size: 20px; letter-spacing: .02em; margin-bottom: 2px; }
+
+  section { padding: 110px 0; }
+  .head { text-align: center; max-width: 640px; margin: 0 auto 56px; }
+  .head h2 { font-size: clamp(36px, 4.5vw, 56px); margin: 14px 0 14px; }
+  .head p { color: var(--muted); font-size: 17px; }
+
+  .cats { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+  .cat { background: var(--beige); border: 0; text-align: left; padding: 0; color: var(--ink); transition: .3s; }
+  .cat .art { aspect-ratio: 4/5; overflow: hidden; }
+  .cat .art svg { width: 100%; height: 100%; transition: transform .6s; }
+  .cat:hover .art svg { transform: scale(1.05); }
+  .cat span { display: flex; flex-direction: column; gap: 2px; padding: 16px 18px; font-family: "Cormorant Garamond", serif; font-size: 22px; line-height: 1.15; }
+  .cat span i { font-style: normal; font-family: Jost, sans-serif; font-size: 12px; color: var(--muted); letter-spacing: .1em; }
+
+  .shop { background: var(--white); }
+  .filters { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-bottom: 44px; }
+  .filters button { background: none; border: 1px solid var(--sand); padding: 10px 20px; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  .filters button[aria-pressed="true"] { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px 24px; }
+  .card { text-align: left; background: none; border: 0; color: var(--ink); }
+  .card .art { position: relative; aspect-ratio: 4/5; background: var(--beige); overflow: hidden; }
+  .card .art svg { position: absolute; inset: 0; width: 100%; height: 100%; transition: opacity .5s, transform .6s; }
+  .card .art svg + svg { opacity: 0; }
+  .card:hover .art svg:first-child { opacity: 0; }
+  .card:hover .art svg + svg { opacity: 1; transform: scale(1.03); }
+  .tag { position: absolute; left: 12px; top: 12px; background: var(--cream); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; padding: 5px 10px; z-index: 2; }
+  .card h3 { font-size: 22px; margin-top: 16px; }
+  .card p { display: flex; justify-content: space-between; font-size: 14px; color: var(--muted); margin-top: 4px; }
+  .card p b { font-weight: 400; color: var(--ink); }
+  .card[hidden] { display: none; }
+
+  .story { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .story .art { aspect-ratio: 1; background: var(--ink); }
+  .story h2 { font-size: clamp(36px, 4.5vw, 56px); margin: 16px 0 22px; }
+  .story p { color: var(--muted); font-size: 17px; margin-bottom: 16px; }
+  .story ul { list-style: none; margin-top: 26px; display: grid; gap: 12px; }
+  .story li { display: flex; gap: 14px; align-items: center; font-size: 16px; }
+  .story li::before { content: ""; width: 26px; height: 1px; background: var(--gold); }
+
+  .jewel { background: var(--ink); color: var(--cream); }
+  .jewel .head p { color: #b9ae9d; }
+  .jewel .grid { grid-template-columns: repeat(3, 1fr); }
+  .jewel .card { color: var(--cream); }
+  .jewel .card .art { background: var(--ink-2); }
+  .jewel .card p { color: #b9ae9d; }
+  .jewel .card p b { color: var(--cream); }
+  .jewel .tag { background: var(--ink); color: var(--sand); }
+  .jewel-note { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 54px; color: var(--sand); font-size: 14px; letter-spacing: .12em; text-transform: uppercase; }
+
+  .pay { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .pay div { border: 1px solid var(--sand); padding: 36px 30px; background: var(--white); }
+  .pay h3 { font-size: 26px; margin: 18px 0 10px; }
+  .pay p { color: var(--muted); }
+  .pay svg { color: var(--gold); }
+
+  .faq { max-width: 760px; margin: 0 auto; }
+  .faq details { border-bottom: 1px solid var(--sand); padding: 22px 0; }
+  .faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; gap: 20px; font-family: "Cormorant Garamond", serif; font-size: 24px; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; font-family: Jost, sans-serif; font-weight: 300; }
+  .faq details[open] summary::after { content: "−"; }
+  .faq details p { color: var(--muted); margin-top: 12px; }
+
+  .news { background: var(--beige); text-align: center; }
+  .news form { display: flex; max-width: 520px; margin: 30px auto 0; border: 1px solid var(--ink); }
+  .news input { flex: 1; min-width: 0; border: 0; background: transparent; padding: 16px 18px; font: inherit; }
+  .news button { border: 0; background: var(--ink); color: var(--cream); padding: 0 26px; font-size: 13px; letter-spacing: .2em; text-transform: uppercase; }
+
+  footer { background: var(--ink); color: #b9ae9d; padding: 70px 0 34px; font-size: 14px; }
+  footer .cols { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; }
+  footer h4 { color: var(--cream); font-weight: 400; letter-spacing: .2em; text-transform: uppercase; font-size: 12px; margin-bottom: 16px; }
+  footer ul { list-style: none; display: grid; gap: 8px; }
+  footer a { text-decoration: none; }
+  footer a:hover { color: var(--cream); }
+  footer .logo b { color: var(--cream); }
+  footer .bottom { border-top: 1px solid #34312c; margin-top: 50px; padding-top: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 12px; }
+
+  /* Fiche produit */
+  dialog { border: 0; padding: 0; max-width: 1040px; width: calc(100% - 32px); background: var(--cream); color: var(--ink); margin: auto; max-height: calc(100dvh - 32px); }
+  dialog::backdrop { background: rgba(22,21,20,.6); }
+  .pd { display: grid; grid-template-columns: 1.1fr 1fr; }
+  .pd-gallery { background: var(--beige); }
+  .pd-main { aspect-ratio: 4/5; }
+  .pd-main svg { width: 100%; height: 100%; }
+  .pd-thumbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 8px; }
+  .pd-thumbs button { border: 1px solid transparent; padding: 0; background: var(--sand); aspect-ratio: 1; overflow: hidden; }
+  .pd-thumbs button[aria-current="true"] { border-color: var(--ink); }
+  .pd-thumbs svg { width: 100%; height: 100%; }
+  .pd-info { padding: 48px 44px; display: flex; flex-direction: column; }
+  .pd-info h2 { font-size: 40px; margin: 12px 0 8px; }
+  .pd-price { font-size: 22px; margin-bottom: 22px; }
+  .pd-desc { color: var(--muted); margin-bottom: 22px; }
+  .pd-specs { list-style: none; border-top: 1px solid var(--sand); margin-bottom: 26px; }
+  .pd-specs li { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--sand); font-size: 14px; }
+  .pd-specs span { color: var(--muted); }
+  .pd-buy { display: flex; gap: 12px; margin-top: auto; }
+  .qty { display: flex; border: 1px solid var(--ink); }
+  .qty button { width: 44px; background: none; border: 0; font-size: 18px; }
+  .qty output { width: 36px; display: grid; place-items: center; }
+  .pd-buy .btn { flex: 1; }
+  .close { position: absolute; right: 10px; top: 10px; z-index: 2; width: 44px; height: 44px; border: 0; background: var(--cream); font-size: 26px; line-height: 1; }
+
+  /* Panier */
+  .drawer { position: fixed; inset: 0 0 0 auto; width: min(440px, 100%); background: var(--cream); z-index: 60; transform: translateX(100%); transition: transform .35s; display: flex; flex-direction: column; box-shadow: -20px 0 60px rgba(0,0,0,.15); }
+  .drawer.open { transform: none; }
+  .shade { position: fixed; inset: 0; background: rgba(22,21,20,.45); z-index: 55; opacity: 0; pointer-events: none; transition: opacity .35s; }
+  .shade.open { opacity: 1; pointer-events: auto; }
+  .drawer-head { display: flex; justify-content: space-between; align-items: center; padding: 22px 26px; border-bottom: 1px solid var(--sand); }
+  .drawer-head h2 { font-size: 30px; }
+  .drawer-body { flex: 1; overflow: auto; padding: 10px 26px; }
+  .line { display: grid; grid-template-columns: 70px 1fr auto; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--sand); align-items: center; }
+  .line .mini { aspect-ratio: 4/5; background: var(--beige); }
+  .line .mini svg { width: 100%; height: 100%; }
+  .line h3 { font-size: 19px; }
+  .line small { color: var(--muted); }
+  .line .rm { background: none; border: 0; color: var(--muted); font-size: 13px; text-decoration: underline; }
+  .empty { color: var(--muted); padding: 40px 0; text-align: center; }
+  .drawer-foot { padding: 22px 26px; border-top: 1px solid var(--sand); }
+  .total { display: flex; justify-content: space-between; font-size: 18px; margin-bottom: 6px; }
+  .drawer-foot small { display: block; color: var(--muted); margin-bottom: 16px; }
+  .drawer-foot .btn { width: 100%; }
+  .methods { display: grid; gap: 10px; margin-bottom: 16px; }
+  .methods label { display: flex; gap: 12px; align-items: center; border: 1px solid var(--sand); padding: 14px 16px; background: var(--white); cursor: pointer; }
+  .methods label:has(input:checked) { border-color: var(--ink); }
+  .done { text-align: center; padding: 40px 10px; }
+  .done h3 { font-size: 28px; margin-bottom: 10px; }
+  .done p { color: var(--muted); }
+
+  @media (max-width: 1000px) {
+    nav ul { display: none; }
+    nav ul.open { display: flex; flex-direction: column; position: absolute; top: 76px; left: 0; right: 0; background: var(--cream); padding: 10px 20px 20px; border-bottom: 1px solid var(--sand); gap: 0; }
+    nav ul.open a { display: block; padding: 14px 0; border-bottom: 1px solid var(--sand); }
+    .burger { display: grid; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-text { padding: 70px 20px 60px; }
+    .hero-visual { min-height: 420px; }
+    .cats { grid-template-columns: repeat(3, 1fr); }
+    .grid { grid-template-columns: repeat(3, 1fr); }
+    .story { grid-template-columns: 1fr; gap: 44px; }
+    .pd { grid-template-columns: 1fr; }
+    .pd-info { padding: 30px 24px; }
+    footer .cols { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 680px) {
+    section { padding: 76px 0; }
+    .reassure .wrap { grid-template-columns: 1fr 1fr; }
+    .reassure div:nth-child(2) { border-right: 0; }
+    .reassure div:nth-child(-n+2) { border-bottom: 1px solid var(--sand); }
+    .cats { grid-template-columns: 1fr 1fr; }
+    .grid, .jewel .grid { grid-template-columns: 1fr 1fr; gap: 30px 14px; }
+    .card h3 { font-size: 19px; }
+    .pay { grid-template-columns: 1fr; }
+    footer .cols { grid-template-columns: 1fr; }
+    .logo b { font-size: 19px; letter-spacing: .1em; white-space: nowrap; }
+    .topbar { font-size: 12px; }
+  }
+  /* Photos */
+  .art img, .pd-main img, .pd-thumbs img, .mini img, .hero-visual img { width: 100%; height: 100%; object-fit: cover; }
+  .card .art img { position: absolute; inset: 0; transition: opacity .5s, transform .8s; }
+  .card .art img + img { opacity: 0; }
+  .card:hover .art img:first-of-type { opacity: 0; }
+  .card:hover .art img + img { opacity: 1; transform: scale(1.03); }
+  .cat .art img { transition: transform .8s; }
+  .cat:hover .art img { transform: scale(1.05); }
+  .hero-visual img { position: absolute; inset: 0; }
+  .story .art { overflow: hidden; }
+  .jewel .card .art { background: var(--ink-2); }
+</style>
+</head>
+<body>
+
+<div class="demo">Maquette : nom provisoire. Articles et photos (libres de droits) sont des exemples, prix à venir. <a href="admin.html" style="color:#fff">Voir l'espace vendeuse</a></div>
+<div class="topbar">Artisanat de Marrakech · Fait main · Livraison en colis · Carte ou virement</div>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <button class="icon-btn burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+      </button>
+      <ul>
+        <li><a href="#boutique" data-go="deco">Décoration</a></li>
+        <li><a href="#boutique" data-go="vaisselle">Vaisselle</a></li>
+        <li><a href="#boutique" data-go="paniers">Paniers</a></li>
+        <li><a href="#boutique" data-go="textiles">Rideaux</a></li>
+        <li><a href="#bijoux">Bijoux</a></li>
+      </ul>
+    </nav>
+    <a class="logo" href="#">
+      <b>MAISON MEDINA</b>
+      <small>MARRAKECH</small>
+    </a>
+    <div class="icons">
+      <button class="icon-btn" id="openCart" aria-label="Ouvrir le panier">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 8h14l-1.2 12H6.2z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg>
+        <span class="count" data-n="0">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero" style="padding:0">
+    <div class="hero-text">
+      <div class="kicker">Décoration marocaine et bijoux</div>
+      <h1>L'artisanat de Marrakech, <em>chez vous.</em></h1>
+      <p>Vaisselle, paniers, rideaux et objets faits main par des artisans du Maroc, et des bijoux en acier inoxydable aux lignes sobres.</p>
+      <div class="hero-actions">
+        <a class="btn btn-dark" href="#boutique">Découvrir la boutique</a>
+        <a class="btn" href="#bijoux">Les bijoux</a>
+      </div>
+    </div>
+    <div class="hero-visual" id="heroArt"></div>
+  </section>
+
+  <div class="reassure">
+    <div class="wrap">
+      <div><strong>Fait main</strong>Pièces d'artisans</div>
+      <div><strong>Pièces uniques</strong>Chaque objet diffère</div>
+      <div><strong>Carte ou virement</strong>Paiement au choix</div>
+      <div><strong>Emballage soigné</strong>Prêt à offrir</div>
+    </div>
+  </div>
+
+  <section id="univers">
+    <div class="wrap">
+      <div class="head">
+        <div class="kicker">Nos univers</div>
+        <h2>Un intérieur aux couleurs de l'Orient</h2>
+        <p>Des matières naturelles et des teintes douces, choisies pour aller avec tous les intérieurs.</p>
+      </div>
+      <div class="cats" id="cats"></div>
+    </div>
+  </section>
+
+  <section class="shop" id="boutique">
+    <div class="wrap">
+      <div class="head">
+        <div class="kicker">La boutique</div>
+        <h2>Nos pièces du moment</h2>
+        <p>Cliquez sur un article pour voir ses photos et sa description.</p>
+      </div>
+      <div class="filters" role="group" aria-label="Filtrer les articles"></div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap story">
+      <div class="art" id="storyArt"></div>
+      <div>
+        <div class="kicker">Fait main au Maroc</div>
+        <h2>Des objets qui ont une histoire</h2>
+        <p>Chaque pièce est façonnée à la main : l'osier tressé, la terre tournée, le tissu tissé. Les petites différences d'un objet à l'autre sont la marque du travail de l'artisan.</p>
+        <p>Nous choisissons des objets sobres et durables, faits pour être utilisés tous les jours.</p>
+        <ul>
+          <li>Matières naturelles</li>
+          <li>Savoir-faire de Marrakech</li>
+          <li>Pièces choisies une à une</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="jewel" id="bijoux">
+    <div class="wrap">
+      <div class="head">
+        <div class="kicker">Bijoux</div>
+        <h2>Acier inoxydable, inspiration orientale</h2>
+        <p>Des bijoux fins et sobres, à porter tous les jours.</p>
+      </div>
+      <div class="grid" id="jewelGrid"></div>
+      <div class="jewel-note"><span>Acier inoxydable</span><span>Finition dorée ou argentée</span><span>Livré dans son écrin</span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="head">
+        <div class="kicker">Commander</div>
+        <h2>Simple et sécurisé</h2>
+      </div>
+      <div class="pay">
+        <div>
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></svg>
+          <h3>Carte bancaire</h3>
+          <p>Paiement sécurisé en ligne, en quelques secondes.</p>
+        </div>
+        <div>
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M3 10 12 4l9 6M5 10v8M9 10v8M15 10v8M19 10v8M3 20h18"/></svg>
+          <h3>Virement</h3>
+          <p>Vous recevez nos coordonnées bancaires. La commande part dès réception du virement.</p>
+        </div>
+        <div>
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M3 8 12 3l9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg>
+          <h3>Livraison</h3>
+          <p>Envoi en colis à domicile. Chaque objet est emballé avec soin pour arriver intact.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="head">
+        <div class="kicker">Questions</div>
+        <h2>Bon à savoir</h2>
+      </div>
+      <div class="faq">
+        <details><summary>Les objets sont-ils vraiment faits main ?</summary><p>Oui. C'est pour cela que deux pièces ne sont jamais tout à fait identiques : la couleur ou la forme peut varier légèrement.</p></details>
+        <details><summary>Les bijoux en acier inoxydable noircissent-ils ?</summary><p>L'acier inoxydable résiste bien à l'eau et au temps. Pour le garder brillant, évitez les produits chimiques et rangez-le à part.</p></details>
+        <details><summary>Comment payer par virement ?</summary><p>Choisissez « Virement » au moment de commander. Vous recevez nos coordonnées bancaires, et la commande est envoyée dès réception du paiement.</p></details>
+        <details><summary>Puis-je offrir un objet ?</summary><p>Oui, chaque commande est emballée avec soin, prête à offrir.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="news">
+    <div class="wrap">
+      <div class="kicker">Nouveautés</div>
+      <h2 style="font-size:clamp(32px,4vw,48px);margin-top:12px">Les nouvelles pièces en premier</h2>
+      <form id="news"><input type="email" required placeholder="Votre adresse e-mail" aria-label="Votre adresse e-mail"><button>S'inscrire</button></form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="logo" href="#" style="text-align:left"><b>MAISON MEDINA</b><small>MARRAKECH</small></a>
+        <p style="margin-top:18px;max-width:300px">Décoration marocaine faite main et bijoux en acier inoxydable.</p>
+      </div>
+      <div><h4>Boutique</h4><ul><li><a href="#boutique">Décoration</a></li><li><a href="#boutique">Vaisselle</a></li><li><a href="#boutique">Paniers</a></li><li><a href="#bijoux">Bijoux</a></li></ul></div>
+      <div><h4>Aide</h4><ul><li><a href="#">Livraison</a></li><li><a href="#">Retours</a></li><li><a href="#">Contact</a></li><li><a href="admin.html">Espace vendeuse</a></li></ul></div>
+      <div><h4>Informations</h4><ul><li><a href="#">Mentions légales</a></li><li><a href="#">Conditions de vente</a></li><li><a href="#">Confidentialité</a></li></ul></div>
+    </div>
+    <div class="bottom"><span>© Maison Medina (nom provisoire)</span><span>Maquette réalisée par Le Bon Site · lebonsitepro.fr</span></div>
+  </div>
+</footer>
+
+<dialog id="pd" aria-label="Fiche article">
+  <button class="close" aria-label="Fermer">×</button>
+  <div class="pd">
+    <div class="pd-gallery">
+      <div class="pd-main"></div>
+      <div class="pd-thumbs"></div>
+    </div>
+    <div class="pd-info">
+      <div class="kicker pd-cat"></div>
+      <h2 class="pd-name"></h2>
+      <div class="pd-price"></div>
+      <p class="pd-desc"></p>
+      <ul class="pd-specs"></ul>
+      <div class="pd-buy">
+        <div class="qty"><button type="button" data-q="-1" aria-label="Moins">−</button><output>1</output><button type="button" data-q="1" aria-label="Plus">+</button></div>
+        <button class="btn btn-dark" id="add">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<div class="shade" id="shade"></div>
+<aside class="drawer" id="drawer" aria-label="Panier">
+  <div class="drawer-head"><h2>Votre panier</h2><button class="icon-btn" id="closeCart" aria-label="Fermer le panier" style="font-size:26px">×</button></div>
+  <div class="drawer-body" id="lines"></div>
+  <div class="drawer-foot" id="foot"></div>
+</aside>
+
+<script>
+// Photos d'exemple libres de droits (Unsplash)
+const U = (id, w = 900, h = 1125) => `https://images.unsplash.com/photo-${id}?w=${w}&h=${h}&fit=crop&auto=format&q=75`;
+const img = (id, alt, w, h) => `<img src="${U(id, w, h)}" alt="${alt}" loading="lazy">`;
+
+// Articles (exemples)
+const P = [
+  { id: 1, cat: "vaisselle", name: "Assiette Fès", price: null, ph: ["1553523292-1140e57d4f87", "1790090760761-91bfc916c082", "1792073224718-45d194192044"], tag: "Fait main", desc: "Assiette en céramique peinte à la main, aux motifs géométriques inspirés des zelliges. Parfaite pour servir ou pour décorer un mur.", specs: [["Matière", "Céramique émaillée"], ["Dimensions", "Ø 26 cm"], ["Entretien", "Lavage à la main"], ["Origine", "Maroc"]] },
+  { id: 2, cat: "vaisselle", name: "Bol Atlas", price: null, ph: ["1733590634381-b58fce897229", "1621453571889-0b228e998080", "1523367438061-01c055ce790c"], desc: "Bol en céramique émaillée, tourné à la main. Pour les salades, les fruits ou en vide-poche.", specs: [["Matière", "Céramique émaillée"], ["Dimensions", "Ø 18 cm"], ["Entretien", "Lavage à la main"], ["Origine", "Maroc"]] },
+  { id: 3, cat: "vaisselle", name: "Tajine en terre cuite", price: null, ph: ["1706793986649-5c6516491489", "1706794831005-e0cbae755fae", "1761168955192-d710bf401325"], tag: "Pièce unique", desc: "Tajine en terre cuite, façonné à la main. Pour la table ou pour la décoration.", specs: [["Matière", "Terre cuite"], ["Dimensions", "Ø 30 cm"], ["Usage", "Service ou décoration"], ["Origine", "Maroc"]] },
+  { id: 4, cat: "paniers", name: "Panier de Marrakech", price: null, ph: ["1659520709425-31b547254b59", "1578678809626-a3741782f0b8", "1626037235530-fe56de7d6459"], tag: "Fait main", desc: "Panier tressé à la main, anses solides. Pour le marché, la plage ou comme rangement.", specs: [["Matière", "Paille tressée"], ["Dimensions", "40 × 30 cm"], ["Anses", "Tressées"], ["Origine", "Marrakech"]] },
+  { id: 5, cat: "paniers", name: "Paniers de rangement", price: null, ph: ["1455669175216-9017c9b02fc6", "1481061730414-e888962bd2c0", "1562835154-7ac43f0fec10"], desc: "Paniers en osier tressé pour ranger plaids, jouets ou linge. Plusieurs tailles disponibles.", specs: [["Matière", "Osier tressé"], ["Dimensions", "Ø 35 cm"], ["Usage", "Rangement"], ["Origine", "Maroc"]] },
+  { id: 6, cat: "textiles", name: "Rideau en lin écru", price: null, ph: ["1682421938316-4b186e25174c", "1615225502559-842cbc296205", "1764422097759-1fa737c50c51"], tag: "Nouveau", desc: "Rideau tissé couleur écrue. Il filtre la lumière avec douceur et habille la pièce sans l'assombrir.", specs: [["Matière", "Lin"], ["Dimensions", "140 × 260 cm"], ["Fixation", "Passants"], ["Origine", "Maroc"]] },
+  { id: 7, cat: "deco", name: "Lanterne Medina", price: null, ph: ["1778486897678-b0bd710edf5a", "1786437548087-3ff73341a247", "1774853672959-1a6a6e0f8b5d"], desc: "Lanterne en métal ajouré. Avec une bougie, elle projette des motifs sur les murs.", specs: [["Matière", "Métal"], ["Hauteur", "38 cm"], ["Usage", "Intérieur"], ["Origine", "Marrakech"]] },
+  { id: 8, cat: "textiles", name: "Voilage blanc", price: null, ph: ["1688732614684-220c19395b2b", "1633304688070-780d36751e2e", "1689155627959-03a8e553ef33"], desc: "Voilage léger et lumineux, pour adoucir la lumière du jour.", specs: [["Matière", "Coton léger"], ["Dimensions", "140 × 250 cm"], ["Fixation", "Œillets"], ["Origine", "Maroc"]] },
+];
+const J = [
+  { id: 11, cat: "bijoux", name: "Collier Cercle", price: null, ph: ["1783541507490-edb026e2a961", "1773929345739-94db8a4ccd0c", "1623321673989-830eff0fd59f"], tag: "Doré", desc: "Fine chaîne et pendentif cercle. Léger, à porter tous les jours.", specs: [["Matière", "Acier inoxydable"], ["Finition", "Dorée"], ["Longueur", "45 cm, réglable"], ["Livré", "Dans son écrin"]] },
+  { id: 12, cat: "bijoux", name: "Jonc Marrakech", price: null, ph: ["1689367436442-76c859315008", "1689367436629-1d288f1e23b6", "1786052347285-3ad7f12c738f"], desc: "Bracelet jonc ouvert, il s'ajuste au poignet.", specs: [["Matière", "Acier inoxydable"], ["Finition", "Dorée"], ["Taille", "Ajustable"], ["Livré", "Dans son écrin"]] },
+  { id: 13, cat: "bijoux", name: "Boucles Goutte", price: null, ph: ["1727990865600-91f8cb8b0168", "1723802205505-2f88b2227718", "1671644730555-916aa8d8157f"], tag: "Nouveau", desc: "Boucles d'oreilles en forme de goutte, au volume doux.", specs: [["Matière", "Acier inoxydable"], ["Finition", "Dorée"], ["Hauteur", "2 cm"], ["Livré", "Dans son écrin"]] },
+  { id: 14, cat: "bijoux", name: "Bague fine", price: null, ph: ["1631982686092-e6561a853187", "1628926379972-9843ad139a8c", "1622398925373-3f91b1e275f5"], desc: "Bague fine et minimaliste, à porter seule ou à plusieurs.", specs: [["Matière", "Acier inoxydable"], ["Finition", "Dorée"], ["Taille", "Ajustable"], ["Livré", "Dans son écrin"]] },
+  { id: 15, cat: "bijoux", name: "Collier Argent", price: null, ph: ["1588444968576-f8fe92ce56fd", "1676329945867-01c9975aa9d1", "1511253819057-5408d4d70465"], tag: "Argenté", desc: "Collier fin en finition argentée, pour un style minimal.", specs: [["Matière", "Acier inoxydable"], ["Finition", "Argentée"], ["Longueur", "45 cm, réglable"], ["Livré", "Dans son écrin"]] },
+  { id: 16, cat: "bijoux", name: "Bracelets fins", price: null, ph: ["1761222101900-9c9e34fac2ce", "1589674781759-c21c37956a44", "1763029513623-37d488cb97b1"], desc: "Bracelets fins argentés, à superposer.", specs: [["Matière", "Acier inoxydable"], ["Finition", "Argentée"], ["Taille", "Ajustable"], ["Livré", "Dans son écrin"]] },
+];
+let EXTRA = [];
+try { EXTRA = JSON.parse(localStorage.getItem("mm_articles") || "[]"); } catch (e) {}
+EXTRA.forEach(a => (a.cat === "bijoux" ? J : P).unshift(a));
+const ALL = [...P, ...J];
+const NAMES = { deco: "Décoration", vaisselle: "Vaisselle", paniers: "Paniers", textiles: "Rideaux et textiles", bijoux: "Bijoux" };
+const euro = n => n == null || isNaN(n) ? "?? €" : n.toFixed(2).replace(".", ",") + " €";
+const views = p => p.ph.map((id, i) => id.startsWith("data:") ? `<img src="${id}" alt="${p.name}, photo ${i + 1}">` : img(id, `${p.name}, photo ${i + 1}`));
+
+// Hero et histoire
+document.getElementById("heroArt").innerHTML = img("1505576391880-b3f9d713dc4f", "Intérieur marocain aux murs ocre", 1200, 1300);
+document.getElementById("storyArt").innerHTML = img("1621846323386-a60faf26f962", "Mains d'artisan travaillant l'argile", 1000, 1000);
+
+// Univers
+const CATS = [["deco", "1786437548087-3ff73341a247"], ["vaisselle", "1553523292-1140e57d4f87"], ["paniers", "1659520709425-31b547254b59"], ["textiles", "1682421938316-4b186e25174c"], ["bijoux", "1783541507490-edb026e2a961"]];
+document.getElementById("cats").innerHTML = CATS.map(([k, id]) => `<button class="cat" data-go="${k}"><div class="art">${img(id, NAMES[k], 600, 750)}</div><span>${NAMES[k]}<i>${(n => n + (n > 1 ? " articles" : " article"))(ALL.filter(p => p.cat === k).length)}</i></span></button>`).join("");
+
+// Grilles
+const card = p => { const v = views(p); return `<button class="card" data-id="${p.id}" data-cat="${p.cat}"><div class="art">${p.tag ? `<span class="tag">${p.tag}</span>` : ""}${v[0]}${v[1] || ""}</div><h3>${p.name}</h3><p><span>${p.cat === "bijoux" ? "Acier inoxydable" : NAMES[p.cat]}</span><b>${euro(p.price)}</b></p></button>`; };
+document.getElementById("grid").innerHTML = P.map(card).join("");
+document.getElementById("jewelGrid").innerHTML = J.map(card).join("");
+
+const F = [["tous", "Tout"], ["deco", "Décoration"], ["vaisselle", "Vaisselle"], ["paniers", "Paniers"], ["textiles", "Rideaux et textiles"]];
+const fbox = document.querySelector(".filters");
+fbox.innerHTML = F.map(([k, n], i) => `<button type="button" data-f="${k}" aria-pressed="${i === 0}">${n}</button>`).join("");
+const filter = k => {
+  fbox.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", b.dataset.f === k));
+  document.querySelectorAll("#grid .card").forEach(c => c.hidden = k !== "tous" && c.dataset.cat !== k);
+};
+fbox.addEventListener("click", e => { const b = e.target.closest("button"); if (b) filter(b.dataset.f); });
+document.querySelectorAll("[data-go]").forEach(el => el.addEventListener("click", e => {
+  const k = el.dataset.go;
+  e.preventDefault(); menu.classList.remove("open");
+  if (k === "bijoux") { document.getElementById("bijoux").scrollIntoView({ behavior: "smooth" }); return; }
+  filter(k); document.getElementById("boutique").scrollIntoView({ behavior: "smooth" });
+}));
+
+// Fiche produit
+const pd = document.getElementById("pd");
+let cur = null, qty = 1;
+const show = (v, i) => {
+  pd.querySelector(".pd-main").innerHTML = v[i];
+  pd.querySelectorAll(".pd-thumbs button").forEach((b, j) => b.setAttribute("aria-current", j === i));
+};
+const open = id => {
+  cur = ALL.find(p => p.id === +id); qty = 1;
+  const v = views(cur);
+  pd.querySelector(".pd-cat").textContent = { deco: "Décoration", vaisselle: "Vaisselle", paniers: "Paniers", textiles: "Rideaux et textiles", bijoux: "Bijoux" }[cur.cat];
+  pd.querySelector(".pd-name").textContent = cur.name;
+  pd.querySelector(".pd-price").textContent = euro(cur.price);
+  pd.querySelector(".pd-desc").textContent = cur.desc;
+  pd.querySelector(".pd-specs").innerHTML = cur.specs.map(([a, b]) => `<li><span>${a}</span>${b}</li>`).join("");
+  pd.querySelector(".pd-thumbs").innerHTML = v.map((s, i) => `<button type="button" aria-label="Photo ${i + 1}">${s}</button>`).join("");
+  pd.querySelectorAll(".pd-thumbs button").forEach((b, i) => b.addEventListener("click", () => show(v, i)));
+  pd.querySelector("output").textContent = qty;
+  show(v, 0);
+  pd.showModal();
+};
+document.addEventListener("click", e => { const c = e.target.closest(".card"); if (c) open(c.dataset.id); });
+pd.querySelector(".close").addEventListener("click", () => pd.close());
+pd.addEventListener("click", e => { if (e.target === pd) pd.close(); });
+pd.querySelectorAll("[data-q]").forEach(b => b.addEventListener("click", () => { qty = Math.max(1, qty + +b.dataset.q); pd.querySelector("output").textContent = qty; }));
+
+// Panier
+const cart = new Map();
+const drawer = document.getElementById("drawer"), shade = document.getElementById("shade");
+const setOpen = o => { drawer.classList.toggle("open", o); shade.classList.toggle("open", o); };
+let step = "list";
+const render = () => {
+  const n = [...cart.values()].reduce((a, b) => a + b, 0);
+  const cnt = document.querySelector(".count"); cnt.textContent = n; cnt.dataset.n = n;
+  const total = [...cart].reduce((s, [id, q]) => { const pr = ALL.find(p => p.id === id).price; return pr == null ? NaN : s + pr * q; }, 0);
+  const lines = document.getElementById("lines"), foot = document.getElementById("foot");
+  if (step === "done") {
+    lines.innerHTML = `<div class="done"><h3>Merci !</h3><p>Ceci est une maquette : aucun paiement n'est fait.<br><br>Sur le vrai site, le client paie ici par carte bancaire en toute sécurité, ou reçoit vos coordonnées bancaires pour un virement.</p></div>`;
+    foot.innerHTML = `<button class="btn btn-dark" id="again">Continuer la visite</button>`;
+    foot.querySelector("#again").onclick = () => { step = "list"; cart.clear(); render(); setOpen(false); };
+    return;
+  }
+  if (!n) { lines.innerHTML = `<p class="empty">Votre panier est vide.</p>`; foot.innerHTML = ""; return; }
+  lines.innerHTML = [...cart].map(([id, q]) => { const p = ALL.find(x => x.id === id); return `<div class="line"><div class="mini">${views(p)[0]}</div><div><h3>${p.name}</h3><small>${q} × ${euro(p.price)}</small></div><button class="rm" data-rm="${id}">Retirer</button></div>`; }).join("");
+  lines.querySelectorAll("[data-rm]").forEach(b => b.onclick = () => { cart.delete(+b.dataset.rm); render(); });
+  if (step === "pay") {
+    foot.innerHTML = `<div class="total"><span>Total</span><span>${euro(total)}</span></div><small>Choisissez votre moyen de paiement</small><div class="methods"><label><input type="radio" name="m" checked> Carte bancaire</label><label><input type="radio" name="m"> Virement bancaire</label></div><button class="btn btn-dark" id="pay">Payer ${euro(total)}</button>`;
+    foot.querySelector("#pay").onclick = () => { step = "done"; render(); };
+  } else {
+    foot.innerHTML = `<div class="total"><span>Sous-total</span><span>${euro(total)}</span></div><small>Envoi en colis, frais calculés à l'étape suivante</small><button class="btn btn-dark" id="order">Commander</button>`;
+    foot.querySelector("#order").onclick = () => { step = "pay"; render(); };
+  }
+};
+document.getElementById("add").addEventListener("click", () => { cart.set(cur.id, (cart.get(cur.id) || 0) + qty); step = "list"; render(); pd.close(); setOpen(true); });
+document.getElementById("openCart").addEventListener("click", () => { render(); setOpen(true); });
+document.getElementById("closeCart").addEventListener("click", () => setOpen(false));
+shade.addEventListener("click", () => setOpen(false));
+render();
+
+// Menu mobile et lettre d'info
+const burger = document.querySelector(".burger"), menu = document.querySelector("nav ul");
+burger.addEventListener("click", () => burger.setAttribute("aria-expanded", menu.classList.toggle("open")));
+document.getElementById("news").addEventListener("submit", e => { e.preventDefault(); e.target.innerHTML = `<p style="padding:16px;width:100%">Merci, c'est noté (maquette).</p>`; });
+</script>
+</body>
+</html>

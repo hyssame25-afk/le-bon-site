@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Espace vendeuse | Maison Medina</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --cream: #f6f1e9; --beige: #ece3d4; --sand: #ddd0bb; --gold: #9c7c4e; --ink: #161514; --muted: #6f675c; --white: #fffdf9; --red: #a3412c; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Jost, system-ui, sans-serif; font-weight: 300; color: var(--ink); background: var(--cream); line-height: 1.5; }
+  h1, h2 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; line-height: 1.1; }
+  button, input, select, textarea { font: inherit; color: inherit; }
+  button { cursor: pointer; }
+  .demo { background: var(--ink); color: var(--sand); font-size: 13px; text-align: center; padding: 8px 16px; }
+  header { background: var(--white); border-bottom: 1px solid var(--sand); }
+  header .in { max-width: 1100px; margin: 0 auto; padding: 18px 20px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .logo b { font-family: "Cormorant Garamond", serif; font-weight: 500; font-size: 24px; letter-spacing: .12em; }
+  .logo small { display: block; font-size: 11px; letter-spacing: .3em; color: var(--gold); text-transform: uppercase; }
+  .who { font-size: 14px; color: var(--muted); display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+  .who a { color: var(--ink); }
+  main { max-width: 1100px; margin: 0 auto; padding: 36px 20px 80px; }
+  .tabs { display: flex; gap: 8px; margin-bottom: 26px; flex-wrap: wrap; }
+  .tabs button { background: none; border: 1px solid var(--sand); padding: 10px 20px; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  .tabs button[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--cream); }
+  .bar { display: flex; justify-content: space-between; align-items: end; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
+  .bar h1 { font-size: 40px; }
+  .bar p { color: var(--muted); }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 24px; border: 1px solid var(--ink); background: var(--ink); color: var(--cream); font-size: 13px; letter-spacing: .16em; text-transform: uppercase; text-decoration: none; }
+  .btn.light { background: none; color: var(--ink); }
+  .btn.danger { background: none; color: var(--red); border-color: var(--red); }
+  .list { background: var(--white); border: 1px solid var(--sand); }
+  .row { display: grid; grid-template-columns: 64px 1fr 120px 110px auto; gap: 16px; align-items: center; padding: 14px 18px; border-bottom: 1px solid var(--sand); }
+  .row:last-child { border-bottom: 0; }
+  .row img { width: 64px; height: 80px; object-fit: cover; background: var(--beige); }
+  .row b { font-weight: 500; display: block; }
+  .row small { color: var(--muted); }
+  .row .act { display: flex; gap: 8px; }
+  .row .act button { background: none; border: 1px solid var(--sand); padding: 8px 12px; font-size: 13px; }
+  .pill { display: inline-block; font-size: 12px; padding: 3px 10px; border-radius: 20px; background: var(--beige); }
+  .pill.on { background: #dfe8d6; }
+  .empty { padding: 34px; text-align: center; color: var(--muted); }
+  .note { margin-top: 14px; font-size: 14px; color: var(--muted); }
+
+  form.card { background: var(--white); border: 1px solid var(--sand); padding: 30px; display: grid; gap: 18px; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; }
+  label { display: grid; gap: 6px; font-size: 14px; font-weight: 400; }
+  label span { font-weight: 300; color: var(--muted); font-size: 13px; }
+  input, select, textarea { width: 100%; border: 1px solid var(--sand); background: var(--cream); padding: 12px 14px; }
+  textarea { min-height: 110px; resize: vertical; }
+  input:focus, select:focus, textarea:focus { outline: 2px solid var(--gold); outline-offset: -1px; }
+  .photos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .slot { position: relative; aspect-ratio: 4/5; border: 1px dashed var(--gold); background: var(--cream); display: grid; place-items: center; text-align: center; color: var(--muted); font-size: 14px; cursor: pointer; overflow: hidden; }
+  .slot img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .slot .x { position: absolute; right: 6px; top: 6px; z-index: 2; width: 30px; height: 30px; border: 0; background: var(--ink); color: var(--cream); font-size: 18px; line-height: 1; }
+  .slot input { display: none; }
+  .actions { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+  .toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); background: var(--ink); color: var(--cream); padding: 12px 22px; font-size: 14px; opacity: 0; transition: opacity .3s; pointer-events: none; }
+  .toast.show { opacity: 1; }
+  table { width: 100%; border-collapse: collapse; background: var(--white); border: 1px solid var(--sand); font-size: 15px; }
+  th, td { text-align: left; padding: 14px 16px; border-bottom: 1px solid var(--sand); }
+  th { font-weight: 400; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  .scroll { overflow-x: auto; }
+  @media (max-width: 720px) {
+    .row { grid-template-columns: 56px 1fr; }
+    .row img { width: 56px; height: 70px; }
+    .row .price, .row .state { grid-column: 2; }
+    .row .act { grid-column: 1 / -1; }
+    .grid2, .grid3 { grid-template-columns: 1fr; }
+    form.card { padding: 20px; }
+    .bar h1 { font-size: 32px; }
+  }
+</style>
+</head>
+<body>
+<div class="demo">Démo de l'espace vendeuse. Ici, les articles ajoutés restent sur cet appareil. Sur le vrai site, ils sont enregistrés en ligne et visibles par tous.</div>
+<header>
+  <div class="in">
+    <div class="logo"><b>MAISON MEDINA</b><small>Espace vendeuse</small></div>
+    <div class="who">Connectée (démo) <a href="./">Voir la boutique</a></div>
+  </div>
+</header>
+
+<main>
+  <div class="tabs" role="group" aria-label="Rubriques">
+    <button type="button" data-tab="articles" aria-pressed="true">Mes articles</button>
+    <button type="button" data-tab="commandes" aria-pressed="false">Commandes</button>
+  </div>
+
+  <section id="articles">
+    <div class="bar">
+      <div><h1>Mes articles</h1><p>Ajoutez, modifiez ou retirez vos articles. Ils apparaissent tout de suite dans la boutique.</p></div>
+      <button class="btn" id="new">+ Ajouter un article</button>
+    </div>
+    <div class="list" id="list"></div>
+    <p class="note">Les 14 articles d'exemple de la maquette ne sont pas modifiables ici. Seuls vos articles ajoutés apparaissent dans cette liste.</p>
+  </section>
+
+  <section id="edit" hidden>
+    <div class="bar"><div><h1 id="formTitle">Nouvel article</h1><p>2 ou 3 photos, un prix et une description suffisent.</p></div></div>
+    <form class="card" id="form">
+      <div class="grid2">
+        <label>Nom de l'article<input name="name" required placeholder="Ex. : Panier de Marrakech"></label>
+        <label>Catégorie
+          <select name="cat">
+            <option value="deco">Décoration</option>
+            <option value="vaisselle">Vaisselle</option>
+            <option value="paniers">Paniers</option>
+            <option value="textiles">Rideaux et textiles</option>
+            <option value="bijoux">Bijoux</option>
+          </select>
+        </label>
+      </div>
+      <div class="grid3">
+        <label>Prix (€)<input name="price" type="number" min="0" step="0.01" placeholder="Ex. : 39"></label>
+        <label>Étiquette
+          <select name="tag"><option value="">Aucune (facultatif)</option><option>Nouveau</option><option>Fait main</option><option>Pièce unique</option><option>Doré</option><option>Argenté</option></select>
+        </label>
+        <label>Stock<select name="stock"><option value="1">En stock</option><option value="0">Épuisé</option></select></label>
+      </div>
+      <label>Description<textarea name="desc" placeholder="Matière, usage, ce qui le rend unique..."></textarea></label>
+      <div class="grid3">
+        <label>Matière<input name="m" placeholder="Ex. : Osier tressé"></label>
+        <label>Dimensions<input name="d" placeholder="Ex. : 40 × 30 cm"></label>
+        <label>Origine<input name="o" placeholder="Ex. : Marrakech"></label>
+      </div>
+      <div>
+        <p style="margin-bottom:8px;font-size:14px;font-weight:400">Photos <span style="color:var(--muted);font-weight:300;font-size:13px">(jusqu'à 3, la première est la photo principale)</span></p>
+        <div class="photos" id="photos"></div>
+      </div>
+      <div class="actions">
+        <button type="button" class="btn light" id="cancel">Annuler</button>
+        <button class="btn">Enregistrer l'article</button>
+      </div>
+    </form>
+  </section>
+
+  <section id="commandes" hidden>
+    <div class="bar"><div><h1>Commandes</h1><p>Chaque nouvelle commande arrive ici et par e-mail.</p></div></div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>N°</th><th>Date</th><th>Client</th><th>Articles</th><th>Paiement</th><th>État</th></tr></thead>
+        <tbody>
+          <tr><td>Exemple 1</td><td>—</td><td>Cliente A.</td><td>Panier de Marrakech</td><td>Carte bancaire</td><td><span class="pill on">Payée, à envoyer</span></td></tr>
+          <tr><td>Exemple 2</td><td>—</td><td>Client B.</td><td>Collier Cercle, Bague fine</td><td>Virement</td><td><span class="pill">Virement en attente</span></td></tr>
+          <tr><td>Exemple 3</td><td>—</td><td>Cliente C.</td><td>Lanterne Medina</td><td>Carte bancaire</td><td><span class="pill">Colis envoyé</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Commandes d'exemple pour la démo. Sur le vrai site : numéro de suivi du colis, et passage à « payée » quand le virement est reçu.</p>
+  </section>
+</main>
+<div class="toast" id="toast"></div>
+
+<script>
+const KEY = "mm_articles";
+const NAMES = { deco: "Décoration", vaisselle: "Vaisselle", paniers: "Paniers", textiles: "Rideaux et textiles", bijoux: "Bijoux" };
+const load = () => { try { return JSON.parse(localStorage.getItem(KEY) || "[]"); } catch (e) { return []; } };
+const save = a => { try { localStorage.setItem(KEY, JSON.stringify(a)); return true; } catch (e) { alert("Mémoire de la démo pleine : retirez un article ou utilisez des photos plus légères."); return false; } };
+const euro = n => n == null ? "?? €" : n.toFixed(2).replace(".", ",") + " €";
+const toast = t => { const el = document.getElementById("toast"); el.textContent = t; el.classList.add("show"); setTimeout(() => el.classList.remove("show"), 2200); };
+const esc = t => String(t).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+const show = id => ["articles", "edit", "commandes"].forEach(s => document.getElementById(s).hidden = s !== id);
+document.querySelectorAll("[data-tab]").forEach(b => b.addEventListener("click", () => {
+  document.querySelectorAll("[data-tab]").forEach(x => x.setAttribute("aria-pressed", x === b));
+  show(b.dataset.tab);
+}));
+
+function renderList() {
+  const a = load(), list = document.getElementById("list");
+  if (!a.length) { list.innerHTML = `<p class="empty">Aucun article ajouté pour l'instant.<br>Cliquez sur « Ajouter un article » pour essayer.</p>`; return; }
+  list.innerHTML = a.map(p => `<div class="row">
+    ${p.ph[0] ? `<img src="${p.ph[0]}" alt="">` : `<div style="width:64px;height:80px;background:var(--beige)"></div>`}
+    <div><b>${esc(p.name)}</b><small>${NAMES[p.cat]} · ${p.ph.length} photo${p.ph.length > 1 ? "s" : ""}</small></div>
+    <div class="price">${euro(p.price)}</div>
+    <div class="state"><span class="pill ${p.stock === "0" ? "" : "on"}">${p.stock === "0" ? "Épuisé" : "En vente"}</span></div>
+    <div class="act"><button data-edit="${p.id}">Modifier</button><button data-del="${p.id}">Retirer</button></div>
+  </div>`).join("");
+  list.querySelectorAll("[data-edit]").forEach(b => b.onclick = () => openForm(load().find(p => p.id === +b.dataset.edit)));
+  list.querySelectorAll("[data-del]").forEach(b => b.onclick = () => {
+    if (!confirm("Retirer cet article de la boutique ?")) return;
+    save(load().filter(p => p.id !== +b.dataset.del)); renderList(); toast("Article retiré");
+  });
+}
+
+// Photos : redimensionnees pour rester legeres
+let photos = [], editing = null;
+const resize = file => new Promise((ok, ko) => {
+  const r = new FileReader();
+  r.onerror = ko;
+  r.onload = () => { const im = new Image(); im.onerror = ko; im.onload = () => {
+    const max = 900, k = Math.min(1, max / Math.max(im.width, im.height));
+    const c = document.createElement("canvas"); c.width = Math.round(im.width * k); c.height = Math.round(im.height * k);
+    c.getContext("2d").drawImage(im, 0, 0, c.width, c.height); ok(c.toDataURL("image/jpeg", .78));
+  }; im.src = r.result; };
+  r.readAsDataURL(file);
+});
+function renderPhotos() {
+  const box = document.getElementById("photos");
+  box.innerHTML = [0, 1, 2].map(i => photos[i]
+    ? `<div class="slot"><img src="${photos[i]}" alt="Photo ${i + 1}"><button type="button" class="x" data-rm="${i}" aria-label="Retirer la photo">×</button></div>`
+    : `<label class="slot">${i === photos.length ? "+ Ajouter une photo" : ""}<input type="file" accept="image/*" data-i="${i}"></label>`).join("");
+  box.querySelectorAll("[data-rm]").forEach(b => b.onclick = () => { photos.splice(+b.dataset.rm, 1); renderPhotos(); });
+  box.querySelectorAll("input[type=file]").forEach(inp => inp.onchange = async () => {
+    if (!inp.files[0]) return;
+    try { photos.push(await resize(inp.files[0])); } catch (e) { alert("Cette image n'a pas pu être lue."); }
+    photos = photos.slice(0, 3); renderPhotos();
+  });
+}
+function openForm(p) {
+  editing = p || null;
+  const f = document.getElementById("form");
+  f.reset();
+  document.getElementById("formTitle").textContent = p ? "Modifier l'article" : "Nouvel article";
+  if (p) {
+    f.name.value = p.name; f.cat.value = p.cat; f.price.value = p.price ?? ""; f.tag.value = p.tag || ""; f.stock.value = p.stock || "1"; f.desc.value = p.desc || "";
+    const g = k => (p.specs.find(s => s[0] === k) || [, ""])[1];
+    f.m.value = g("Matière"); f.d.value = g("Dimensions"); f.o.value = g("Origine");
+  }
+  photos = p ? [...p.ph] : [];
+  renderPhotos(); show("edit"); window.scrollTo(0, 0);
+}
+document.getElementById("new").onclick = () => openForm();
+document.getElementById("cancel").onclick = () => show("articles");
+document.getElementById("form").addEventListener("submit", e => {
+  e.preventDefault();
+  const f = e.target;
+  if (!photos.length) { alert("Ajoutez au moins une photo."); return; }
+  const specs = [["Matière", f.m.value], ["Dimensions", f.d.value], ["Origine", f.o.value]].filter(s => s[1].trim());
+  const item = { id: editing ? editing.id : Date.now(), cat: f.cat.value, name: f.name.value.trim(), price: f.price.value === "" ? null : +f.price.value,
+    tag: f.tag.value || (f.stock.value === "0" ? "Épuisé" : ""), stock: f.stock.value, desc: f.desc.value.trim(), specs, ph: photos };
+  const a = load().filter(p => p.id !== item.id);
+  a.unshift(item);
+  if (!save(a)) return;
+  renderList(); show("articles"); toast(editing ? "Article modifié" : "Article ajouté à la boutique");
+});
+renderList();
+</script>
+</body>
+</html>
