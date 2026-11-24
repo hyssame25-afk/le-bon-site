@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Exemple : Salon Lila | Le Bon Site</title>
+<meta name="description" content="Exemple de site Pro réalisé par Le Bon Site : Salon Lila, salon de coiffure fictif à Saint-Valère.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#f8f2ec;
+  --blush:#f1e1da;
+  --blush-deep:#e6cbc0;
+  --plum:#3b1f2b;
+  --plum-soft:#6b4a57;
+  --rose:#b5707f;
+  --line:rgba(59,31,43,.18);
+  --white:#fffdfb;
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --sans:"Jost",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --banner-h:44px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--banner-h) + 72px)}
+body{padding-top:var(--banner-h);background:var(--cream);color:var(--plum);font-family:var(--sans);font-weight:300;font-size:17px;line-height:1.7;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+@media (min-width:768px){.wrap{padding:0 32px}}
+
+/* Bandeau demo */
+.demo-banner{position:fixed;top:0;left:0;right:0;z-index:60;background:var(--plum);color:#fbeee8;font-size:12.5px;line-height:1.4;padding:7px 16px;text-align:center}
+.demo-banner span{margin-right:10px}
+@media (min-width:768px){.demo-banner{font-size:13.5px;padding:11px 16px}}
+.demo-banner a{color:#fff;font-weight:500;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+
+/* En-tete */
+header.site{position:sticky;top:var(--banner-h);z-index:50;background:rgba(248,242,236,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:var(--serif);font-size:28px;font-weight:500;letter-spacing:.02em;text-decoration:none}
+.logo em{font-style:italic;color:var(--rose)}
+.nav ul{display:none;list-style:none;gap:28px;font-size:14px;letter-spacing:.12em;text-transform:uppercase}
+.nav ul a{text-decoration:none;padding:6px 0;border-bottom:1px solid transparent}
+.nav ul a:hover{border-color:var(--plum)}
+.btn{display:inline-block;font-family:var(--sans);font-size:14px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:14px 26px;border:1px solid var(--plum);background:var(--plum);color:var(--cream);cursor:pointer;transition:background .2s,color .2s}
+.btn:hover{background:transparent;color:var(--plum)}
+.btn.ghost{background:transparent;color:var(--plum)}
+.btn.ghost:hover{background:var(--plum);color:var(--cream)}
+.nav .btn{display:none;padding:10px 18px;font-size:12.5px}
+@media (min-width:900px){.nav ul{display:flex}.nav .btn{display:inline-block}}
+
+/* Hero */
+
+.hero-grid{display:grid;gap:32px;padding-top:40px;padding-bottom:56px}
+.eyebrow{font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--rose);font-weight:500}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.1}
+h1{font-size:clamp(44px,9vw,84px);margin:14px 0 20px}
+h1 em,h2 em{font-style:italic;color:var(--rose)}
+.lead{font-size:18px;color:var(--plum-soft);max-width:30em}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.hero-photo{position:relative}
+.hero-photo img{width:100%;aspect-ratio:4/5;max-height:72vh;object-fit:cover}
+.hero-photo::before{content:"";position:absolute;inset:16px -16px -16px 16px;border:1px solid var(--rose);z-index:-1}
+.hero-note{display:flex;gap:28px;margin-top:36px;padding-top:22px;border-top:1px solid var(--line);font-size:14.5px;color:var(--plum-soft);flex-wrap:wrap}
+.hero-note strong{display:block;font-family:var(--serif);font-size:22px;font-weight:500;color:var(--plum)}
+@media (min-width:900px){
+  .hero-grid{grid-template-columns:1.05fr .95fr;align-items:center;gap:72px;padding-top:72px;padding-bottom:96px}
+  .hero-photo::before{inset:24px -24px -24px 24px}
+}
+
+/* Sections */
+section{padding:72px 0}
+@media (min-width:900px){section{padding:104px 0}}
+.sec-head{text-align:center;max-width:640px;margin:0 auto 48px}
+.sec-head h2{font-size:clamp(36px,6vw,56px);margin:10px 0 14px}
+.sec-head p{color:var(--plum-soft)}
+.rule{width:56px;height:1px;background:var(--rose);margin:18px auto 0}
+.alt{background:var(--blush)}
+
+/* Le salon */
+.about{display:grid;gap:40px;align-items:center}
+.about img{width:100%;aspect-ratio:5/4;object-fit:cover}
+.about h2{font-size:clamp(34px,5.5vw,52px);margin:10px 0 18px}
+.about p+p{margin-top:14px}
+.about p{color:var(--plum-soft)}
+.services{display:grid;gap:0;margin-top:28px;border-top:1px solid var(--line)}
+.services div{padding:14px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:16px}
+.services span{font-family:var(--serif);font-size:21px}
+.services small{color:var(--plum-soft);font-size:14px;text-align:right}
+@media (min-width:900px){.about{grid-template-columns:1fr 1fr;gap:80px}}
+
+/* Galerie */
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.gallery button{border:0;padding:0;background:none;cursor:zoom-in;overflow:hidden;position:relative;display:block}
+.gallery img{width:100%;height:100%;aspect-ratio:1/1;object-fit:cover;transition:transform .5s ease}
+.gallery button:hover img,.gallery button:focus-visible img{transform:scale(1.04)}
+.gallery button:focus-visible{outline:2px solid var(--plum);outline-offset:3px}
+@media (min-width:768px){
+  .gallery{grid-template-columns:repeat(3,1fr);gap:16px}
+  .gallery .tall{grid-row:span 2}
+  .gallery .tall img{aspect-ratio:auto}
+}
+.gallery-hint{text-align:center;margin-top:18px;font-size:14px;color:var(--plum-soft)}
+
+/* Lightbox */
+.lightbox{position:fixed;inset:0;z-index:100;background:rgba(32,16,24,.92);display:none;align-items:center;justify-content:center;padding:56px 16px}
+.lightbox.open{display:flex}
+.lightbox img{max-height:82vh;max-width:100%;object-fit:contain;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.lightbox figcaption{color:#f3e4de;text-align:center;font-size:14px;margin-top:12px}
+.lb-btn{position:absolute;background:none;border:1px solid rgba(255,255,255,.4);color:#fff;width:46px;height:46px;font-size:22px;line-height:1;cursor:pointer;font-family:var(--sans)}
+.lb-btn:hover{background:rgba(255,255,255,.12)}
+.lb-close{top:14px;right:14px}
+.lb-prev{left:12px;top:50%;transform:translateY(-50%)}
+.lb-next{right:12px;top:50%;transform:translateY(-50%)}
+@media (max-width:600px){.lb-prev,.lb-next{top:auto;bottom:14px;transform:none}.lb-prev{left:calc(50% - 54px)}.lb-next{right:calc(50% - 54px)}}
+
+/* Tarifs */
+.prices{display:grid;gap:40px;max-width:960px;margin:0 auto}
+.price-col h3{font-size:30px;margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid var(--plum)}
+.price-row{display:flex;align-items:baseline;gap:10px;padding:13px 0;border-bottom:1px solid var(--line)}
+.price-row .name{flex:0 1 auto}
+.price-row .name small{display:block;color:var(--plum-soft);font-size:14px}
+.price-row .dots{flex:1;border-bottom:1px dotted var(--line);transform:translateY(-5px);min-width:12px}
+.price-row .val{font-family:var(--serif);font-size:22px;white-space:nowrap}
+.price-row .val small{font-family:var(--sans);font-size:12px;color:var(--plum-soft);letter-spacing:.04em;margin-right:4px}
+.price-note{text-align:center;color:var(--plum-soft);font-size:14.5px;margin-top:36px}
+@media (min-width:900px){.prices{grid-template-columns:1fr 1fr;gap:64px}}
+
+/* Rendez-vous */
+.rdv{display:grid;gap:40px}
+.rdv-intro h2{font-size:clamp(34px,5.5vw,52px);margin:10px 0 16px}
+.rdv-intro p{color:var(--plum-soft)}
+.rdv-intro img{margin-top:28px;width:100%;aspect-ratio:4/3;object-fit:cover}
+form{background:var(--white);border:1px solid var(--line);padding:28px 20px}
+@media (min-width:768px){form{padding:40px}}
+.field{margin-bottom:20px}
+.field label{display:block;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:8px;font-weight:500}
+.field input,.field select,.field textarea{width:100%;font:inherit;font-size:16px;color:var(--plum);background:transparent;border:0;border-bottom:1px solid var(--line);padding:10px 2px;border-radius:0;appearance:none;-webkit-appearance:none}
+.field select{background-image:linear-gradient(45deg,transparent 50%,var(--plum) 50%),linear-gradient(135deg,var(--plum) 50%,transparent 50%);background-position:calc(100% - 14px) 52%,calc(100% - 9px) 52%;background-size:5px 5px;background-repeat:no-repeat;padding-right:28px}
+.field textarea{min-height:96px;resize:vertical;border:1px solid var(--line);padding:10px}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--plum)}
+.two{display:grid;gap:0 20px}
+@media (min-width:600px){.two{grid-template-columns:1fr 1fr}}
+form .btn{width:100%}
+.form-msg{display:none;margin-top:18px;padding:14px 16px;background:var(--blush);border-left:2px solid var(--rose);font-size:15.5px}
+.form-msg.show{display:block}
+@media (min-width:900px){.rdv{grid-template-columns:.9fr 1.1fr;gap:72px;align-items:start}}
+
+/* FAQ */
+.faq{max-width:760px;margin:0 auto;border-top:1px solid var(--line)}
+details{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:22px 40px 22px 0;font-family:var(--serif);font-size:23px;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:4px;top:50%;transform:translateY(-50%);font-family:var(--sans);font-weight:300;font-size:26px;color:var(--rose);transition:transform .2s}
+details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+details p{padding:0 0 22px;color:var(--plum-soft);max-width:44em}
+
+/* Infos pratiques */
+.infos{display:grid;gap:40px}
+.info-block h3{font-size:30px;margin-bottom:14px}
+.hours{width:100%;border-collapse:collapse;font-size:16px}
+.hours td{padding:10px 0;border-bottom:1px solid var(--line)}
+.hours td:last-child{text-align:right;color:var(--plum-soft)}
+.hours tr.closed td:last-child{font-style:italic}
+.contact-list{list-style:none}
+.contact-list li{padding:10px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.contact-list span{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--plum-soft);padding-top:3px}
+.contact-list a{text-decoration:none;border-bottom:1px solid var(--rose)}
+.map{margin-top:22px;aspect-ratio:16/10;background:
+  linear-gradient(var(--line) 1px,transparent 1px) 0 0/40px 40px,
+  linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/40px 40px,var(--blush);
+  display:flex;align-items:center;justify-content:center;text-decoration:none;border:1px solid var(--line)}
+.map span{background:var(--cream);padding:10px 18px;font-size:14px;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--plum)}
+@media (min-width:900px){.infos{grid-template-columns:1fr 1fr;gap:80px}}
+
+/* Pied de page */
+footer{background:var(--plum);color:#ead8d1;padding:56px 0 110px;font-size:14.5px}
+@media (min-width:900px){footer{padding-bottom:48px}}
+.foot{display:grid;gap:28px}
+.foot .logo{color:#fff}
+.foot nav{display:flex;gap:20px;flex-wrap:wrap}
+.foot a{text-decoration:none;border-bottom:1px solid rgba(255,255,255,.3)}
+.foot-bottom{margin-top:36px;padding-top:20px;border-top:1px solid rgba(255,255,255,.18);font-size:13px;color:#c7aeb6}
+@media (min-width:900px){.foot{grid-template-columns:1.2fr 1fr 1fr;align-items:start}}
+
+/* Barre mobile */
+.mobile-bar{position:fixed;left:0;right:0;bottom:0;z-index:55;display:grid;grid-template-columns:1fr 1fr;background:var(--cream);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom));gap:10px}
+.mobile-bar a{text-align:center;padding:13px 6px;font-size:12px;letter-spacing:.06em;white-space:nowrap;text-transform:uppercase;text-decoration:none;border:1px solid var(--plum)}
+.mobile-bar a.primary{background:var(--plum);color:var(--cream)}
+@media (min-width:900px){.mobile-bar{display:none}}
+</style>
+</head>
+<body>
+
+<div class="demo-banner" role="note">
+  <span>Exemple de site Pro (300 €) réalisé par Le Bon Site. Entreprise fictive.</span>
+  <a href="https://lebonsitepro.fr/">Retour à Le Bon Site</a>
+</div>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="logo" href="#accueil">Salon <em>Lila</em></a>
+    <ul>
+      <li><a href="#salon">Le salon</a></li>
+      <li><a href="#galerie">Galerie</a></li>
+      <li><a href="#tarifs">Tarifs</a></li>
+      <li><a href="#faq">Questions</a></li>
+      <li><a href="#infos">Infos</a></li>
+    </ul>
+    <a class="btn" href="#rendez-vous">Prendre rendez-vous</a>
+  </div>
+</header>
+
+<main>
+<div class="hero" id="accueil">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Coiffure femmes, hommes, enfants</p>
+      <h1>Des cheveux qui vous <em>ressemblent</em></h1>
+      <p class="lead">Au cœur de Saint-Valère, le Salon Lila vous accueille dans un lieu calme et lumineux. On prend le temps de vous écouter, puis de vous coiffer avec soin.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#rendez-vous">Demander un rendez-vous</a>
+        <a class="btn ghost" href="#tarifs">Voir les tarifs</a>
+      </div>
+      <div class="hero-note">
+        <div><strong>Du mardi au samedi</strong>Avec ou sans rendez-vous</div>
+        <div><strong>12 rue des Tilleuls</strong>Saint-Valère</div>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=1600&q=70&auto=format&fit=crop" alt="Coiffeuse en train de coiffer une cliente au salon" width="1600" height="2000">
+    </div>
+  </div>
+</div>
+
+<section id="salon" class="alt">
+  <div class="wrap about">
+    <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=900&q=70&auto=format&fit=crop" alt="Intérieur du salon de coiffure, fauteuils et miroirs" loading="lazy" width="900" height="720">
+    <div>
+      <p class="eyebrow">Le salon</p>
+      <h2>Un moment pour <em>soi</em></h2>
+      <p>Chez Lila, chaque rendez-vous commence par un vrai échange : votre quotidien, le temps que vous voulez passer à vous coiffer le matin, ce que vous aimez ou pas. Ensuite seulement, on prend les ciseaux.</p>
+      <p>Les enfants sont les bienvenus, les messieurs aussi. Nous travaillons avec des produits doux pour le cuir chevelu, et nous vous montrons comment entretenir votre coupe à la maison.</p>
+      <div class="services">
+        <div><span>Coupes</span><small>femmes, hommes, enfants</small></div>
+        <div><span>Couleur</span><small>couleur, mèches, balayage</small></div>
+        <div><span>Coiffage</span><small>brushing, chignon, mariage</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="galerie">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Galerie</p>
+      <h2>Le salon en <em>images</em></h2>
+      <p>Quelques réalisations et l'ambiance du lieu.</p>
+      <div class="rule"></div>
+    </div>
+    <div class="gallery">
+      <button type="button" class="tall" data-i="0"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=900&q=70&auto=format&fit=crop" alt="L'espace de coiffage du salon" loading="lazy"></button>
+      <button type="button" data-i="1"><img src="https://images.unsplash.com/photo-1554519934-e32b1629d9ee?w=900&q=70&auto=format&fit=crop" alt="Ambiance du salon, postes de coiffure" loading="lazy"></button>
+      <button type="button" data-i="2"><img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=900&q=70&auto=format&fit=crop" alt="Soin et coiffage des cheveux" loading="lazy"></button>
+      <button type="button" data-i="3"><img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=900&q=70&auto=format&fit=crop" alt="Coin accueil et décoration du salon" loading="lazy"></button>
+      <button type="button" class="tall" data-i="4"><img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=900&q=70&auto=format&fit=crop" alt="Brushing pour homme au salon" loading="lazy"></button>
+      <button type="button" data-i="5"><img src="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?w=900&q=70&auto=format&fit=crop" alt="Détail d'une coiffure réalisée au salon" loading="lazy"></button>
+    </div>
+    <p class="gallery-hint">Touchez une photo pour l'agrandir.</p>
+  </div>
+</section>
+
+<section id="tarifs" class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Tarifs</p>
+      <h2>Nos <em>prestations</em></h2>
+      <p>Les prix varient selon la longueur et l'épaisseur des cheveux. Nous vous donnons toujours le prix avant de commencer.</p>
+      <div class="rule"></div>
+    </div>
+    <div class="prices">
+      <div class="price-col">
+        <h3>Coupes</h3>
+        <div class="price-row"><span class="name">Coupe femme<small>shampoing, coupe, coiffage</small></span><span class="dots"></span><span class="val"><small>à partir de</small>38 €</span></div>
+        <div class="price-row"><span class="name">Coupe homme<small>shampoing, coupe, finition</small></span><span class="dots"></span><span class="val"><small>à partir de</small>22 €</span></div>
+        <div class="price-row"><span class="name">Coupe enfant<small>jusqu'à 12 ans</small></span><span class="dots"></span><span class="val"><small>à partir de</small>15 €</span></div>
+        <div class="price-row"><span class="name">Brushing<small>shampoing et mise en forme</small></span><span class="dots"></span><span class="val"><small>à partir de</small>25 €</span></div>
+        <div class="price-row"><span class="name">Chignon<small>soirée, cérémonie, mariage</small></span><span class="dots"></span><span class="val"><small>à partir de</small>45 €</span></div>
+      </div>
+      <div class="price-col">
+        <h3>Couleur</h3>
+        <div class="price-row"><span class="name">Couleur<small>racines ou complète</small></span><span class="dots"></span><span class="val"><small>à partir de</small>42 €</span></div>
+        <div class="price-row"><span class="name">Mèches<small>au papier, effet lumineux</small></span><span class="dots"></span><span class="val"><small>à partir de</small>55 €</span></div>
+        <div class="price-row"><span class="name">Balayage<small>effet naturel, fait main</small></span><span class="dots"></span><span class="val"><small>à partir de</small>70 €</span></div>
+        <div class="price-row"><span class="name">Soin profond<small>en complément d'une prestation</small></span><span class="dots"></span><span class="val"><small>à partir de</small>12 €</span></div>
+      </div>
+    </div>
+    <p class="price-note">Tarifs indicatifs, coiffage compris. Paiement par carte ou en espèces.</p>
+  </div>
+</section>
+
+<section id="rendez-vous">
+  <div class="wrap rdv">
+    <div class="rdv-intro">
+      <p class="eyebrow">Rendez-vous</p>
+      <h2>Demande de <em>rendez-vous</em></h2>
+      <p>Indiquez-nous la prestation et le jour qui vous arrangent. Nous vous rappelons rapidement pour fixer l'heure ensemble.</p>
+      <p style="margin-top:12px">Vous préférez appeler ? Nous sommes joignables au <a href="#">06 00 00 00 00</a> pendant les heures d'ouverture.</p>
+      <img src="https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=900&q=70&auto=format&fit=crop" alt="Shampoing au bac, cliente détendue d'une cliente" loading="lazy" width="900" height="675">
+    </div>
+    <form id="rdv-form" novalidate>
+      <div class="two">
+        <div class="field"><label for="f-nom">Nom</label><input id="f-nom" name="nom" type="text" autocomplete="name" required></div>
+        <div class="field"><label for="f-tel">Téléphone</label><input id="f-tel" name="telephone" type="tel" autocomplete="tel" inputmode="tel" required></div>
+      </div>
+      <div class="two">
+        <div class="field">
+          <label for="f-presta">Prestation</label>
+          <select id="f-presta" name="prestation">
+            <option>Coupe femme</option>
+            <option>Coupe homme</option>
+            <option>Coupe enfant</option>
+            <option>Couleur</option>
+            <option>Mèches</option>
+            <option>Balayage</option>
+            <option>Brushing</option>
+            <option>Chignon</option>
+            <option>Je ne sais pas encore</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-jour">Jour souhaité</label>
+          <select id="f-jour" name="jour">
+            <option>Mardi</option>
+            <option>Mercredi</option>
+            <option>Jeudi</option>
+            <option>Vendredi</option>
+            <option>Samedi</option>
+            <option>Peu importe</option>
+          </select>
+        </div>
+      </div>
+      <div class="field"><label for="f-msg">Message</label><textarea id="f-msg" name="message" placeholder="Longueur de vos cheveux, envie particulière, horaire préféré..."></textarea></div>
+      <button class="btn" type="submit">Envoyer la demande</button>
+      <p class="form-msg" id="form-msg" role="status" aria-live="polite">Exemple : sur votre vrai site, la demande arrive dans votre boîte mail.</p>
+    </form>
+  </div>
+</section>
+
+<section id="faq" class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Questions fréquentes</p>
+      <h2>Bon à <em>savoir</em></h2>
+      <div class="rule"></div>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>Peut-on venir sans rendez-vous ?</summary>
+        <p>Oui, quand le planning le permet, surtout en début de semaine. Pour une couleur ou un balayage, mieux vaut réserver car la prestation demande plus de temps.</p>
+      </details>
+      <details>
+        <summary>Combien de temps dure un balayage ?</summary>
+        <p>Comptez en général entre deux heures et deux heures et demie, coiffage compris. Tout dépend de la longueur et de l'effet recherché.</p>
+      </details>
+      <details>
+        <summary>Coiffez-vous les enfants ?</summary>
+        <p>Avec plaisir. Nous prenons le temps de mettre les plus petits à l'aise, et un rehausseur les attend. Le mercredi est souvent le jour le plus pratique.</p>
+      </details>
+      <details>
+        <summary>Faites-vous les coiffures de mariage ?</summary>
+        <p>Oui. Nous proposons un essai quelques semaines avant le jour J pour trouver ensemble la coiffure idéale. Contactez-nous assez tôt pour réserver la date.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="infos">
+  <div class="wrap infos">
+    <div class="info-block">
+      <p class="eyebrow">Horaires</p>
+      <h3>Quand venir</h3>
+      <table class="hours">
+        <tr class="closed"><td>Lundi</td><td>Fermé</td></tr>
+        <tr><td>Mardi</td><td>9 h 00 à 18 h 30</td></tr>
+        <tr><td>Mercredi</td><td>9 h 00 à 18 h 30</td></tr>
+        <tr><td>Jeudi</td><td>9 h 00 à 19 h 30</td></tr>
+        <tr><td>Vendredi</td><td>9 h 00 à 19 h 30</td></tr>
+        <tr><td>Samedi</td><td>8 h 30 à 17 h 00</td></tr>
+        <tr class="closed"><td>Dimanche</td><td>Fermé</td></tr>
+      </table>
+    </div>
+    <div class="info-block">
+      <p class="eyebrow">Contact</p>
+      <h3>Nous trouver</h3>
+      <ul class="contact-list">
+        <li><span>Adresse</span>12 rue des Tilleuls, Saint-Valère</li>
+        <li><span>Téléphone</span><a href="#">06 00 00 00 00</a></li>
+        <li><span>Réseaux</span><span style="letter-spacing:0;text-transform:none;padding:0;color:inherit"><a href="#">Instagram</a> &nbsp; <a href="#">Facebook</a></span></li>
+      </ul>
+      <a class="map" href="#" aria-label="Voir le plan d'accès"><span>Voir le plan d'accès</span></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="logo" href="#accueil">Salon <em>Lila</em></a>
+        <p style="margin-top:10px">Coiffure femmes, hommes, enfants à Saint-Valère.</p>
+      </div>
+      <div>
+        <p>12 rue des Tilleuls, Saint-Valère</p>
+        <p><a href="#">06 00 00 00 00</a></p>
+      </div>
+      <nav aria-label="Liens du pied de page">
+        <a href="#tarifs">Tarifs</a>
+        <a href="#rendez-vous">Rendez-vous</a>
+        <a href="#">Mentions légales</a>
+      </nav>
+    </div>
+    <p class="foot-bottom">Site d'exemple réalisé par <a href="https://lebonsitepro.fr/">Le Bon Site</a>. Le Salon Lila est une entreprise fictive. Photos : Unsplash.</p>
+  </div>
+</footer>
+
+<nav class="mobile-bar" aria-label="Actions rapides">
+  <a href="#">Appeler</a>
+  <a class="primary" href="#rendez-vous">Prendre rendez-vous</a>
+</nav>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo agrandie">
+  <button type="button" class="lb-btn lb-close" aria-label="Fermer">&times;</button>
+  <button type="button" class="lb-btn lb-prev" aria-label="Photo précédente">&lsaquo;</button>
+  <figure>
+    <img id="lb-img" src="" alt="">
+    <figcaption id="lb-cap"></figcaption>
+  </figure>
+  <button type="button" class="lb-btn lb-next" aria-label="Photo suivante">&rsaquo;</button>
+</div>
+
+<script>
+(function(){
+  var bn=document.querySelector('.demo-banner');
+  function fitBanner(){document.documentElement.style.setProperty('--banner-h',bn.offsetHeight+'px');}
+  fitBanner();window.addEventListener('resize',fitBanner);
+  var items=[].slice.call(document.querySelectorAll('.gallery button'));
+  var lb=document.getElementById('lightbox'),img=document.getElementById('lb-img'),cap=document.getElementById('lb-cap');
+  var cur=0,last=null;
+  function show(i){
+    cur=(i+items.length)%items.length;
+    var s=items[cur].querySelector('img');
+    img.src=s.src.replace('w=900','w=1600');
+    img.alt=s.alt;cap.textContent=s.alt;
+  }
+  function open(i){last=document.activeElement;show(i);lb.classList.add('open');document.body.style.overflow='hidden';lb.querySelector('.lb-close').focus();}
+  function close(){lb.classList.remove('open');document.body.style.overflow='';if(last)last.focus();}
+  items.forEach(function(b,i){b.addEventListener('click',function(){open(i);});});
+  lb.querySelector('.lb-close').addEventListener('click',close);
+  lb.querySelector('.lb-prev').addEventListener('click',function(){show(cur-1);});
+  lb.querySelector('.lb-next').addEventListener('click',function(){show(cur+1);});
+  lb.addEventListener('click',function(e){if(e.target===lb)close();});
+  document.addEventListener('keydown',function(e){
+    if(!lb.classList.contains('open'))return;
+    if(e.key==='Escape')close();
+    if(e.key==='ArrowLeft')show(cur-1);
+    if(e.key==='ArrowRight')show(cur+1);
+  });
+
+  var form=document.getElementById('rdv-form'),msg=document.getElementById('form-msg');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    msg.classList.add('show');
+  });
+})();
+</script>
+</body>
+</html>

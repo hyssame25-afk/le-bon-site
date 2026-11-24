@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Exemple : Plomberie Delcourt | Le Bon Site</title>
+<meta name="description" content="Site d'exemple de la formule Essentiel de Le Bon Site : plombier chauffagiste fictif à Saint-Valère.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0b1f3a;
+  --navy-2:#122c52;
+  --blue:#1d4f91;
+  --orange:#ff6a13;
+  --orange-d:#e25500;
+  --paper:#f4f1ea;
+  --ink:#0e1726;
+  --muted:#5a6478;
+  --line:#d9d3c5;
+  --green:#1fa855;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Barlow",system-ui,sans-serif;font-size:17px;line-height:1.55;color:var(--ink);background:var(--paper);overflow-x:clip}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3,.cond{font-family:"Barlow Condensed","Arial Narrow",sans-serif;text-transform:uppercase;letter-spacing:.01em;line-height:1.02}
+.wrap{max-width:1140px;margin:0 auto;padding:0 16px}
+@media(min-width:768px){.wrap{padding:0 32px}}
+
+/* Bandeau demo */
+.demo{position:sticky;top:0;z-index:50;background:#05101f;color:#e8edf5;font-size:13px;line-height:1.3;border-bottom:2px solid var(--orange)}
+.demo .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:42px;padding-top:6px;padding-bottom:6px}
+.demo p{flex:1;min-width:0}
+.demo a{flex:none;color:#fff;font-weight:600;text-decoration:none;background:var(--orange);padding:5px 10px;border-radius:4px;white-space:nowrap}
+.demo a:hover{background:var(--orange-d)}
+
+/* En-tete */
+.top{background:var(--navy);color:#fff;border-bottom:1px solid rgba(255,255,255,.08)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;height:64px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-mark{width:38px;height:38px;background:var(--orange);display:grid;place-items:center;border-radius:6px;transform:skewX(-8deg)}
+.logo-mark svg{transform:skewX(8deg)}
+.logo-txt{font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:22px;text-transform:uppercase;line-height:.95}
+.logo-txt small{display:block;font-size:12px;font-weight:600;letter-spacing:.12em;color:#9fb3d1}
+.top-tel{display:none;font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:22px;text-decoration:none;color:#fff;align-items:center;gap:8px}
+.top-tel span{color:var(--orange)}
+@media(min-width:768px){.top-tel{display:flex}}
+
+/* Hero */
+.hero{position:relative;background:var(--navy);color:#fff;overflow:hidden}
+.hero-img{position:absolute;inset:0}
+.hero-img img{width:100%;height:100%;object-fit:cover;opacity:.7;color:transparent}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,var(--navy) 20%,rgba(11,31,58,.55) 70%,rgba(11,31,58,.2))}
+.hero .wrap{position:relative;z-index:1;padding-top:48px;padding-bottom:56px}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,106,19,.15);border:1px solid var(--orange);color:#ffb488;font-weight:600;font-size:14px;padding:6px 12px;border-radius:999px;margin-bottom:18px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--orange);box-shadow:0 0 0 4px rgba(255,106,19,.25)}
+.hero h1{font-size:clamp(44px,11vw,88px);font-weight:800;max-width:780px}
+.hero h1 em{font-style:normal;color:var(--orange);display:block}
+.hero p.lead{font-size:clamp(17px,2.4vw,20px);color:#d3dceb;max-width:560px;margin:18px 0 28px}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:"Barlow Condensed",sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.03em;text-decoration:none;border-radius:6px;padding:16px 22px;font-size:21px;line-height:1;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-call{background:var(--orange);color:#fff;box-shadow:0 8px 0 -2px var(--orange-d)}
+.btn-call:hover{background:var(--orange-d)}
+.btn-wa{background:#fff;color:var(--navy)}
+.btn-wa svg{color:var(--green)}
+.btn-call .num{font-size:26px}
+@media(max-width:480px){.ctas .btn{width:100%}}
+.hero-facts{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:30px;font-size:15px;color:#b9c6da}
+.hero-facts span{display:flex;align-items:center;gap:8px}
+.hero-facts svg{color:var(--orange);flex:none}
+
+/* Bande orange */
+.strip{background:var(--orange);color:#fff}
+.strip .wrap{display:flex;flex-wrap:wrap;gap:6px 24px;justify-content:center;padding-top:12px;padding-bottom:12px;font-family:"Barlow Condensed",sans-serif;font-weight:700;text-transform:uppercase;font-size:18px;letter-spacing:.04em;text-align:center}
+
+/* Sections */
+section{padding:64px 0}
+.kicker{display:inline-block;font-family:"Barlow Condensed",sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:15px;color:var(--orange-d);margin-bottom:8px}
+.kicker::before{content:"";display:inline-block;width:22px;height:3px;background:var(--orange);vertical-align:middle;margin-right:8px}
+h2{font-size:clamp(34px,7vw,54px);font-weight:800;color:var(--navy);margin-bottom:14px}
+.intro{color:var(--muted);max-width:620px;margin-bottom:32px}
+
+/* Services */
+.grid{display:grid;gap:16px;grid-template-columns:1fr}
+@media(min-width:640px){.grid{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.grid{grid-template-columns:repeat(3,1fr)}}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:24px 22px;position:relative;overflow:hidden}
+.card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--navy)}
+.card.urgent::before{background:var(--orange)}
+.card .ico{width:48px;height:48px;border-radius:6px;background:var(--navy);color:#fff;display:grid;place-items:center;margin-bottom:14px}
+.card.urgent .ico{background:var(--orange)}
+.card h3{font-size:27px;font-weight:700;color:var(--navy);margin-bottom:6px}
+.card p{color:var(--muted);font-size:16px}
+.tag{position:absolute;top:18px;right:18px;background:var(--orange);color:#fff;font-family:"Barlow Condensed",sans-serif;font-weight:700;text-transform:uppercase;font-size:13px;letter-spacing:.06em;padding:3px 8px;border-radius:3px}
+.card.cta{background:var(--navy);color:#fff;border-color:var(--navy);display:flex;flex-direction:column;justify-content:center}
+.card.cta::before{background:var(--orange)}
+.card.cta h3{color:#fff}
+.card.cta p{color:#c4cfe0;margin-bottom:16px}
+.card.cta .btn{align-self:flex-start;font-size:19px;padding:13px 18px}
+
+/* Pourquoi */
+.why{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.why::before{content:"";position:absolute;right:-120px;top:-120px;width:360px;height:360px;border:40px solid rgba(255,106,19,.12);border-radius:50%}
+.why h2{color:#fff}
+.why .kicker{color:#ffb488}
+.why-list{display:grid;gap:14px;grid-template-columns:1fr;position:relative}
+@media(min-width:860px){.why-list{grid-template-columns:repeat(3,1fr);gap:20px}}
+.why-item{border-top:3px solid var(--orange);padding:20px 0 6px}
+.why-item .n{font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:56px;color:var(--orange);line-height:.9}
+.why-item h3{font-size:28px;margin:8px 0}
+.why-item p{color:#c4cfe0}
+
+/* Zone + horaires */
+.zone-grid{display:grid;gap:20px;grid-template-columns:1fr}
+@media(min-width:860px){.zone-grid{grid-template-columns:1.1fr .9fr}}
+.zone-map{background:var(--navy-2);border-radius:8px;padding:24px;color:#fff;position:relative;overflow:hidden;min-height:300px;display:flex;flex-direction:column;justify-content:flex-end}
+.zone-map svg.map{position:absolute;inset:0;width:100%;height:100%}
+.zone-map .zlabel{position:relative;z-index:1}
+.zone-map .zlabel strong{display:block;font-family:"Barlow Condensed",sans-serif;font-size:34px;text-transform:uppercase;line-height:1}
+.zone-map .zlabel span{color:#b9c6da;font-size:15px}
+.towns{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.towns li{list-style:none;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:15px;font-weight:500}
+.hours{background:#fff;border:1px solid var(--line);border-radius:8px;padding:24px 22px}
+.hours h3{font-size:30px;color:var(--navy);margin-bottom:12px}
+.hours table{width:100%;border-collapse:collapse;font-size:16px}
+.hours td{padding:11px 0;border-bottom:1px dashed var(--line)}
+.hours td:last-child{text-align:right;font-weight:600}
+.hours tr:last-child td{border-bottom:0}
+.hours .em{margin-top:16px;background:#fff3eb;border-left:4px solid var(--orange);padding:12px 14px;font-size:15px;border-radius:0 6px 6px 0}
+
+/* Photos */
+.photos{padding:0 0 64px}
+.ph-grid{display:grid;gap:10px;grid-template-columns:1fr 1fr}
+@media(min-width:860px){.ph-grid{grid-template-columns:repeat(4,1fr)}}
+.ph-grid figure{position:relative;border-radius:6px;overflow:hidden;aspect-ratio:4/5;background:var(--navy)}
+.ph-grid img{width:100%;height:100%;object-fit:cover}
+.ph-grid figcaption{position:absolute;left:0;right:0;bottom:0;padding:24px 12px 10px;background:linear-gradient(transparent,rgba(11,31,58,.9));color:#fff;font-family:"Barlow Condensed",sans-serif;font-weight:700;text-transform:uppercase;font-size:17px;letter-spacing:.03em}
+
+/* Contact */
+.contact{background:var(--orange);color:#fff;padding:56px 0}
+.contact h2{color:#fff}
+.contact .kicker{color:var(--navy)}
+.contact .kicker::before{background:var(--navy)}
+.contact-grid{display:grid;gap:24px;grid-template-columns:1fr;align-items:center}
+@media(min-width:860px){.contact-grid{grid-template-columns:1.2fr 1fr}}
+.contact p.sub{font-size:18px;max-width:520px;color:#fff3ea}
+.c-box{background:var(--navy);border-radius:8px;padding:22px;display:grid;gap:12px}
+.c-line{display:flex;align-items:center;gap:14px;text-decoration:none;color:#fff;background:rgba(255,255,255,.06);border-radius:6px;padding:14px;min-width:0}
+.c-line:hover{background:rgba(255,255,255,.12)}
+.c-line .ci{flex:none;width:42px;height:42px;border-radius:6px;background:var(--orange);display:grid;place-items:center}
+.c-line.wa .ci{background:var(--green)}
+.c-line small{display:block;color:#9fb3d1;font-size:13px;text-transform:uppercase;letter-spacing:.08em}
+.c-line strong{display:block;font-size:18px;overflow-wrap:anywhere}
+.c-line .big{font-family:"Barlow Condensed",sans-serif;font-size:28px;line-height:1}
+
+/* Pied */
+footer{background:#05101f;color:#8fa0bb;font-size:14px;padding:28px 0 32px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between}
+footer strong{color:#fff;font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;font-size:18px;letter-spacing:.03em}
+footer a{color:#ffb488}
+
+/* Barre mobile */
+.mbar{position:fixed;left:0;right:0;bottom:0;z-index:40;display:grid;grid-template-columns:1fr 1fr;box-shadow:0 -6px 20px rgba(0,0,0,.25)}
+.mbar a{display:flex;align-items:center;justify-content:center;gap:8px;height:58px;font-family:"Barlow Condensed",sans-serif;font-weight:700;text-transform:uppercase;font-size:21px;letter-spacing:.04em;text-decoration:none;color:#fff}
+.mbar .m-call{background:var(--orange)}
+.mbar .m-wa{background:var(--green)}
+@media(max-width:767px){body{padding-bottom:58px}}
+@media(min-width:768px){.mbar{display:none}}
+@media(max-width:400px){.demo{font-size:12px}.demo a{padding:5px 8px}}
+</style>
+</head>
+<body>
+
+<div class="demo" role="note">
+  <div class="wrap">
+    <p>Exemple de site Essentiel (100 €) réalisé par Le Bon Site. Entreprise fictive.</p>
+    <a href="https://lebonsitepro.fr/">Retour à Le Bon Site</a>
+  </div>
+</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#">
+      <span class="logo-mark" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3 4 6 7.2 6 10.5A6 6 0 0 1 6 13.5C6 10.2 9 7 12 3z"/></svg>
+      </span>
+      <span class="logo-txt">Plomberie Delcourt<small>Plombier chauffagiste</small></span>
+    </a>
+    <a class="top-tel" href="#"><span>Urgence</span> 06 00 00 00 00</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero" style="padding:0">
+    <div class="hero-img">
+      <img src="https://images.unsplash.com/photo-1749532125405-70950966b0e5?w=1600&q=70&auto=format&fit=crop" alt="Plombier au travail dans une salle de bain" fetchpriority="high">
+    </div>
+    <div class="wrap">
+      <span class="badge"><span class="dot"></span>Dépannage rapide à Saint-Valère et alentours</span>
+      <h1>Une fuite, un souci d'eau chaude ?<em>On arrive.</em></h1>
+      <p class="lead">Plombier chauffagiste installé à Saint-Valère. Dépannage, débouchage, chauffe-eau, entretien de chaudière et rénovation de salle de bain. Un seul numéro, un artisan qui répond.</p>
+      <div class="ctas">
+        <a class="btn btn-call" href="#">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          <span class="num">06 00 00 00 00</span>
+        </a>
+        <a class="btn btn-wa" href="#">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.25-.12-1.47-.72-1.7-.8-.23-.09-.4-.13-.56.12-.17.25-.64.8-.79.97-.14.17-.29.19-.54.06a6.7 6.7 0 0 1-3.34-2.92c-.25-.43.25-.4.72-1.34.08-.16.04-.3-.02-.42l-.76-1.83c-.2-.48-.4-.41-.56-.42h-.48a.92.92 0 0 0-.66.31 2.8 2.8 0 0 0-.87 2.07 4.85 4.85 0 0 0 1.02 2.58 11.1 11.1 0 0 0 4.25 3.76c1.58.68 2.2.74 3 .62.48-.07 1.47-.6 1.68-1.18.2-.58.2-1.08.14-1.18-.06-.1-.23-.17-.48-.29z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+      <div class="hero-facts">
+        <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Devis gratuit avant travaux</span>
+        <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Prix annoncé avant de commencer</span>
+        <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>20 km autour de Saint-Valère</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip">
+    <div class="wrap">
+      <span>Fuite</span><span>Débouchage</span><span>Chauffe-eau</span><span>Chaudière</span><span>Salle de bain</span>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="wrap">
+      <span class="kicker">Services</span>
+      <h2>Ce que je fais pour vous</h2>
+      <p class="intro">Des interventions du quotidien aux petits chantiers, je m'occupe de tout ce qui touche à l'eau et au chauffage dans votre maison.</p>
+      <div class="grid">
+        <article class="card urgent">
+          <span class="tag">Urgence</span>
+          <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c3 4 6 7.2 6 10.5A6 6 0 0 1 6 13.5C6 10.2 9 7 12 3z"/></svg></div>
+          <h3>Dépannage fuite</h3>
+          <p>Fuite sous l'évier, joint qui lâche, tuyau percé ou compteur qui tourne : je localise la fuite, je coupe, je répare.</p>
+        </article>
+        <article class="card urgent">
+          <span class="tag">Urgence</span>
+          <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v8M8 12h8"/></svg></div>
+          <h3>Débouchage</h3>
+          <p>Évier, lavabo, douche ou WC bouché : débouchage propre, avec le bon matériel, et conseils pour que ça ne revienne pas.</p>
+        </article>
+        <article class="card">
+          <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="17" rx="3"/><path d="M9 22h6M12 7v5"/></svg></div>
+          <h3>Chauffe-eau</h3>
+          <p>Plus d'eau chaude ? Réparation ou remplacement de votre ballon électrique ou thermodynamique, avec un devis clair.</p>
+        </article>
+        <article class="card">
+          <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16v3a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M6 12V5a2 2 0 0 1 4 0"/></svg></div>
+          <h3>Salle de bain</h3>
+          <p>Remplacement de baignoire par une douche, nouveau meuble vasque, robinetterie : je refais votre salle de bain de A à Z.</p>
+        </article>
+        <article class="card">
+          <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22c4 0 7-2.7 7-6.5 0-3-2-5-3.5-7-.5 2-1.5 3-3 3 .5-3-1-6-3.5-8.5C9 6 5 9 5 15.5 5 19.3 8 22 12 22z"/></svg></div>
+          <h3>Entretien chaudière</h3>
+          <p>Entretien annuel de votre chaudière gaz, nettoyage, contrôle et réglages. Une chaudière bien suivie consomme moins et dure plus longtemps.</p>
+        </article>
+        <article class="card cta">
+          <h3>Un autre besoin ?</h3>
+          <p>Expliquez-moi votre problème, même en deux mots ou avec une photo. Je vous dis vite ce que je peux faire.</p>
+          <a class="btn btn-call" href="#">Me contacter</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="why">
+    <div class="wrap">
+      <span class="kicker">Pourquoi moi</span>
+      <h2>Un artisan, pas un standard</h2>
+      <div class="why-list">
+        <div class="why-item">
+          <div class="n">01</div>
+          <h3>Vous m'avez en direct</h3>
+          <p>C'est moi qui décroche, moi qui me déplace et moi qui fais le travail. Pas d'intermédiaire, pas de surprise.</p>
+        </div>
+        <div class="why-item">
+          <div class="n">02</div>
+          <h3>Le prix avant les travaux</h3>
+          <p>Je vous explique ce qui ne va pas et je vous donne le prix avant de commencer. Vous décidez en connaissance de cause.</p>
+        </div>
+        <div class="why-item">
+          <div class="n">03</div>
+          <h3>Un chantier propre</h3>
+          <p>Bâches, protections et nettoyage en fin d'intervention. Je laisse votre maison comme je l'ai trouvée, la panne en moins.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="zone">
+    <div class="wrap">
+      <span class="kicker">Zone et horaires</span>
+      <h2>Où et quand j'interviens</h2>
+      <p class="intro">Je me déplace dans un rayon de 20 km autour de Saint-Valère, chez les particuliers comme chez les petits commerces.</p>
+      <div class="zone-grid">
+        <div>
+          <div class="zone-map">
+            <svg class="map" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <g stroke="rgba(255,255,255,.07)" stroke-width="1">
+                <path d="M0 50H400M0 100H400M0 150H400M0 200H400M0 250H400M50 0V300M100 0V300M150 0V300M200 0V300M250 0V300M300 0V300M350 0V300"/>
+              </g>
+              <path d="M-10 210C80 180 120 240 210 200S330 120 410 150" stroke="rgba(120,170,230,.35)" stroke-width="6" fill="none"/>
+              <circle cx="200" cy="130" r="110" fill="rgba(255,106,19,.10)" stroke="#ff6a13" stroke-width="2" stroke-dasharray="6 6"/>
+              <circle cx="200" cy="130" r="55" fill="rgba(255,106,19,.12)"/>
+              <circle cx="200" cy="130" r="9" fill="#ff6a13"/>
+              <circle cx="200" cy="130" r="18" fill="none" stroke="#ff6a13" stroke-width="2" opacity=".6"/>
+            </svg>
+            <div class="zlabel">
+              <strong>Saint-Valère</strong>
+              <span>et 20 km autour</span>
+            </div>
+          </div>
+          <ul class="towns">
+            <li>Saint-Valère</li><li>Communes voisines</li><li>Hameaux du secteur</li><li>Appelez pour vérifier</li>
+          </ul>
+        </div>
+        <div class="hours">
+          <h3>Horaires</h3>
+          <table>
+            <tr><td>Lundi au vendredi</td><td>8 h - 19 h</td></tr>
+            <tr><td>Samedi</td><td>9 h - 12 h</td></tr>
+            <tr><td>Dimanche</td><td>Fermé</td></tr>
+          </table>
+          <p class="em"><strong>Urgence en dehors des horaires ?</strong> Laissez un message ou écrivez sur WhatsApp, je vous rappelle dès que possible.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="photos">
+    <div class="wrap">
+      <div class="ph-grid">
+        <figure>
+          <img src="https://images.unsplash.com/photo-1542013936693-884638332954?w=800&q=70&auto=format&fit=crop" alt="Robinet de cuisine en inox avec un filet d'eau" loading="lazy">
+          <figcaption>Robinetterie</figcaption>
+        </figure>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1620653713380-7a34b773fef8?w=800&q=70&auto=format&fit=crop" alt="Chauffe-eau installé dans un local technique" loading="lazy">
+          <figcaption>Chauffe-eau</figcaption>
+        </figure>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1650551182991-b07558247564?w=800&q=70&auto=format&fit=crop" alt="Tuyauteries et équipements d'une chaufferie" loading="lazy">
+          <figcaption>Chaufferie</figcaption>
+        </figure>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1676210134188-4c05dd172f89?w=800&q=70&auto=format&fit=crop" alt="Plombier qui répare un siphon sous un évier" loading="lazy">
+          <figcaption>Salle de bain</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+
+  <section class="contact" id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <span class="kicker">Contact</span>
+        <h2>Un problème ? Appelez.</h2>
+        <p class="sub">Le plus rapide, c'est le téléphone. Si je suis sur un chantier, envoyez un message WhatsApp avec une photo : je vous réponds dans la journée.</p>
+      </div>
+      <div class="c-box">
+        <a class="c-line" href="#">
+          <span class="ci"><svg width="22" height="22" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></span>
+          <span><small>Téléphone</small><strong class="big">06 00 00 00 00</strong></span>
+        </a>
+        <a class="c-line wa" href="#">
+          <span class="ci"><svg width="22" height="22" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.25-.12-1.47-.72-1.7-.8-.23-.09-.4-.13-.56.12-.17.25-.64.8-.79.97-.14.17-.29.19-.54.06a6.7 6.7 0 0 1-3.34-2.92c-.25-.43.25-.4.72-1.34.08-.16.04-.3-.02-.42l-.76-1.83c-.2-.48-.4-.41-.56-.42h-.48a.92.92 0 0 0-.66.31 2.8 2.8 0 0 0-.87 2.07 4.85 4.85 0 0 0 1.02 2.58 11.1 11.1 0 0 0 4.25 3.76c1.58.68 2.2.74 3 .62.48-.07 1.47-.6 1.68-1.18.2-.58.2-1.08.14-1.18-.06-.1-.23-.17-.48-.29z"/></svg></span>
+          <span><small>WhatsApp</small><strong>Envoyer une photo du problème</strong></span>
+        </a>
+        <a class="c-line" href="#">
+          <span class="ci"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+          <span><small>E-mail</small><strong>contact@plomberie-delcourt.fr</strong></span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><strong>Plomberie Delcourt</strong><br>Plombier chauffagiste, Saint-Valère</div>
+    <div>Site d'exemple, entreprise fictive.<br>Réalisé par <a href="https://lebonsitepro.fr/">Le Bon Site</a></div>
+  </div>
+</footer>
+
+<nav class="mbar" aria-label="Contact rapide">
+  <a class="m-call" href="#">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    Appeler
+  </a>
+  <a class="m-wa" href="#">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.25-.12-1.47-.72-1.7-.8-.23-.09-.4-.13-.56.12-.17.25-.64.8-.79.97-.14.17-.29.19-.54.06a6.7 6.7 0 0 1-3.34-2.92c-.25-.43.25-.4.72-1.34.08-.16.04-.3-.02-.42l-.76-1.83c-.2-.48-.4-.41-.56-.42h-.48a.92.92 0 0 0-.66.31 2.8 2.8 0 0 0-.87 2.07 4.85 4.85 0 0 0 1.02 2.58 11.1 11.1 0 0 0 4.25 3.76c1.58.68 2.2.74 3 .62.48-.07 1.47-.6 1.68-1.18.2-.58.2-1.08.14-1.18-.06-.1-.23-.17-.48-.29z"/></svg>
+    WhatsApp
+  </a>
+</nav>
+
+<script>
+document.querySelectorAll('a[href="#"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();});});
+</script>
+</body>
+</html>

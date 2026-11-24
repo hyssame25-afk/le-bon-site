@@ -161,6 +161,19 @@
   .plan .btn { margin-top: auto; }
   .prix-note { margin-top: 24px; color: var(--muted); font-size: 16px; text-align: center; }
 
+  /* Exemples */
+  .exemples { padding-top: 0; }
+  .ex-intro { color: var(--muted); margin: -24px 0 32px; max-width: 640px; }
+  .ex-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .ex { display: block; text-decoration: none; border: 1px solid var(--line); border-radius: 18px; overflow: hidden; background: var(--paper); transition: transform .2s, box-shadow .2s; }
+  .ex:hover { transform: translateY(-3px); box-shadow: 0 18px 40px rgba(19,32,43,.12); }
+  .ex img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: top; border-bottom: 1px solid var(--line); display: block; }
+  .ex div { padding: 18px 20px 22px; }
+  .ex small { font-weight: 700; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  .ex h3 { font-size: 22px; margin: 6px 0 6px; }
+  .ex p { color: var(--muted); font-size: 16px; }
+  .ex span.go { display: inline-block; margin-top: 12px; font-weight: 700; border-bottom: 2px solid var(--sun); }
+
   /* FAQ */
   .faq { background: var(--mist); }
   .faq-list { display: grid; gap: 12px; max-width: 820px; }
@@ -192,7 +205,8 @@
 
   @media (max-width: 900px) {
     .hero .wrap, .contact .wrap { grid-template-columns: 1fr; }
-    .steps, .plans { grid-template-columns: 1fr; }
+    .steps, .plans, .ex-grid { grid-template-columns: 1fr; }
+    .ex-grid { max-width: 520px; }
     .plans { max-width: 520px; }
     .browser { transform: none; }
     header nav a.tel { display: none; }
@@ -239,7 +253,7 @@
         <p class="lead">Je crée gratuitement la maquette de votre site, avec votre nom. <strong>Elle vous plaît, vous payez. Sinon, rien.</strong></p>
         <div class="hero-actions">
           <a class="btn btn-sun" href="#contact">Recevoir ma maquette gratuite</a>
-          <a class="btn btn-line" href="#prix">Voir les prix</a>
+          <a class="btn btn-line" href="#exemples">Voir des exemples</a>
         </div>
         <ul class="checks">
           <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg>Dès 100 €</li>
@@ -268,6 +282,27 @@
         <div class="step"><h3>Vous m'appelez</h3><p>5 minutes pour me parler de votre métier.</p></div>
         <div class="step"><h3>Je fais la maquette</h3><p>Vous recevez un lien vers votre futur site. Gratuit.</p></div>
         <div class="step"><h3>Il est en ligne</h3><p>Elle vous plaît ? Je m'occupe de tout le reste.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="exemples" id="exemples">
+    <div class="wrap">
+      <h2>Voici à quoi ressemble votre site</h2>
+      <p class="ex-intro">Trois exemples, un par formule. Les entreprises sont inventées. Cliquez pour les essayer, sur ordinateur ou sur téléphone.</p>
+      <div class="ex-grid">
+        <a class="ex" href="exemples/plombier/" target="_blank" rel="noopener">
+          <img src="images/exemple-plombier.jpg" alt="Exemple de site pour un plombier" loading="lazy" width="800" height="600">
+          <div><small>Essentiel · 100 €</small><h3>Un plombier</h3><p>Une page claire, avec les boutons Appeler et WhatsApp.</p><span class="go">Voir l'exemple</span></div>
+        </a>
+        <a class="ex" href="exemples/coiffure/" target="_blank" rel="noopener">
+          <img src="images/exemple-coiffure.jpg" alt="Exemple de site pour un salon de coiffure" loading="lazy" width="800" height="600">
+          <div><small>Pro · 300 €</small><h3>Un salon de coiffure</h3><p>Galerie photos, tarifs et demande de rendez-vous.</p><span class="go">Voir l'exemple</span></div>
+        </a>
+        <a class="ex" href="exemples/fleuriste/" target="_blank" rel="noopener">
+          <img src="images/exemple-fleuriste.jpg" alt="Exemple de site avec boutique en ligne pour un fleuriste" loading="lazy" width="800" height="600">
+          <div><small>Premium · 500 €</small><h3>Un fleuriste</h3><p>Boutique en ligne avec panier, rendez-vous et assistant.</p><span class="go">Voir l'exemple</span></div>
+        </a>
       </div>
     </div>
   </section>
