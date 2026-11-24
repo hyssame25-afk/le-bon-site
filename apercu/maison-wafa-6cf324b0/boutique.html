@@ -7,13 +7,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=3">
-<script src="assets/data.js?v=3"></script>
+<link rel="stylesheet" href="assets/style.css?v=4">
+<script src="assets/data.js?v=4"></script>
 <title>E-shop | Maison Wafa</title>
 <meta name="description" content="Tous les articles de Maison Wafa : décoration marocaine, art de la table, paniers, textile, bien-être et bijoux.">
 <style>
-  .cat-tiles { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; margin-bottom: 40px; }
-  .cat-tiles a { position: relative; aspect-ratio: 1; overflow: hidden; text-decoration: none; color: #fff; }
+  .cat-tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 40px; }
+  .cat-tiles a { position: relative; aspect-ratio: 16/10; overflow: hidden; text-decoration: none; color: #fff; }
   .cat-tiles img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s; }
   .cat-tiles a::after { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,.25); }
   .cat-tiles span { position: absolute; inset: 0; z-index: 1; display: grid; place-items: center; text-align: center; font-family: Commissioner, sans-serif; font-size: 12px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; padding: 6px; }
@@ -40,7 +40,7 @@
       </div>
       <div class="box">
         <h3>Prix maximum</h3>
-        <input type="range" id="max" min="5" max="60" step="1" aria-label="Prix maximum">
+        <input type="range" id="max" min="5" max="200" step="1" aria-label="Prix maximum">
         <div class="range-val"><span>5 €</span><span id="maxVal"></span></div>
       </div>
       <div class="box" id="finBox">
@@ -70,11 +70,11 @@
     </div>
   </div>
 </main>
-<script src="assets/app.js?v=3"></script>
+<script src="assets/app.js?v=4"></script>
 <script>
 const st = {
   cat: param("cat") || "", q: param("q") || "", fm: param("fm") === "1",
-  max: 60, fin: [], sort: param("sort") || (param("q") ? "pop" : "pop"), shown: 9,
+  max: 200, fin: [], sort: param("sort") || (param("q") ? "pop" : "pop"), shown: 9,
 };
 const INTRO = {
   "": "Toutes nos pièces, choisies une par une auprès d'artisans de tout le Maroc.",
@@ -84,6 +84,8 @@ const INTRO = {
   textiles: "Rideaux et voilages aux matières naturelles.",
   bienetre: "Huile d'argan, henné, ghassoul, eau de rose : les soins du hammam.",
   bijoux: "Bijoux fins en acier inoxydable, finition dorée ou argentée.",
+  cuir: "Babouches, poufs et sacs en cuir, cousus à la main à Fès et Marrakech.",
+  epicerie: "Dattes, épices et douceurs du Maroc.",
 };
 const TILE_PH = { deco: "1505576391880-b3f9d713dc4f", vaisselle: "1553523292-1140e57d4f87", paniers: "1659520709425-31b547254b59", textiles: "1682421938316-4b186e25174c", bienetre: "1740744931699-11d1db68c0d4", bijoux: "1783541507490-edb026e2a961" };
 
@@ -108,15 +110,15 @@ function draw() {
   $("#h1").textContent = title;
   $("#intro").textContent = st.q ? "" : INTRO[st.cat] || "";
   $("#crumbs").innerHTML = `<a href="index.html">Accueil</a> / <a href="boutique.html">E-shop</a>${st.cat ? ` / <span>${NAMES[st.cat]}</span>` : ""}${st.q ? ` / <span>Recherche</span>` : ""}`;
-  $("#tiles").innerHTML = st.cat || st.q ? "" : CAT_ORDER.map(c => `<a href="boutique.html?cat=${c}">${img(TILE_PH[c], NAMES[c], 400, 400)}<span>${NAMES[c]}</span></a>`).join("");
+  $("#tiles").innerHTML = st.cat || st.q ? "" : CAT_ORDER.map(c => `<a href="boutique.html?cat=${c}">${img(CAT_PH[c], NAMES[c], 400, 400)}<span>${NAMES[c]}</span></a>`).join("");
   $("#cats").innerHTML = `<li><a href="#" data-c="" aria-current="${!st.cat}">Tout <span>${base().length}</span></a></li>` + CAT_ORDER.map(c => `<li><a href="#" data-c="${c}" aria-current="${st.cat === c}">${NAMES[c]} <span>${base().filter(p => p.cat === c).length}</span></a></li>`).join("");
-  $("#fm").checked = st.fm; $("#max").value = st.max; $("#maxVal").textContent = st.max >= 60 ? "60 € et +" : st.max + " €"; $("#sort").value = st.sort;
+  $("#fm").checked = st.fm; $("#max").value = st.max; $("#maxVal").textContent = st.max >= 200 ? "200 € et +" : st.max + " €"; $("#sort").value = st.sort;
   $("#finBox").hidden = !(st.cat === "bijoux" || st.cat === "");
   $("#n").textContent = r.length + (r.length > 1 ? " articles" : " article");
   const chips = [];
   if (st.q) chips.push(["q", `Recherche : ${st.q}`]);
   if (st.fm) chips.push(["fm", "Fait main"]);
-  if (st.max < 60) chips.push(["max", `Jusqu'à ${st.max} €`]);
+  if (st.max < 200) chips.push(["max", `Jusqu'à ${st.max} €`]);
   st.fin.forEach(f => chips.push(["fin:" + f, f]));
   $("#chips").innerHTML = chips.map(([k, t]) => `<button data-chip="${k}" aria-label="Enlever le filtre ${esc(t)}">${esc(t)} ×</button>`).join("");
   $("#grid").innerHTML = r.length ? r.slice(0, st.shown).map(card).join("")
@@ -131,11 +133,11 @@ $("#max").addEventListener("input", e => { st.max = +e.target.value; draw(); });
 $$(".fin").forEach(c => c.addEventListener("change", () => { st.fin = $$(".fin").filter(x => x.checked).map(x => x.value); draw(); }));
 $("#sort").addEventListener("change", e => { st.sort = e.target.value; draw(); });
 $("#moreBtn").addEventListener("click", () => { st.shown += 9; draw(); });
-$("#reset").addEventListener("click", () => { Object.assign(st, { q: "", fm: false, max: 60, fin: [] }); $$(".fin").forEach(x => x.checked = false); $$(".search input").forEach(i => i.value = ""); draw(); });
+$("#reset").addEventListener("click", () => { Object.assign(st, { q: "", fm: false, max: 200, fin: [] }); $$(".fin").forEach(x => x.checked = false); $$(".search input").forEach(i => i.value = ""); draw(); });
 $("#chips").addEventListener("click", e => {
   const b = e.target.closest("[data-chip]"); if (!b) return;
   const k = b.dataset.chip;
-  if (k === "q") { st.q = ""; $$(".search input").forEach(i => i.value = ""); } else if (k === "fm") st.fm = false; else if (k === "max") st.max = 60;
+  if (k === "q") { st.q = ""; $$(".search input").forEach(i => i.value = ""); } else if (k === "fm") st.fm = false; else if (k === "max") st.max = 200;
   else { const f = k.slice(4); st.fin = st.fin.filter(x => x !== f); $$(".fin").forEach(x => { if (x.value === f) x.checked = false; }); }
   draw();
 });
