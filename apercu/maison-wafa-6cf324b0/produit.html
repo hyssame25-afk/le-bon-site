@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/data.js"></script>
+<title>Article | Maison Wafa</title>
+</head>
+<body data-page="produit">
+<main class="wrap">
+  <div class="crumbs" id="crumbs"></div>
+  <div id="product"></div>
+  <section style="padding-top:0">
+    <div class="row-head"><h2>Vous aimerez aussi</h2><a id="moreCat" href="boutique.html">Tout voir</a></div>
+    <div class="grid" id="related"></div>
+  </section>
+  <section style="padding-top:0" id="recentBox" hidden>
+    <div class="row-head"><h2>Vus récemment</h2></div>
+    <div class="row-scroll" id="recent"></div>
+  </section>
+</main>
+<script src="assets/app.js"></script>
+<script>
+const p = byId(param("id")) || PRODUCTS[0];
+const out = p.tag === "Épuisé" || p.stock === "0";
+document.title = p.name + " | Maison Wafa";
+$("#crumbs").innerHTML = `<a href="index.html">Accueil</a> / <a href="boutique.html">E-shop</a> / <a href="boutique.html?cat=${p.cat}">${NAMES[p.cat]}</a> / <span>${esc(p.name)}</span>`;
+const pics = p.ph.map((id, i) => img(id, `${p.name}, photo ${i + 1}`, 1000, 1250, i > 0));
+$("#product").innerHTML = `<div class="product">
+  <div class="gallery">
+    <div class="thumbs">${p.ph.map((id, i) => `<button type="button" aria-label="Photo ${i + 1}" data-i="${i}" aria-current="${i === 0}">${img(id, "", 160, 200, false)}</button>`).join("")}</div>
+    <div class="main-img" id="main" title="Cliquer pour zoomer">${pics[0]}</div>
+  </div>
+  <div class="info">
+    <div class="kicker">${NAMES[p.cat]}</div>
+    <h1>${esc(p.name)}</h1>
+    <div class="p-price">${euro(p.price)}</div>
+    <div class="tax">TTC, frais de livraison calculés au panier</div>
+    <div class="made">${p.fm ? `<span class="fm static">${ICON.hand} Fait main</span> Façonné à la main par un artisan. Chaque pièce est un peu différente.` : `Fabrication : non faite main.`}</div>
+    <div class="stock${out ? " out" : ""}">${out ? "Épuisé pour le moment" : "En stock, expédié sous 48 h"}</div>
+    <p style="margin-bottom:24px">${esc(p.desc)}</p>
+    <div class="buy">
+      <span class="qty lg"><button type="button" id="minus" aria-label="Moins">−</button><output id="qv">1</output><button type="button" id="plus" aria-label="Plus">+</button></span>
+      <button class="btn btn-dark" id="add"${out ? " disabled" : ""}>Ajouter au panier</button>
+      <button class="fav-big" data-fav="${p.id}" aria-pressed="${isFav(p.id)}" aria-label="Ajouter aux favoris">${ICON.heart(20)}</button>
+    </div>
+    <div class="mini-trust">
+      <div>${ICON.truck} Livraison offerte dès ${FREE_FROM} €, sinon à partir de ${euro(SHIPPING[0].price)}</div>
+      <div>${ICON.lock} Paiement sécurisé par carte ou par virement</div>
+      <div>${ICON.back} Retour possible sous 14 jours</div>
+    </div>
+    <div class="acc">
+      <details open><summary>Caractéristiques</summary><ul class="specs">${(p.specs || []).map(([a, b]) => `<li><span>${esc(a)}</span>${esc(b)}</li>`).join("")}</ul></details>
+      <details><summary>Livraison</summary><p>${SHIPPING.map(s => `${s.name} : ${euro(s.price)} (${s.delay})`).join("<br>")}<br>Offerte dès ${FREE_FROM} € d'achat. Chaque pièce est emballée avec soin.</p></details>
+      <details><summary>Retours</summary><p>Vous avez 14 jours après réception pour nous renvoyer l'article, dans son état d'origine. <a href="livraison-retours.html#retours">Comment faire</a></p></details>
+      <details><summary>Une question sur cet article ?</summary><p><a href="contact.html?sujet=${encodeURIComponent(p.name)}">Écrivez-nous</a>, nous répondons sous 24 h.</p></details>
+    </div>
+    <div class="share">Partager : <a href="#" data-share>Facebook</a><a href="#" data-share>Pinterest</a><a href="#" data-share>WhatsApp</a><button class="link" id="copy">Copier le lien</button></div>
+  </div>
+</div>`;
+
+let q = 1;
+$("#minus").onclick = () => { q = Math.max(1, q - 1); $("#qv").textContent = q; };
+$("#plus").onclick = () => { q++; $("#qv").textContent = q; };
+$("#add").onclick = () => { addToCart(p.id, q); openDrawer(true); };
+$$(".thumbs button").forEach(b => b.onclick = () => { $("#main").innerHTML = pics[b.dataset.i]; $("#main").classList.remove("zoom"); $$(".thumbs button").forEach(x => x.setAttribute("aria-current", x === b)); });
+$("#main").addEventListener("click", () => $("#main").classList.toggle("zoom"));
+$("#main").addEventListener("mousemove", e => { const r = e.currentTarget.getBoundingClientRect(), i = $("img", e.currentTarget); if (i) i.style.transformOrigin = `${(e.clientX - r.left) / r.width * 100}% ${(e.clientY - r.top) / r.height * 100}%`; });
+$$("[data-share]").forEach(a => a.onclick = e => { e.preventDefault(); toast("Partage (maquette)"); });
+$("#copy").onclick = () => { navigator.clipboard?.writeText(location.href).catch(() => {}); toast("Lien copié"); };
+
+const rel = [...PRODUCTS.filter(x => x.cat === p.cat && x.id !== p.id), ...PRODUCTS.filter(x => x.cat !== p.cat)].slice(0, 4);
+$("#related").innerHTML = rel.map(card).join("");
+$("#moreCat").href = "boutique.html?cat=" + p.cat;
+const rec = store.get("mw_recent", []).filter(id => id !== p.id).map(byId).filter(Boolean);
+if (rec.length) { $("#recentBox").hidden = false; $("#recent").innerHTML = rec.map(card).join(""); }
+pushRecent(p.id);
+</script>
+</body>
+</html>

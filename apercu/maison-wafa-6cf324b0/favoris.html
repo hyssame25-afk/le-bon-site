@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/data.js"></script>
+<title>Mes favoris | Maison Wafa</title>
+</head>
+<body data-page="favoris">
+<main class="wrap" style="padding-bottom:90px">
+  <div class="crumbs"><a href="index.html">Accueil</a> / <span>Mes favoris</span></div>
+  <div class="page-head"><h1>Mes favoris</h1><p>Cliquez sur le cœur d'un article pour le garder ici.</p></div>
+  <div class="grid" id="grid"></div>
+</main>
+<script src="assets/app.js"></script>
+<script>
+const draw = () => {
+  const f = getFavs().map(byId);
+  $("#grid").innerHTML = f.length ? f.map(card).join("")
+    : `<div class="no-result" style="grid-column:1/-1"><h2>Aucun favori pour l'instant</h2><p>Touchez le cœur sur un article pour l'ajouter ici.</p><p style="margin-top:20px"><a class="btn btn-dark" href="boutique.html">Découvrir l'e-shop</a></p></div>`;
+};
+document.addEventListener("favs", draw);
+draw();
+</script>
+</body>
+</html>

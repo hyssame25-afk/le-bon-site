@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/data.js"></script>
+<title>Mon compte | Maison Wafa</title>
+</head>
+<body data-page="compte">
+<main class="wrap" style="padding-bottom:90px">
+  <div class="crumbs"><a href="index.html">Accueil</a> / <span>Mon compte</span></div>
+  <div class="page-head"><h1>Mon compte</h1><p>Pas besoin de compte pour commander. Il sert à retrouver vos commandes et vos favoris.</p></div>
+  <div class="cols-2">
+    <div class="panel">
+      <h2>Se connecter</h2>
+      <form class="form" id="login">
+        <label>E-mail<input type="email" required autocomplete="email"></label>
+        <label>Mot de passe<input type="password" required autocomplete="current-password"></label>
+        <button class="btn btn-dark">Se connecter</button>
+        <a class="link" href="#" id="lost">Mot de passe oublié ?</a>
+      </form>
+      <p style="margin-top:22px;color:var(--muted)">Nouveau ici ? Le compte se crée en un clic au moment de la commande.</p>
+    </div>
+    <div class="panel" id="suivi">
+      <h2>Suivre ma commande</h2>
+      <form class="form" id="track">
+        <label>Numéro de commande<input required id="num"></label>
+        <label>E-mail utilisé pour la commande<input type="email" required></label>
+        <button class="btn">Voir où en est ma commande</button>
+      </form>
+      <div id="trackOut"></div>
+    </div>
+  </div>
+</main>
+<script src="assets/app.js"></script>
+<script>
+const last = store.get("mw_last_order", null);
+if (last) $("#num").value = last.n;
+$("#login").onsubmit = e => { e.preventDefault(); toast("Connexion (maquette) : rien n'est enregistré"); };
+$("#lost").onclick = e => { e.preventDefault(); toast("Un lien de réinitialisation serait envoyé par e-mail (maquette)"); };
+$("#track").onsubmit = e => {
+  e.preventDefault();
+  $("#trackOut").innerHTML = `<div class="note" style="margin-top:18px;background:var(--bg);padding:16px;font-family:Commissioner,sans-serif;font-size:14px">
+    <b>Commande n° ${esc($("#num").value)}</b><br>Statut (exemple) : en préparation, expédition sous 48 h.<br><span style="color:var(--muted)">Sur le vrai site, le statut est mis à jour par la vendeuse dans son espace.</span></div>`;
+};
+</script>
+</body>
+</html>

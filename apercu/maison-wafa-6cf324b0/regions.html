@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/data.js"></script>
+<title>Le Maroc, région par région | Maison Wafa</title>
+<meta name="description" content="Fès, Meknès, Marrakech, Agadir, Tanger, Tétouan... Chaque région du Maroc a son savoir-faire. Découvrez leurs spécialités.">
+</head>
+<body data-page="regions">
+<main>
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">Accueil</a> / <span>Le Maroc, région par région</span></div>
+    <div class="page-head"><h1>Le Maroc, région par région</h1><p>Du Nord au Souss, chaque région a son savoir-faire, transmis de génération en génération. Nos pièces viennent de tout le pays.</p></div>
+    <div class="reg" id="regions" style="margin-bottom:80px"></div>
+  </div>
+  <section style="background:var(--white)">
+    <div class="wrap story">
+      <div class="art" id="art"></div>
+      <div>
+        <div class="kicker">Fait main</div>
+        <h2>Reconnaître une pièce faite main</h2>
+        <p>Dans la boutique, les pièces faites à la main par un artisan portent le badge « Fait main ». Comme elles sont faites à la main, deux pièces ne sont jamais tout à fait identiques : c'est ce qui fait leur charme.</p>
+        <p>Les autres produits, comme le henné ou l'eau de rose, viennent aussi du Maroc mais ne sont pas façonnés à la main.</p>
+        <a class="btn btn-dark" href="boutique.html?fm=1" style="margin-top:10px">Voir les pièces faites main</a>
+      </div>
+    </div>
+  </section>
+</main>
+<script src="assets/app.js"></script>
+<script>
+$("#regions").innerHTML = REGIONS.map(([n, t, q]) => {
+  const k = q ? search(q).length : 0;
+  return k ? `<a href="boutique.html?q=${encodeURIComponent(q)}"><h3>${n}</h3><p>${t}</p><span class="go">Voir les pièces (${k})</span></a>` : `<div><h3>${n}</h3><p>${t}</p></div>`;
+}).join("");
+$("#art").innerHTML = img("1621846323386-a60faf26f962", "Mains d'artisan travaillant l'argile", 900, 1125);
+</script>
+</body>
+</html>

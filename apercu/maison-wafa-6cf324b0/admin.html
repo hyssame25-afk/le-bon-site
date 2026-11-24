@@ -50,6 +50,8 @@
   .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; }
   label { display: grid; gap: 6px; font-size: 14px; font-weight: 400; }
   label span { font-weight: 300; color: var(--muted); font-size: 13px; }
+  label.check { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; background: var(--cream); border: 1px solid var(--sand); padding: 14px 16px; }
+  label.check input { width: 18px; height: 18px; accent-color: var(--ink); }
   input, select, textarea { width: 100%; border: 1px solid var(--sand); background: var(--cream); padding: 12px 14px; }
   textarea { min-height: 110px; resize: vertical; }
   input:focus, select:focus, textarea:focus { outline: 2px solid var(--gold); outline-offset: -1px; }
@@ -98,7 +100,7 @@
       <button class="btn" id="new">+ Ajouter un article</button>
     </div>
     <div class="list" id="list"></div>
-    <p class="note">Les 14 articles d'exemple de la maquette ne sont pas modifiables ici. Seuls vos articles ajoutés apparaissent dans cette liste.</p>
+    <p class="note">Les 19 articles d'exemple de la maquette ne sont pas modifiables ici. Seuls vos articles ajoutés apparaissent dans cette liste.</p>
   </section>
 
   <section id="edit" hidden>
@@ -109,9 +111,10 @@
         <label>Catégorie
           <select name="cat">
             <option value="deco">Décoration</option>
-            <option value="vaisselle">Vaisselle</option>
+            <option value="vaisselle">Art de la table</option>
             <option value="paniers">Paniers</option>
-            <option value="textiles">Rideaux et textiles</option>
+            <option value="textiles">Textile</option>
+            <option value="bienetre">Bien-être</option>
             <option value="bijoux">Bijoux</option>
           </select>
         </label>
@@ -119,10 +122,11 @@
       <div class="grid3">
         <label>Prix (€)<input name="price" type="number" min="0" step="0.01" placeholder="Ex. : 39"></label>
         <label>Étiquette
-          <select name="tag"><option value="">Aucune (facultatif)</option><option>Nouveau</option><option>Fait main</option><option>Pièce unique</option><option>Doré</option><option>Argenté</option></select>
+          <select name="tag"><option value="">Aucune (facultatif)</option><option>Nouveau</option><option>Bio</option><option>Pièce unique</option><option>Doré</option><option>Argenté</option></select>
         </label>
         <label>Stock<select name="stock"><option value="1">En stock</option><option value="0">Épuisé</option></select></label>
       </div>
+      <label class="check"><input type="checkbox" name="fm"> Fait main <span>(cochez si la pièce est faite à la main par un artisan : le badge « Fait main » s'affiche sur l'article)</span></label>
       <label>Description<textarea name="desc" placeholder="Matière, usage, ce qui le rend unique..."></textarea></label>
       <div class="grid3">
         <label>Matière<input name="m" placeholder="Ex. : Osier tressé"></label>
@@ -172,7 +176,7 @@
 
 <script>
 const KEY = "mm_articles";
-const NAMES = { deco: "Décoration", vaisselle: "Vaisselle", paniers: "Paniers", textiles: "Rideaux et textiles", bijoux: "Bijoux" };
+const NAMES = { deco: "Décoration", vaisselle: "Art de la table", paniers: "Paniers", textiles: "Textile", bienetre: "Bien-être", bijoux: "Bijoux" };
 const load = () => { try { return JSON.parse(localStorage.getItem(KEY) || "[]"); } catch (e) { return []; } };
 const save = a => { try { localStorage.setItem(KEY, JSON.stringify(a)); return true; } catch (e) { alert("Mémoire de la démo pleine : retirez un article ou utilisez des photos plus légères."); return false; } };
 const euro = n => n == null ? "?? €" : n.toFixed(2).replace(".", ",") + " €";
@@ -190,7 +194,7 @@ function renderList() {
   if (!a.length) { list.innerHTML = `<p class="empty">Aucun article ajouté pour l'instant.<br>Cliquez sur « Ajouter un article » pour essayer.</p>`; return; }
   list.innerHTML = a.map(p => `<div class="row">
     ${p.ph[0] ? `<img src="${p.ph[0]}" alt="">` : `<div style="width:64px;height:80px;background:var(--beige)"></div>`}
-    <div><b>${esc(p.name)}</b><small>${NAMES[p.cat]} · ${p.ph.length} photo${p.ph.length > 1 ? "s" : ""}</small></div>
+    <div><b>${esc(p.name)}</b><small>${NAMES[p.cat]}${p.fm ? " · Fait main" : ""} · ${p.ph.length} photo${p.ph.length > 1 ? "s" : ""}</small></div>
     <div class="price">${euro(p.price)}</div>
     <div class="state"><span class="pill ${p.stock === "0" ? "" : "on"}">${p.stock === "0" ? "Épuisé" : "En vente"}</span></div>
     <div class="act"><button data-edit="${p.id}">Modifier</button><button data-del="${p.id}">Retirer</button></div>
@@ -232,7 +236,7 @@ function openForm(p) {
   f.reset();
   document.getElementById("formTitle").textContent = p ? "Modifier l'article" : "Nouvel article";
   if (p) {
-    f.name.value = p.name; f.cat.value = p.cat; f.price.value = p.price ?? ""; f.tag.value = p.tag || ""; f.stock.value = p.stock || "1"; f.desc.value = p.desc || "";
+    f.name.value = p.name; f.cat.value = p.cat; f.price.value = p.price ?? ""; f.tag.value = p.tag || ""; f.stock.value = p.stock || "1"; f.desc.value = p.desc || ""; f.fm.checked = !!p.fm;
     const g = k => (p.specs.find(s => s[0] === k) || [, ""])[1];
     f.m.value = g("Matière"); f.d.value = g("Dimensions"); f.o.value = g("Origine");
   }
@@ -247,7 +251,7 @@ document.getElementById("form").addEventListener("submit", e => {
   if (!photos.length) { alert("Ajoutez au moins une photo."); return; }
   const specs = [["Matière", f.m.value], ["Dimensions", f.d.value], ["Origine", f.o.value]].filter(s => s[1].trim());
   const item = { id: editing ? editing.id : Date.now(), cat: f.cat.value, name: f.name.value.trim(), price: f.price.value === "" ? null : +f.price.value,
-    tag: f.tag.value || (f.stock.value === "0" ? "Épuisé" : ""), stock: f.stock.value, desc: f.desc.value.trim(), specs, ph: photos };
+    tag: f.tag.value || (f.stock.value === "0" ? "Épuisé" : ""), fm: f.fm.checked, stock: f.stock.value, desc: f.desc.value.trim(), specs, ph: photos };
   const a = load().filter(p => p.id !== item.id);
   a.unshift(item);
   if (!save(a)) return;

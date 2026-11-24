@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/data.js"></script>
+<title>Commande | Maison Wafa</title>
+<style>
+  .co h2 { font-size: 14px; letter-spacing: .1em; margin: 0 0 16px; display: flex; gap: 12px; align-items: center; }
+  .co h2 b { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--ink); color: #fff; font-weight: 400; font-size: 13px; }
+  .co .panel { margin-bottom: 18px; }
+  .card-fields { display: grid; gap: 14px; margin-top: 14px; }
+  .note { background: var(--bg); padding: 14px 16px; font-family: Commissioner, sans-serif; font-size: 13px; color: var(--muted); margin-top: 14px; }
+  .thanks { max-width: 640px; margin: 0 auto 90px; text-align: center; }
+  .thanks .panel { text-align: left; margin-top: 30px; }
+</style>
+</head>
+<body data-page="commande">
+<main class="wrap">
+  <div class="crumbs"><a href="index.html">Accueil</a> / <a href="panier.html">Panier</a> / <span>Commande</span></div>
+  <div class="page-head"><h1>Commande</h1></div>
+  <div id="co"></div>
+</main>
+<script src="assets/app.js"></script>
+<script>
+const promo = store.get("mw_promo", "");
+function totals(shipId) {
+  const sub = cartSub(), disc = promo ? Math.round(sub * 10) / 100 : 0;
+  const sh = sub >= FREE_FROM ? 0 : SHIPPING.find(s => s.id === shipId).price;
+  return { sub, disc, sh, tot: sub - disc + sh };
+}
+function summary(shipId) {
+  const t = totals(shipId);
+  return `<h2>Votre commande</h2>
+    <div class="small-lines">${getCart().map(({ id, q }) => { const p = byId(id); return `<div class="line"><span class="mini">${img(p.ph[0], p.name, 120, 150)}</span><div><h3>${esc(p.name)}</h3><small>Quantité : ${q}</small></div><div class="end">${euro((p.price || 0) * q)}</div></div>`; }).join("")}</div>
+    <div class="total"><span>Sous-total</span><span>${euro(t.sub)}</span></div>
+    ${t.disc ? `<div class="total"><span>Code ${esc(promo)}</span><span>-${euro(t.disc)}</span></div>` : ""}
+    <div class="total"><span>Livraison</span><span>${t.sh ? euro(t.sh) : "Offerte"}</span></div>
+    <div class="total big"><span>Total TTC</span><span>${euro(t.tot)}</span></div>
+    <a class="link" href="panier.html">Modifier le panier</a>`;
+}
+if (!getCart().length) {
+  $("#co").innerHTML = `<div class="no-result"><h2>Votre panier est vide</h2><p style="margin-top:20px"><a class="btn btn-dark" href="boutique.html">Découvrir l'e-shop</a></p></div>`;
+} else {
+  $("#co").innerHTML = `<div class="steps-bar"><span>1. Panier</span>›<b>2. Livraison et paiement</b>›<span>3. Confirmation</span></div>
+  <form class="cart-page co form" id="form">
+    <div>
+      <div class="panel">
+        <h2><b>1</b> Vos coordonnées</h2>
+        <div class="form">
+          <label>E-mail<input type="email" name="email" required autocomplete="email"></label>
+          <div class="two"><label>Prénom<input required autocomplete="given-name"></label><label>Nom<input required autocomplete="family-name"></label></div>
+          <label>Adresse<input required autocomplete="street-address"></label>
+          <div class="two"><label>Code postal<input required autocomplete="postal-code" inputmode="numeric"></label><label>Ville<input required autocomplete="address-level2"></label></div>
+          <label>Téléphone (pour le livreur)<input type="tel" autocomplete="tel"></label>
+        </div>
+      </div>
+      <div class="panel">
+        <h2><b>2</b> Livraison</h2>
+        <div class="methods">${SHIPPING.map((s, i) => `<label><span><input type="radio" name="ship" value="${s.id}"${i === 0 ? " checked" : ""}><span>${s.name}<small>${s.delay}</small></span></span><span>${cartSub() >= FREE_FROM ? "Offerte" : euro(s.price)}</span></label>`).join("")}</div>
+      </div>
+      <div class="panel">
+        <h2><b>3</b> Paiement</h2>
+        <div class="methods">
+          <label><span><input type="radio" name="pay" value="cb" checked><span>Carte bancaire<small>CB, Visa, Mastercard. Paiement sécurisé.</small></span></span></label>
+          <label><span><input type="radio" name="pay" value="vir"><span>Virement bancaire<small>Commande envoyée dès réception du virement.</small></span></span></label>
+        </div>
+        <div id="payInfo"></div>
+      </div>
+      <label class="chk" style="display:flex;gap:10px;align-items:center;font-weight:400"><input type="checkbox" required style="width:16px;height:16px"> J'accepte les <a href="legal.html#cgv" target="_blank">conditions générales de vente</a></label>
+    </div>
+    <div class="summary" id="sum"></div>
+  </form>`;
+  const ship = () => $("[name=ship]:checked").value;
+  const payInfo = () => {
+    $("#payInfo").innerHTML = $("[name=pay]:checked").value === "cb"
+      ? `<div class="note">Sur le vrai site, le paiement par carte se fait ici dans une fenêtre sécurisée (Stripe). Dans cette maquette, rien n'est payé.</div>`
+      : `<div class="note">Après la commande, vous recevez par e-mail les coordonnées bancaires de la boutique et le numéro de commande à indiquer dans le virement.</div>`;
+  };
+  const drawSum = () => { $("#sum").innerHTML = summary(ship()) + `<button class="btn btn-dark">Valider et payer ${euro(totals(ship()).tot)}</button>`; };
+  $$("[name=ship]").forEach(r => r.onchange = drawSum);
+  $$("[name=pay]").forEach(r => r.onchange = payInfo);
+  payInfo(); drawSum();
+  $("#form").onsubmit = e => {
+    e.preventDefault();
+    const n = 1000 + Math.floor(Math.random() * 9000), vir = $("[name=pay]:checked").value === "vir", tot = totals(ship()).tot, mail = $("[name=email]").value;
+    store.set("mw_last_order", { n, tot, vir, date: new Date().toLocaleDateString("fr-FR") });
+    setCart([]); store.set("mw_promo", "");
+    $(".page-head h1").textContent = "Merci pour votre commande";
+    $("#co").innerHTML = `<div class="thanks">
+      <div class="steps-bar"><span>1. Panier</span>›<span>2. Livraison et paiement</span>›<b>3. Confirmation</b></div>
+      <p>Commande n° <b>${n}</b> · ${euro(tot)}</p>
+      <p style="color:var(--muted);margin-top:10px">Un e-mail de confirmation est envoyé à ${esc(mail)}.</p>
+      <div class="panel">
+        <h2>${vir ? "Prochaine étape : le virement" : "Paiement reçu"}</h2>
+        <p style="color:var(--muted)">${vir ? `Faites un virement de ${euro(tot)} avec la référence « ${n} ». Les coordonnées bancaires sont dans l'e-mail. La commande part dès réception.` : "Votre commande est préparée avec soin et expédiée sous 48 h. Vous recevrez le numéro de suivi par e-mail."}</p>
+        <p class="note">Ceci est une maquette : aucun paiement n'a été fait et aucun e-mail n'est envoyé.</p>
+      </div>
+      <p style="margin-top:30px"><a class="btn btn-dark" href="boutique.html">Continuer la visite</a></p>
+    </div>`;
+    scrollTo(0, 0);
+  };
+}
+</script>
+</body>
+</html>

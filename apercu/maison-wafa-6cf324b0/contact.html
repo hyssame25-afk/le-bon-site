@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/data.js"></script>
+<title>Contact et questions | Maison Wafa</title>
+</head>
+<body data-page="contact">
+<main class="wrap" style="padding-bottom:90px">
+  <div class="crumbs"><a href="index.html">Accueil</a> / <span>Contact</span></div>
+  <div class="page-head"><h1>Nous contacter</h1><p>Une question sur un article, une commande ou un retour ? Nous répondons sous 24 h.</p></div>
+  <div class="cols-2">
+    <div class="panel">
+      <h2>Écrivez-nous</h2>
+      <form class="form" id="cf">
+        <div class="two"><label>Nom<input required autocomplete="name"></label><label>E-mail<input type="email" required autocomplete="email"></label></div>
+        <label>Sujet<select id="sujet"><option>Question sur un article</option><option>Ma commande</option><option>Un retour</option><option>Autre</option></select></label>
+        <label>Numéro de commande (si vous en avez un)<input></label>
+        <label>Message<textarea required id="msg"></textarea></label>
+        <button class="btn btn-dark">Envoyer</button>
+      </form>
+    </div>
+    <div>
+      <div class="panel" style="margin-bottom:18px">
+        <h2>Coordonnées</h2>
+        <p style="color:var(--muted)">E-mail, téléphone et réseaux sociaux de la boutique : ils seront affichés ici sur le vrai site.</p>
+      </div>
+      <div class="faq" id="faq">
+        <details><summary>Comment savoir si un objet est fait main ?</summary><p>Les pièces faites à la main par un artisan portent le badge « Fait main », sur la photo et dans la fiche de l'article. Dans l'e-shop, cochez « Fait main uniquement ».</p></details>
+        <details><summary>D'où viennent les produits bien-être ?</summary><p>Du Maroc : huile d'argan du Souss, henné naturel, ghassoul du Moyen Atlas, eau de rose de la vallée des roses. La composition est écrite dans la fiche de chaque produit.</p></details>
+        <details><summary>Quels sont les délais de livraison ?</summary><p>Les commandes partent sous 48 h. Ensuite 2 à 5 jours selon le mode choisi. <a href="livraison-retours.html">Tout savoir</a></p></details>
+        <details><summary>Comment payer par virement ?</summary><p>Choisissez « Virement » au moment de commander. Vous recevez nos coordonnées bancaires par e-mail, et la commande part dès réception du paiement.</p></details>
+        <details><summary>Les bijoux en acier inoxydable noircissent-ils ?</summary><p>L'acier inoxydable résiste bien à l'eau et au temps. Pour le garder brillant, évitez les produits chimiques et rangez-le à part.</p></details>
+        <details><summary>Puis-je renvoyer un objet ?</summary><p>Oui, sous 14 jours après réception, dans son état d'origine. <a href="livraison-retours.html#retours">Faire une demande de retour</a></p></details>
+      </div>
+    </div>
+  </div>
+</main>
+<script src="assets/app.js"></script>
+<script>
+const s = param("sujet");
+if (s) { $("#msg").value = `Bonjour, j'ai une question sur l'article « ${s} » : `; }
+$("#cf").onsubmit = e => { e.preventDefault(); e.target.outerHTML = `<p class="sent">Merci, votre message est envoyé (maquette). Sur le vrai site, la vendeuse le reçoit par e-mail.</p>`; };
+</script>
+</body>
+</html>
