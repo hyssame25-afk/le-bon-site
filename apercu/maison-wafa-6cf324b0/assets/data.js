@@ -2,6 +2,7 @@
 const U = (id, w = 900, h = 1125) => `https://images.unsplash.com/photo-${id}?w=${w}&h=${h}&fit=crop&auto=format&q=75`;
 
 const NAMES = { deco: "Décoration", vaisselle: "Art de la table", paniers: "Paniers", textiles: "Textile", bienetre: "Bien-être", bijoux: "Bijoux" };
+const CAT_PH = { deco: "1505576391880-b3f9d713dc4f", vaisselle: "1553523292-1140e57d4f87", paniers: "1659520709425-31b547254b59", textiles: "1682421938316-4b186e25174c", bienetre: "1740744931699-11d1db68c0d4", bijoux: "1783541507490-edb026e2a961" };
 const CAT_ORDER = ["deco", "vaisselle", "paniers", "textiles", "bienetre", "bijoux"];
 
 const PRODUCTS = [

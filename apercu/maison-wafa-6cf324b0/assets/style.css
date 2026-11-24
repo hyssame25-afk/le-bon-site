@@ -64,11 +64,23 @@ nav.main > ul { list-style: none; display: flex; justify-content: center; flex-w
 nav.main > ul > li { position: relative; }
 nav.main a { text-decoration: none; display: inline-block; padding: 6px 0; border-bottom: 1px solid transparent; }
 nav.main a:hover, nav.main a[aria-current="page"] { border-color: var(--ink); }
-.drop { position: absolute; top: 100%; left: -24px; background: var(--white); min-width: 230px; padding: 12px 0; box-shadow: 0 14px 40px rgba(0,0,0,.12); list-style: none; display: none; z-index: 45; text-transform: none; letter-spacing: 0; }
-.drop a { display: flex; justify-content: space-between; gap: 20px; padding: 8px 24px; border: 0; font-weight: 400; font-size: 14px; }
-.drop a:hover { background: var(--bg); }
-.drop small { color: var(--muted); }
-nav.main li:hover > .drop, nav.main li:focus-within > .drop { display: block; }
+.drop { position: absolute; top: calc(100% + 1px); left: -20px; width: 820px; background: var(--white); padding: 26px; box-shadow: 0 18px 50px rgba(0,0,0,.14); display: none; z-index: 45; text-transform: none; letter-spacing: 0; grid-template-columns: 1fr 190px; gap: 30px; }
+.drop::before { content: ""; position: absolute; left: 0; right: 0; top: -14px; height: 14px; }
+.drop-cats { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+nav.main .drop-cats a { display: block; padding: 0; border: 0; }
+.drop-cats .ph { display: block; aspect-ratio: 16/10; overflow: hidden; background: var(--bg-2); }
+.drop-cats img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s; }
+.drop-cats a:hover img { transform: scale(1.06); }
+.drop-cats b { display: block; font-size: 12px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; margin-top: 10px; }
+.drop-cats small { color: var(--muted); font-size: 12px; font-family: "Playfair Display", serif; font-style: italic; }
+.drop-side { border-left: 1px solid var(--line); padding-left: 26px; }
+.drop-side h4 { font-size: 11px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: var(--caramel); margin-bottom: 12px; }
+.drop-side ul { list-style: none; display: grid; gap: 4px; margin-bottom: 22px; }
+nav.main .drop-side a { padding: 5px 0; font-size: 13px; font-weight: 400; letter-spacing: .02em; border: 0; }
+nav.main .drop-side a:hover { color: var(--caramel); }
+nav.main .drop-side .btn { display: flex; padding: 13px 16px; font-size: 11px; width: 100%; border: 1px solid var(--ink); }
+nav.main .drop-side .btn:hover { color: #fff; }
+nav.main li:hover > .drop, nav.main li:focus-within > .drop { display: grid; }
 .mobile-search { display: none; padding: 0 0 14px; }
 .mobile-search .search { width: 100%; }
 
@@ -332,8 +344,14 @@ footer.site .bottom { border-top: 1px solid #333; margin-top: 44px; padding-top:
   nav.main.open { display: block; border-top: 1px solid var(--line); }
   nav.main.open > ul { flex-direction: column; align-items: stretch; gap: 0; padding: 6px 0 14px; }
   nav.main.open > ul > li > a { display: block; padding: 12px 0; }
-  nav.main .drop { position: static; display: block; box-shadow: none; background: none; padding: 0 0 8px 14px; min-width: 0; }
-  nav.main .drop a { padding: 6px 0; }
+  nav.main .drop, nav.main li:hover > .drop { position: static; display: block; width: auto; box-shadow: none; background: none; padding: 0 0 10px 14px; }
+  .drop::before, nav.main .drop-cats, .drop-side h4, nav.main .drop-side .btn { display: none; }
+  .drop-cats { grid-template-columns: 1fr; gap: 0; }
+  nav.main .drop-cats a { display: flex; justify-content: space-between; padding: 8px 0; }
+  .drop-cats b { margin: 0; font-weight: 400; letter-spacing: .06em; }
+  .drop-side { border: 0; padding: 0; }
+  .drop-side ul { margin: 0; gap: 0; }
+  nav.main .drop-side a { padding: 8px 0; }
   .burger, .search-toggle { display: grid; }
   .head-row .search { display: none; }
   .mobile-search.open { display: block; }

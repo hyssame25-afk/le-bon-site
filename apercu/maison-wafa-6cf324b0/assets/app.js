@@ -127,7 +127,14 @@ function buildHeader() {
     <nav class="main" aria-label="Menu principal">
       <ul>
         <li><a href="boutique.html"${cur("boutique")}>E-shop</a>
-          <ul class="drop">${CAT_ORDER.map(c => `<li><a href="boutique.html?cat=${c}">${NAMES[c]} <small>${counts[c]}</small></a></li>`).join("")}<li><a href="boutique.html?fm=1">Fait main uniquement</a></li></ul>
+          <div class="drop">
+            <ul class="drop-cats">${CAT_ORDER.map(c => `<li><a href="boutique.html?cat=${c}"><span class="ph">${img(CAT_PH[c], "", 360, 225)}</span><b>${NAMES[c]}</b><small>${counts[c]} article${counts[c] > 1 ? "s" : ""}</small></a></li>`).join("")}</ul>
+            <div class="drop-side">
+              <h4>À découvrir</h4>
+              <ul><li><a href="boutique.html?sort=new">Nouveautés</a></li><li><a href="boutique.html?fm=1">Pièces faites main</a></li><li><a href="boutique.html?sort=asc">Petits prix</a></li><li><a href="regions.html">Par région du Maroc</a></li></ul>
+              <a class="btn btn-dark" href="boutique.html">Tout l'e-shop</a>
+            </div>
+          </div>
         </li>
         ${NAV.slice(1).map(([h, t, k]) => `<li><a href="${h}"${cur(k)}>${t}</a></li>`).join("")}
       </ul>
