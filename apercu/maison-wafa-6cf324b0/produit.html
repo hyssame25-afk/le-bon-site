@@ -7,8 +7,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=4">
-<script src="assets/data.js?v=4"></script>
+<link rel="stylesheet" href="assets/style.css?v=5">
+<script src="assets/data.js?v=5"></script>
 <title>Article | Maison Wafa</title>
 </head>
 <body data-page="produit">
@@ -24,7 +24,7 @@
     <div class="row-scroll" id="recent"></div>
   </section>
 </main>
-<script src="assets/app.js?v=4"></script>
+<script src="assets/app.js?v=5"></script>
 <script>
 const p = byId(param("id")) || PRODUCTS[0];
 const out = p.tag === "Épuisé" || p.stock === "0";
@@ -41,7 +41,7 @@ $("#product").innerHTML = `<div class="product">
     <h1>${esc(p.name)}</h1>
     <div class="p-price">${euro(p.price)}</div>
     <div class="tax">TTC, frais de livraison calculés au panier</div>
-    <div class="made">${p.fm ? `<span class="fm static">${ICON.hand} Fait main</span> Façonné à la main par un artisan. Chaque pièce est un peu différente.` : `Fabrication : non faite main.`}</div>
+    <div class="made">${p.fm ? `<b>Fait main :</b> façonné à la main par un artisan. Chaque pièce est un peu différente.` : `Fabrication : non faite main.`}</div>
     <div class="stock${out ? " out" : ""}">${out ? "Épuisé pour le moment" : "En stock, expédié sous 48 h"}</div>
     <p style="margin-bottom:24px">${esc(p.desc)}</p>
     <div class="buy">

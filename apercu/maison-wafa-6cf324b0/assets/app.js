@@ -70,7 +70,7 @@ const mark = (text, q) => {
 // ---------- Carte produit ----------
 const card = p => `<article class="card">
   <a href="produit.html?id=${p.id}">
-    <div class="art">${p.tag ? `<span class="tag">${esc(p.tag)}</span>` : ""}${p.fm ? `<span class="fm">${ICON.hand} Fait main</span>` : ""}${img(p.ph[0], p.name, 600, 750)}${p.ph[1] ? img(p.ph[1], p.name + ", autre vue", 600, 750) : ""}</div>
+    <div class="art">${p.tag ? `<span class="tag">${esc(p.tag)}</span>` : ""}${img(p.ph[0], p.name, 600, 750)}${p.ph[1] ? img(p.ph[1], p.name + ", autre vue", 600, 750) : ""}</div>
     <div class="cat">${NAMES[p.cat] || ""}</div>
     <h3>${esc(p.name)}</h3>
     <div class="price">${euro(p.price)}</div>
