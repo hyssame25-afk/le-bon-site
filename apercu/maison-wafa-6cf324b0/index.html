@@ -7,8 +7,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=5">
-<script src="assets/data.js?v=5"></script>
+<link rel="stylesheet" href="assets/style.css?v=7">
+<script src="assets/data.js?v=7"></script>
 <title>Maison Wafa | Décoration marocaine, bien-être et bijoux</title>
 <meta name="description" content="Décoration marocaine faite main, art de la table, paniers, textile, bien-être (argan, henné, ghassoul) et bijoux. L'artisanat de tout le Maroc, livré chez vous.">
 </head>
@@ -75,7 +75,7 @@
     </div>
   </section>
 </main>
-<script src="assets/app.js?v=5"></script>
+<script src="assets/app.js?v=7"></script>
 <script>
 const TILES = [["deco", "1505576391880-b3f9d713dc4f", "big"], ["bijoux", "1783541507490-edb026e2a961", ""], ["vaisselle", "1553523292-1140e57d4f87", ""], ["paniers", "1659520709425-31b547254b59", ""], ["textiles", "1682421938316-4b186e25174c", ""], ["bienetre", "1740744931699-11d1db68c0d4", "wide"]];
 $("#mosaic").innerHTML = TILES.map(([k, id, size], i) => `<a class="tile ${size}" href="boutique.html?cat=${k}">${img(id, NAMES[k], size === "wide" ? 1800 : size ? 1400 : 800, size === "wide" ? 700 : 900, i > 1)}<span>${NAMES[k]}${size === "wide" ? "<small>Huile d'argan, henné, ghassoul, eau de rose</small>" : ""}</span></a>`).join("");

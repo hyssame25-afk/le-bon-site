@@ -68,11 +68,17 @@ const mark = (text, q) => {
 };
 
 // ---------- Carte produit ----------
+const spec = (p, k) => ((p.specs || []).find(s => s[0] === k) || [])[1] || "";
+const matLine = p => {
+  const m = spec(p, "Matière") || spec(p, "Composition"), o = spec(p, "Origine");
+  return [m, o && o !== "Maroc" ? o : ""].filter(Boolean).join(", ");
+};
 const card = p => `<article class="card">
   <a href="produit.html?id=${p.id}">
     <div class="art">${p.tag ? `<span class="tag">${esc(p.tag)}</span>` : ""}${img(p.ph[0], p.name, 600, 750)}${p.ph[1] ? img(p.ph[1], p.name + ", autre vue", 600, 750) : ""}</div>
     <div class="cat">${NAMES[p.cat] || ""}</div>
     <h3>${esc(p.name)}</h3>
+    ${matLine(p) ? `<div class="mat">${esc(matLine(p))}</div>` : ""}
     <div class="price">${euro(p.price)}</div>
   </a>
   <button class="fav" data-fav="${p.id}" aria-pressed="${isFav(p.id)}" aria-label="Ajouter ${esc(p.name)} aux favoris">${ICON.heart(17)}</button>
@@ -241,6 +247,21 @@ const shipBar = sub => {
   return `<div class="ship-bar">${left > 0 ? `Plus que <b>${euro(left)}</b> pour la livraison offerte` : `<b>Livraison offerte</b> sur votre commande`}<div class="bar"><i style="width:${Math.min(100, sub / FREE_FROM * 100)}%"></i></div></div>`;
 };
 
+// "A associer avec" : 3 articles qui vont avec le dernier article ajoute
+const COMPL = { vaisselle: ["vaisselle", "epicerie"], deco: ["textiles", "deco"], paniers: ["textiles", "deco"], textiles: ["deco", "paniers"], cuir: ["cuir", "textiles"], bienetre: ["bienetre", "textiles"], epicerie: ["vaisselle", "epicerie"], bijoux: ["bijoux"] };
+const pairs = (c, sub) => {
+  const last = byId(c[c.length - 1].id), inCart = new Set(c.map(l => +l.id)), aim = Math.max(FREE_FROM - sub, 15);
+  return (COMPL[last.cat] || [last.cat]).flatMap((cat, i) => PRODUCTS
+    .filter(p => p.cat === cat && !inCart.has(+p.id) && p.tag !== "Épuisé" && p.price)
+    .map(p => ({ p, s: i * 1000 + Math.abs(p.price - aim) })))
+    .sort((a, b) => a.s - b.s).slice(0, 3).map(x => x.p);
+};
+const pairBlock = list => list.length ? `<div class="pairs"><h3>À associer avec</h3>${list.map(p => `<div class="pair">
+    <a class="mini" href="produit.html?id=${p.id}">${img(p.ph[0], p.name, 120, 150, false)}</a>
+    <div><a href="produit.html?id=${p.id}">${esc(p.name)}</a><small>${euro(p.price)}</small></div>
+    <button class="btn" data-add="${p.id}" aria-label="Ajouter ${esc(p.name)} au panier">+ Ajouter</button>
+  </div>`).join("")}</div>` : "";
+
 function renderDrawer() {
   const c = getCart(), sub = cartSub();
   $("#shipBar").innerHTML = shipBar(sub);
@@ -253,7 +274,7 @@ function renderDrawer() {
     <a class="mini" href="produit.html?id=${id}">${img(p.ph[0], p.name, 140, 175, false)}</a>
     <div><h3><a href="produit.html?id=${id}">${esc(p.name)}</a></h3><small>${euro(p.price)}</small><div style="margin-top:8px"><span class="qty"><button data-q="${id}" data-d="-1" aria-label="Moins">−</button><output>${q}</output><button data-q="${id}" data-d="1" aria-label="Plus">+</button></span></div></div>
     <div class="end">${euro((p.price || 0) * q)}<button class="rm" data-rm="${id}">Retirer</button></div>
-  </div>`; }).join("");
+  </div>`; }).join("") + pairBlock(pairs(c, sub));
   $("#foot").innerHTML = `<div class="total"><span>Sous-total</span><span>${euro(sub)}</span></div>
     <small style="color:var(--muted);font-family:Commissioner,sans-serif;font-size:12px">Frais de livraison calculés à l'étape suivante.</small>
     <a class="btn btn-dark" href="commande.html">Commander</a>
